@@ -50,13 +50,6 @@ links:                        # Custom links to add to the top bar
     iconAlign: left           # Icon alignment, to the left or right
     target: blank             # Custom target
                               # Use "blank" to open link in a new window
-  - text: Developer Documentation
-    link: https://wiki.tumppi066.fi/docs/ # Link to an internal file
-    icon: gear                # A custom icon name, :emoji:, <svg>, or
-                              # a path to a file
-    iconAlign: left           # Icon alignment, to the left or right
-    target: blank             # Custom target
-                              # Use "blank" to open link in a new window
 
 # -----------------------------------------------------------------------------
 
