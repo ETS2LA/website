@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-05-07T11:10:32Z",
+  "created": "2024-05-17T14:47:56Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -21,6 +21,9 @@
       "path": "index.html"
     },
     {
+      "path": "installation\\beta-1\\index.html"
+    },
+    {
       "path": "resources\\css\\retype.css"
     },
     {
@@ -34,6 +37,9 @@
     },
     {
       "path": "resources\\js\\lunr.js"
+    },
+    {
+      "path": "resources\\js\\prism.js"
     },
     {
       "path": "resources\\js\\retype.js"
@@ -61,6 +67,12 @@
     },
     {
       "path": "sitemap.xml.gz"
+    },
+    {
+      "path": "tags\\index.html"
+    },
+    {
+      "path": "tags\\tutorial\\index.html"
     }
   ]
 }
