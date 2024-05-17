@@ -79,15 +79,7 @@ python main.py
 ==-
 ### Step 5: Additional tips.
 ==- 1. Updating the app
-To update the app, you can run the following commands in the **root folder**.
-```bash
-git pull
-git checkout rewrite
-cd frontend
-npm install
-cd ..
-pip install -r requirements.txt
-```
+Just click the update available button on the top right of the UI once it lights up.
 ==- 2. Opening the UI from your phone.
 !!! Note
 It is recommended to use a tablet instead of a phone. Not all pages are optimized for small screens.
