@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-05-17T14:47:56Z",
+  "created": "2024-06-09T17:24:33Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -9,10 +9,19 @@
       "path": "404.html"
     },
     {
+      "path": "annotation\\index.html"
+    },
+    {
       "path": "assets\\favicon.ico"
     },
     {
       "path": "assets\\markdownlogo.png"
+    },
+    {
+      "path": "assets\\vehicledeetectionannotation\\annotation_example.png"
+    },
+    {
+      "path": "assets\\vehicledeetectionannotation\\blurry_vehicle.png"
     },
     {
       "path": "CNAME"
@@ -69,10 +78,19 @@
       "path": "sitemap.xml.gz"
     },
     {
+      "path": "tags\\ai\\index.html"
+    },
+    {
+      "path": "tags\\annotation\\index.html"
+    },
+    {
       "path": "tags\\index.html"
     },
     {
       "path": "tags\\tutorial\\index.html"
+    },
+    {
+      "path": "tags\\vehicle-detection\\index.html"
     }
   ]
 }
