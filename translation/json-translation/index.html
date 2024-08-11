@@ -9,24 +9,26 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Beta 1</title>
-    <meta name="title" content="Beta 1">
-    <meta name="description" content="This is a BETA version, not everything is in, and nothing is complete.">
+    <title>JSON Translation</title>
+    <meta name="title" content="JSON Translation">
+    <meta name="description" content="The translation backend and tokens are still not finalized. If you start translating now you might have to redo the work later on.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://wiki.tumppi066.fi/installation/beta-1/">
+    <link rel="canonical" href="https://wiki.tumppi066.fi/translation/json-translation/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wiki.tumppi066.fi/installation/beta-1/">
-    <meta property="og:title" content="Beta 1">
-    <meta property="og:description" content="This is a BETA version, not everything is in, and nothing is complete.">
+    <meta property="og:url" content="https://wiki.tumppi066.fi/translation/json-translation/">
+    <meta property="og:title" content="JSON Translation">
+    <meta property="og:description" content="The translation backend and tokens are still not finalized. If you start translating now you might have to redo the work later on.">
+    <meta property="og:image" content="https://wiki.tumppi066.fi/translation/image.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://wiki.tumppi066.fi/installation/beta-1/">
-    <meta property="twitter:title" content="Beta 1">
-    <meta property="twitter:description" content="This is a BETA version, not everything is in, and nothing is complete.">
+    <meta property="twitter:url" content="https://wiki.tumppi066.fi/translation/json-translation/">
+    <meta property="twitter:title" content="JSON Translation">
+    <meta property="twitter:description" content="The translation backend and tokens are still not finalized. If you start translating now you might have to redo the work later on.">
+    <meta property="twitter:image" content="https://wiki.tumppi066.fi/translation/image.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -183,10 +185,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="beta-1" class="break-words">
+<doc-anchor-target id="json-translation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#beta-1">#</doc-anchor-trigger>
-        <span>Beta 1</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#json-translation">#</doc-anchor-trigger>
+        <span>JSON Translation</span>
     </h1>
 </doc-anchor-target>
 <div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
@@ -215,205 +217,267 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This is a BETA version, not everything is in, and nothing is complete. We are still working on this, and we want your feedback on how to make it better. Please do tell us anything on your mind in the discord thread!</p>
+<p>The translation backend and tokens are still not finalized. If you start translating now you might have to redo the work later on.<br />
+I DO NOT ACCEPT TRANSLATIONS DUE TO THIS YET!</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="introduction-to-v20">
+<doc-anchor-target id="introduction-to-v20-translation">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction-to-v20">#</doc-anchor-trigger>
-        <span>Introduction to V2.0</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#introduction-to-v20-translation">#</doc-anchor-trigger>
+        <span>Introduction to V2.0 translation</span>
     </h3>
 </doc-anchor-target>
-<p>This is a complete rewrite of the entire app framework. Basically anything and everything has changed. This is a list of the main changes so far.</p>
-<ul>
-<li>Each plugin is now running in it&#x27;s own process.</li>
-<li>The frontend is now a website running NextJS and react.</li>
-<li>Some stuff that was previously a &quot;plugin&quot; is now a &quot;module&quot;.
-<ul>
-<li>For example the screencapture is now a module. This means it will run as the plugin needs, lowering the time from capture to the plugin getting the image.</li>
-</ul>
+<p>Unlike the previous versions, 2.0 has native translation support. This is done using several different json files.</p>
+<doc-panels>
+   <doc-panel id="badge-variant-ghost-text-do-not-edit-this-file-badge-variant-dark-text-keys-json">
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>Do not edit this file!</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>keys.json</span>
+</span></template>
+<p>This file contains all the translation keys, the app will validate translation files against the contents of this file.</p>
+   </doc-panel>
+   <doc-panel id="badge-variant-ghost-text-do-not-edit-this-file-badge-variant-dark-text-comments-json">
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>Do not edit this file!</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>comments.json</span>
+</span></template>
+<p>This file is important! It contains comments for some of the keys. You should always check this file for any comments before translating.</p>
+   </doc-panel>
+   <doc-panel id="badge-variant-ghost-text-do-not-edit-this-file-badge-variant-dark-text-en-json">
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>Do not edit this file!</span>
+</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>en.json</span>
+</span></template>
+<p>This file contains the base English translations. When translating use this as a reference point.</p>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="language-json-file-format">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#language-json-file-format">#</doc-anchor-trigger>
+        <span>Language json file format</span>
+    </h3>
+</doc-anchor-target>
+<doc-panels>
+   <doc-panel id="name" collapsed>
+       <template #title><code v-pre>name</code></template>
+<p>The name of the language in the language itself.</p>
+   </doc-panel>
+   <doc-panel id="name-en" collapsed>
+       <template #title><code v-pre>name_en</code></template>
+<p>The name of the language in English.</p>
+   </doc-panel>
+   <doc-panel id="iso-code" collapsed>
+       <template #title><code v-pre>iso_code</code></template>
+<p>The ISO code of the language. Use the 2 letter code (<code v-pre>ISO 639-1 Code</code>) if your language has one, otherwise the 3 letter code (<code v-pre>ISO 639-2 Code</code>).<br />
+<a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">https://www.loc.gov/standards/iso639-2/php/code_list.php</a></p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>The iso_code variables <strong>has to match</strong> the file name of the translation file.</p>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+   <doc-panel id="comments" collapsed>
+       <template #title><code v-pre>_COMMENTS</code></template>
+<p>Caps locked comments are comments only visible to editors that use the json files. Usually they are just used to explain the structure of the file.</p>
+   </doc-panel>
+   <doc-panel id="comments" collapsed>
+       <template #title><code v-pre>_CoMMeNTS</code></template>
+<p>Comments that are capitalized in any other way are shown to users of the translation UI. They might contain comments from translators to each other.</p>
+   </doc-panel>
+   <doc-panel id="keys" collapsed>
+       <template #title><code v-pre>keys</code></template>
+<p>This is how you actually translate. Just copy the key from keys.json and paste it, then add the translation.</p>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="example-file">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-file">#</doc-anchor-trigger>
+        <span>Example file:</span>
+    </h5>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-json"><code v-pre class="language-json">{
+  &quot;name&quot;: &quot;Suomi&quot;,
+  &quot;name_en&quot;: &quot;Finnish&quot;,
+  &quot;iso_code&quot;: &quot;fi&quot;,
+
+  &quot;_GLOBALS&quot;: &quot;Please leave a space here to seperate the different sections of the translations.&quot;,
+
+  &quot;confirm&quot;: &quot;Vahvista&quot;,
+  &quot;cancel&quot;: &quot;Peruuta&quot;,
+  &quot;yes&quot;: &quot;Kyllä&quot;,
+  &quot;no&quot;: &quot;Ei&quot;,
+  &quot;continue&quot;: &quot;Jatka&quot;,
+  &quot;loading&quot;: &quot;Ladataan...&quot;,
+  &quot;success&quot;: &quot;Onnistui&quot;,
+  &quot;error&quot;: &quot;Epäonnistui&quot;,
+  &quot;done&quot;: &quot;Valmis&quot;,
+  &quot;set&quot;: &quot;Asetettu&quot;,
+  &quot;setting&quot;: &quot;Asetetaan...&quot;,
+  &quot;unknown&quot;: &quot;Tuntematon&quot;,
+
+  &quot;_BACKEND&quot;: &quot;Please leave a space here to seperate the different sections of the translations.&quot;,
+
+  &quot;main.errors_and_warnings&quot;: &quot;Virheet ja varoitukset lokitiedostoissa:&quot;,
+  &quot;main.errors&quot;: &quot;Virheitä:&quot;,
+  &quot;main.warnings&quot;: &quot;Varoituksia:&quot;,
+  ...
+}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="translation-process">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#translation-process">#</doc-anchor-trigger>
+        <span>Translation process</span>
+    </h3>
+</doc-anchor-target>
+<doc-panels>
+   <doc-panel id="1-discord">
+       <template #title>1. Discord</template>
+<ol>
+<li>Go to the <a href="https://discord.gg/ETS2LA">ETS2LA Discord server</a>, then the <a href="https://discord.com/channels/1120719484982939790/1133373947744878634">#roles</a> channel and press the button to get the translator role.</li>
+<li>Go to the <a href="https://discord.com/channels/1120719484982939790/1272264777997226179">#translations</a> forum and find the post of the language you want to translate. If it doesn&#x27;t exist, create a new post.</li>
+<li>If you are no the first person, then check with others on the current progress of the language (you can use <code v-pre>@here</code> to ping everyone that has commented on the post).</li>
+</ol>
+   </doc-panel>
+   <doc-panel id="2-translation">
+       <template #title>2. Translation</template>
+<ol>
+<li>Copy the <code v-pre>en.json</code> file and rename it to your language&#x27;s ISO code.</li>
+<li>Change the <code v-pre>name</code>, <code v-pre>name_en</code> and <code v-pre>iso_code</code> fields to match your language.</li>
+<li>Start translating the keys. <strong>Make sure to check the comments.json file!</strong></li>
+</ol>
+   </doc-panel>
+   <doc-panel id="3-testing">
+       <template #title>3. Testing</template>
+<ol>
+<li>If you didn&#x27;t do so already, test the language in the app to make sure everything works.</li>
+<li>If you are not the only translator, I suggest asking for other people&#x27;s opinions.</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>You can either change the language from the settings (once implemented) or the global.json file in <code v-pre>root/code/app/ETS2LA/global.json</code>.</p>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+   <doc-panel id="4-submitting">
+       <template #title>4. Submitting</template>
+<ol>
+<li>Send the edited file in the discord forum of your own language. Then ping either <em>DylDev</em> or <em>Tumppi066</em> to update the translations with your file.</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>Remember that our timezones are different, so we might not be able to update the translations immediately.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="done">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#done">#</doc-anchor-trigger>
+        <span>Done!</span>
+    </h5>
+</doc-anchor-target>
+   </doc-panel>
+</doc-panels>
+<doc-anchor-target id="translation-guidelines">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#translation-guidelines">#</doc-anchor-trigger>
+        <span>Translation Guidelines</span>
+    </h3>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>Anything written here is overwritten by the comments.json file if there is a conflict.</p>
+        </div>
+    </div>
+</div>
+<doc-panels>
+   <doc-panel id="general">
+       <template #title>General</template>
+<ol>
+<li><strong>Be consistent!</strong> If you translate a word one way, keep it that way throughout the translation.</li>
+<li><strong>Work with others!</strong> This is often a multi-person job, so make sure to communicate with the others to setup your own guidelines.
+<ol>
+<li>Regarding this if you want me to pin a message in the post, then just ask!</li>
+</ol>
 </li>
-</ul>
-<doc-anchor-target id="step-1-download-the-requirements">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-1-download-the-requirements">#</doc-anchor-trigger>
-        <span>Step 1: Download the requirements.</span>
-    </h3>
-</doc-anchor-target>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>Please do note that installing V2.0 is not yet as simple as V1.0.<br />
-If you are scared of the terminal, then you might want to wait for later releases.</p>
-        </div>
-    </div>
-</div>
-<doc-panels>
-   <doc-panel id="1-node-js" collapsed>
-       <template #title>1. Node.js</template>
-<p>You can download Node.js from <a href="https://nodejs.org/en/download/prebuilt-binaries/">here</a>. Node is used to run the frontend and install NextJS later on.</p>
+<li><strong>This is not a job!</strong> If you don&#x27;t have time to translate immediately, that&#x27;s fine. Most of the time there are others and if you are the only translator, then don&#x27;t worry about it!</li>
+</ol>
    </doc-panel>
-   <doc-panel id="2-git" collapsed>
-       <template #title>2. Git</template>
-<p>You can download Git from <a href="https://git-scm.com/downloads">here</a>. Git is used to clone and update the app.</p>
-   </doc-panel>
-   <doc-panel id="3-python" collapsed>
-       <template #title>3. Python</template>
-<p>You can download Python from <a href="https://www.python.org/downloads/">here</a>. Python is the main backend language.</p>
-   </doc-panel>
-</doc-panels>
-<doc-anchor-target id="step-2-clone-the-repository">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-2-clone-the-repository">#</doc-anchor-trigger>
-        <span>Step 2: Clone the repository.</span>
-    </h3>
-</doc-anchor-target>
-<doc-panels>
-   <doc-panel id="1-create-a-new-folder-for-the-app" collapsed>
-       <template #title>1. Create a new folder for the app.</template>
-<p>This can for example be <code v-pre>C:\LaneAssist</code></p>
-   </doc-panel>
-   <doc-panel id="2-open-a-terminal-in-the-folder" collapsed>
-       <template #title>2. Open a terminal in the folder.</template>
-<ul>
-<li>On <strong>windows</strong> you can just shift + right click and select <code v-pre>Open in Terminal</code>.</li>
-<li>Another way is to type &quot;cmd&quot; in the address bar and press enter.</li>
-<li>Third way that works on all systems is to open the terminal and type <code v-pre>cd </code> and the path of the folder, ex. <code v-pre>cd C:\LaneAssist</code>.</li>
-</ul>
-   </doc-panel>
-   <doc-panel id="3-run-the-following-commands-to-clone-the-repository" collapsed>
-       <template #title>3. Run the following commands to clone the repository.</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">git clone https://github.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist.git .
-git checkout rewrite</code></pre>
-</doc-codeblock></div>
-   </doc-panel>
-</doc-panels>
-<doc-anchor-target id="step-3-install-the-dependencies">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-3-install-the-dependencies">#</doc-anchor-trigger>
-        <span>Step 3: Install the dependencies.</span>
-    </h3>
-</doc-anchor-target>
-<doc-panels>
-   <doc-panel id="1-nextjs-and-recharts" collapsed>
-       <template #title>1. NextJS and recharts</template>
-<p>Assuming you have Node installed and you have a console open in the <strong>root folder</strong>, run the following commands.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">cd frontend
-npm install</code></pre>
-</doc-codeblock></div>
-   </doc-panel>
-   <doc-panel id="2-python-dependencies" collapsed>
-       <template #title>2. Python dependencies</template>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>If you are coming from the last instruction, then you can just run <code v-pre>cd ..</code> to go back to the root folder.</p>
-        </div>
-    </div>
-</div>
-<p>Assuming you have Python installed and you have a console open in the <strong>root folder</strong>, run the following commands.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install -r requirements.txt</code></pre>
-</doc-codeblock></div>
-   </doc-panel>
-</doc-panels>
-<doc-anchor-target id="step-4-start-the-app">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-4-start-the-app">#</doc-anchor-trigger>
-        <span>Step 4: Start the app.</span>
-    </h3>
-</doc-anchor-target>
-<doc-panels>
-   <doc-panel id="1-manually" collapsed>
-       <template #title>1. Manually</template>
-<p>Assuming you are in the <strong>root folder</strong> run the following command.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">python main.py</code></pre>
-</doc-codeblock></div>
-<p>This will start the backend and fronted and pop out a new window.</p>
-   </doc-panel>
-   <doc-panel id="2-by-creating-a-start-file" collapsed>
-       <template #title>2. By creating a start file</template>
+   <doc-panel id="special-characters">
+       <template #title>Special characters</template>
 <ol>
-<li>Create a new file in the <strong>root folder</strong> and name it <code v-pre>start.bat</code>.</li>
-<li>Open the file with a text editor and paste the following code.</li>
-</ol>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">@echo off
-python main.py</code></pre>
-</doc-codeblock></div>
-<ol start="3">
-<li>Save the file and double click it to start the app.</li>
+<li><strong>Preserve special characters!</strong> If the English text has special characters (like <code v-pre>\n</code>, <code v-pre>\t</code>, <code v-pre>:</code> etc... or spaces at the start or end), make sure to keep them in the translation.</li>
+<li><strong>Do not add special characters!</strong> If the English text doesn&#x27;t have special characters, don&#x27;t add them.</li>
 </ol>
    </doc-panel>
+   <doc-panel id="variables">
+       <template #title>Variables</template>
+<p>We use variables in the translations to add dynamic content. They are written as <code v-pre>{0}</code>, <code v-pre>{1}</code>, <code v-pre>{2}</code> etc... and are replaced with the actual content when the translation is used. You can see what the variables mean in the comments.json file, this file also often includes examples of how the translation would look in english.</p>
+<p><strong>MAKE SURE TO KEEP ALL VARIABLES</strong></p>
+   </doc-panel>
 </doc-panels>
-<doc-anchor-target id="step-5-additional-tips">
+<doc-anchor-target id="not-updating-after-translating">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#step-5-additional-tips">#</doc-anchor-trigger>
-        <span>Step 5: Additional tips.</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#not-updating-after-translating">#</doc-anchor-trigger>
+        <span>Not updating after translating!</span>
     </h3>
 </doc-anchor-target>
-<doc-panels>
-   <doc-panel id="1-updating-the-app" collapsed>
-       <template #title>1. Updating the app</template>
-<p>Just click the update available button on the top right of the UI once it lights up.</p>
-   </doc-panel>
-   <doc-panel id="2-opening-the-ui-from-your-phone" collapsed>
-       <template #title>2. Opening the UI from your phone.</template>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>It is recommended to use a tablet instead of a phone. Not all pages are optimized for small screens.</p>
-<p>This guide also works for opening the UI on another computer (for example a laptop), so that you can have the UI open on a second device while playing on the main one. (since ETS2 disables control if tabbed out)</p>
-        </div>
-    </div>
-</div>
-<ol>
-<li>Make sure your phone is connected to the same network as your PC.</li>
-<li>Get your PC&#x27;s local IP address. This can be found in the console log, for example:<br />
-<code v-pre>[17:46:01] [INF] webserver.py    Webserver started on http://192.168.1.135:37520 (&amp; localhost:37520)</code><br />
--&gt; <strong>192.168.1.135</strong> is the IP address.</li>
-<li>Navigate your phone browser to <code v-pre>http://&lt;your-ip&gt;:3000</code> (ex. <code v-pre>http://192.168.1.135:3000</code>).</li>
-<li>Type the IP once more into the input field and press connect.</li>
-</ol>
-   </doc-panel>
-</doc-panels>
+<p><img src="../image.png" alt="From @onayB09 on discord!" /><br />
+If you get an error like this, then that means your local changes are preventing the app from updating. You should backup the file and then delete it. The app will then download the latest version of the file.</p>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
@@ -433,20 +497,20 @@ python main.py</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../installation/beta-1/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">ETS​2​LA</span>
+                                                <span class="block mt-1">Beta 1</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../translation/json-translation/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../annotation/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">JSON Translation</span>
+                                                <span class="block mt-1">Vehicle Detection Image Annotation</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -493,6 +557,6 @@ python main.py</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Beta 1", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "JSON Translation", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
