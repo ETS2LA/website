@@ -21,7 +21,7 @@ output: wiki               # Custom path to the output directory
 # -----------------------------------------------------------------------------
 
 #url: example.com              # The base URL of your website
-url: wiki.tumppi066.fi         # Can also be a sub-domain
+url: https://ets2la.github.io/documentation         # Can also be a sub-domain
 #url: example.com/docs         # Can also include a sub-folder path
 #url: https://example.com/docs # Can also include a protocol
 
