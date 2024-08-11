@@ -10,7 +10,7 @@ tags:
 ---
 
 !!! Warning
-The translation backend and tokens are still not finalized. If you start translating now you might have to redo the work later on. 
+The translation backend and tokens are still not finalized. If you start translating now you might have to redo the work later on. We will also release a UI for translation shortly, it will display comments and other useful information while translating, making it easier.
 I DO NOT ACCEPT TRANSLATIONS DUE TO THIS YET!
 !!!
 ### Introduction to V2.0 translation
