@@ -1,6 +1,6 @@
 {
   "version": "3.5.0",
-  "created": "2024-06-09T17:24:33Z",
+  "created": "2024-08-11T20.16.46Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -91,6 +91,12 @@
     },
     {
       "path": "tags\\vehicle-detection\\index.html"
+    },
+    {
+      "path": "translation\\image.png"
+    },
+    {
+      "path": "translation\\json-translation\\index.html"
     }
   ]
 }
