@@ -3,7 +3,7 @@ authors:
   - name: Tumppi066
     link: https://github.com/Tumppi066
     avatar: https://avatars.githubusercontent.com/u/83072683?v=4
-date: 2024-29-8
+date: 2024-8-29
 icon: heart
 order: 99
 ---

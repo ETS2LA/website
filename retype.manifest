@@ -1,12 +1,15 @@
 {
   "version": "3.5.0",
-  "created": "2024-08-29T15:48:05Z",
+  "created": "2024-08-31T13:04:12Z",
   "files": [
     {
       "path": ".nojekyll"
     },
     {
       "path": "404.html"
+    },
+    {
+      "path": "assets\\acc_settings.png"
     },
     {
       "path": "assets\\favicon.ico"
@@ -35,6 +38,12 @@
     {
       "path": "CNAME",
       "old": true
+    },
+    {
+      "path": "developers\\modules\\index.html"
+    },
+    {
+      "path": "developers\\plugin_development\\index.html"
     },
     {
       "path": "guides\\installation\\beta-1\\index.html"
