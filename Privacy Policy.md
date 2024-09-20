@@ -44,7 +44,7 @@ We will store your data for as long as you have an account with us. We provide n
 We provide an option to download all of your data. In the case of account deletion, we will delete all of your data from our server.
 
 # Unregistered Users
-We do not collect any identifiable information from unregistered users. However we do collect the non-identifiable information mentioned above. **For unregistered users, collecting said information is not optional.**
+We do not collect any identifiable information from unregistered users. However we do collect some non-identifiable information mentioned above. **For unregistered users, collecting said information is not optional.**
 
 # Changes to this Privacy Policy
 We will update this Privacy Policy if necessary, for example if we start storing more data as part of a new Service. If we do so, you will be notified via the announcements channel on our Discord Server. The last update date will also always be present at the very top of this Privacy Policy.
