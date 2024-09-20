@@ -1,6 +1,6 @@
 {
-  "version": "3.5.0",
-  "created": "2024-08-31T13:04:12Z",
+  "version": "3.6.0",
+  "created": "2024-09-20T10:02:47Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -46,6 +46,9 @@
       "path": "developers\\plugin_development\\index.html"
     },
     {
+      "path": "gdpr\\index.html"
+    },
+    {
       "path": "guides\\installation\\beta-1\\index.html"
     },
     {
@@ -62,6 +65,9 @@
     },
     {
       "path": "others\\annotation\\index.html"
+    },
+    {
+      "path": "privacy-policy\\index.html"
     },
     {
       "path": "resources\\css\\retype.css"
