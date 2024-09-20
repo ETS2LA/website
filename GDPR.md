@@ -34,7 +34,7 @@ In certain circumstances, you have the following data protection rights:
 - The right to withdraw consent
 
 # Log Files
-ETS2LA does not directly collect any log files. However, we have access to visitor's internet protocol (IP) addresses, browser type and date and time stamp through our DNS provider. These are not linked to any information that is personally identifiable. The purpose of this information is for analyzing trends, and for the protection and security of our website.
+ETS2LA does not directly collect any log files. However, we have access to visitor's internet protocol (IP) addresses, browser type and date and time stamp through our dynamic name service (DNS) provider. These are not linked to any information that is personally identifiable. The purpose of this information is for analyzing trends, and for the protection and security of our website.
 
 # Children's Information
 Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
