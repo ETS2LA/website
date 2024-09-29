@@ -20,7 +20,7 @@ This privacy policy applies to our cloud services, which you need to explicitly 
 
 We take your privacy seriously. As such, we collect as little identifiable information as possible and only use it for the purposes absolutely necessary to provide our services to you.
 
-This is a very simple summary for normal people. We also have a proper [GDPR policy](https://ets2la.github.io/documentation/GDPR/). You might want to read that as well.
+This is a very simple summary for normal people. We also have a proper [GDPR policy](https://ets2la.github.io/documentation/gdpr/). You might want to read that as well.
 
 # The information we store
 We only store the following **identifiable** information:
