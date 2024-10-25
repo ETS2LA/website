@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/documentation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780958816557">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783180283151">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -22,24 +22,22 @@
     <meta property="og:url" content="https://ets2la.github.io/documentation/developers/plugin_development/">
     <meta property="og:title" content="Plugin Development">
     <meta property="og:description" content="Welcome! I am happy to know that you are interested in developing plugins for ETS2LA.">
-    <meta property="og:image" content="https://ets2la.github.io/documentation/assets/acc_settings.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://ets2la.github.io/documentation/developers/plugin_development/">
     <meta property="twitter:title" content="Plugin Development">
     <meta property="twitter:description" content="Welcome! I am happy to know that you are interested in developing plugins for ETS2LA.">
-    <meta property="twitter:image" content="https://ets2la.github.io/documentation/assets/acc_settings.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../assets/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.780958816557" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783180283151" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780958816557" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783180283151" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780958816557" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780958816557" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783180283151" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783180283151" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -209,18 +207,19 @@
 <hr>
 <p>Welcome! I am happy to know that you are interested in developing plugins for ETS2LA. This page will guide you through the process of creating your very own plugin.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Keep in mind that ETS2LA V2.0 is not yet in a perfectly stable change. If you join the discord I can notify you of any breaking changes to the plugin APIs.</p>
+<p>If you are any more questions then hit me up on discord, this page is for Backend V2, and it&#x27;s still experimental so give me any feedback you have!</p>
         </div>
     </div>
 </div>
@@ -245,314 +244,86 @@
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">ETS2LA
-│   plugins
-│   └─── my_plugin
-│       │   main.py
-│       │   plugin.json
-│       │   settings.json
-|       |   ...</code></pre>
+└─── Plugin
+└─── UI
+
+plugins &lt;- This is where you put your plugins
+└─── my_plugin
+    │   main.py
+    |   ...
+
+frontend
+└─── ...</code></pre>
 </doc-codeblock></div>
+<p>Following is the structure of a plugin <code v-pre>main.py</code> file:</p>
 <doc-tabs>
-<doc-tab v-cloak id="main-py">
-<template #title>main.py</template>
-<p>This is the main file of your plugin. The ETS2LA backend will run this file when the plugin is loaded.<br />
-As far as ETS2LA specific code goes this is an example:</p>
+<doc-tab v-cloak id="information-on-imports">
+<template #title>Information on imports</template>
+<p>It&#x27;s important to talk about how to import things in a plugin file. This is one of the compromises we had to make to make the backend as simple as possible.</p>
+<ul>
+<li>You can import anything from ETS2LA libraries at the top of the file.</li>
+<li>You can import any base python libraries at the top of the file.</li>
+<li>You <strong>shouldn&#x27;t</strong> import any other libraries at the top of the file.</li>
+</ul>
+<p>Why? Because at startup the app will read all the Plugin objects to build a list of plugins and their settings menus. If you import something large from a 3rd party library that will drastically slower the startup time and introduce additional RAM overhead.</p>
+<p>What should I do instead?</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.plugin.runner import PluginRunner
+<pre class="language-python"><code v-pre class="language-python"># ETS2LA libraries
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
 
-# This is your plugin's access to the ETS2LA backend
-# we'll explore this more later
-runner: PluginRunner = None
+# Base python libraries
+import time
+import math
 
-# This function will get called when the plugin is loaded
-def Initialize():
-    ...
+class Plugin(ETS2LAPlugin):
+    def imports(self):
+        # Import the libraries you need here as
+        # this function will be called before any of the plugin code 
+        # (check the next section for more info on that)
+        global torch, np
+        import numpy as np
+        import torch
 
-# This function will be called every time the plugin is updated
-def plugin():
-    ...
-
-    # Your plugin can return data for other plugins to use directly, it can also return tags.
-    # We are slowly moving towards using tags instead of direct data, so you should use tags if possible.
-    return None, {
-        &quot;tag&quot;: &quot;value&quot;
-        ...
-    }
-</code></pre>
+    def run(self):
+        # Your plugin code here
+        ...</code></pre>
 </doc-codeblock></div>
 </doc-tab>
-<doc-tab v-cloak id="plugin-json">
-<template #title>plugin.json</template>
-<p>This file will decide how the program treats your plugin. It is also where you define the settings user interface. Below is a list of all the different keys that this file understands:</p>
+<doc-tab v-cloak id="plugin">
+<template #title>Plugin</template>
+<p>As you saw in the last section this is the main class of the plugin. The class will handle all the plugin backend logic and communications. Following is a list of features and example code (you can also check the plugin class itself, as it is documented).</p>
+<p>Features provided by the plugin class:</p>
 <doc-panels>
-   <doc-panel id="badge-variant-success-text-name-size-m-badge-variant-ghost-text-translation-key-corners-square-size-s-badge-variant-dark-text-string-corners-square-size-s">
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
-    <span>name</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>translation key</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>string</span>
-</span></template>
-<p>This will be the <strong>name</strong> of your plugin shown in the UI, it is recommended to use the translation key as show in the translation section later.</p>
-   </doc-panel>
-   <doc-panel id="badge-variant-success-text-authors-size-m-badge-variant-ghost-text-author-object-corners-square-size-s-badge-variant-dark-text-array-corners-square-size-s">
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
-    <span>authors</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>author_object</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>array</span>
-</span></template>
-<p>This is a list of author objects, this is how a typical author object looks like:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-    &quot;name&quot;: &quot;Tumppi066&quot;,
-    &quot;url&quot;: &quot;https://github.com/Tumppi066&quot;,
-    &quot;avatar&quot;: &quot;https://avatars.githubusercontent.com/u/83072683?v=4&quot;
-}</code></pre>
-</doc-codeblock></div>
-   </doc-panel>
-   <doc-panel id="badge-variant-success-text-description-size-m-badge-variant-ghost-text-translation-key-corners-square-size-s-badge-variant-dark-text-string-corners-square-size-s">
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
-    <span>description</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>translation key</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>string</span>
-</span></template>
-<p>This is the description shown in the UI, like with the name it is recommended to create a translation key.</p>
-   </doc-panel>
-   <doc-panel id="badge-variant-success-text-version-size-m-badge-variant-ghost-text-version-corners-square-size-s-badge-variant-dark-text-string-corners-square-size-s">
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
-    <span>version</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>version</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>string</span>
-</span></template>
-<p>It is recommended to use semantic versioning for this. (MAJOR.MINOR.PATCH)</p>
-   </doc-panel>
-   <doc-panel id="badge-variant-warning-text-dependencies-size-m-badge-variant-ghost-text-string-corners-square-size-s-badge-variant-dark-text-array-corners-square-size-s" collapsed>
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>dependencies</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>string</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>array</span>
-</span></template>
-<p>A list of the names of the plugins that this plugin depends on.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p>This has not yet been implemented!</p>
-        </div>
-    </div>
-</div>
-   </doc-panel>
-   <doc-panel id="badge-variant-warning-text-modules-size-m-badge-variant-ghost-text-module-corners-square-size-s-badge-variant-dark-text-array-corners-square-size-s" collapsed>
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>modules</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>module</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>array</span>
-</span></template>
-<p>Modules will be explained a bit further down, as of writing the current list of modules is:</p>
-<ul>
-<li>MapUtils</li>
-<li>Raycasting</li>
-<li>ScreenCapture</li>
-<li>SDKController</li>
-<li>ShowImage</li>
-<li>Steering</li>
-<li>TruckSimAPI</li>
-</ul>
-   </doc-panel>
-   <doc-panel id="badge-variant-warning-text-compatible-size-m-badge-variant-ghost-text-os-name-corners-square-size-s-badge-variant-dark-text-array-corners-square-size-s" collapsed>
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>compatible</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>os name</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>array</span>
-</span></template>
-<p>The plugin won&#x27;t be shown in the UI if the user is using an incompatible OS.<br />
-Accepted values are:</p>
-<ul>
-<li>Windows</li>
-<li>Linux</li>
-<li>MacOS</li>
-</ul>
-   </doc-panel>
-   <doc-panel id="badge-variant-warning-text-settings-size-m-badge-variant-ghost-text-settings-object-corners-square-size-s-badge-variant-dark-text-array-corners-square-size-s" collapsed>
-       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>settings</span>
-</span> <span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>settings_object</span>
-</span><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-5 px-1.5 text-2xs">
-    <span>array</span>
-</span></template>
-<p>This is a large topic and will be explained further down.</p>
-   </doc-panel>
-</doc-panels>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Note about intellisense</h5>
-<p>We provide a json schema for autocomplete, you can import it by adding this to the top of the json file</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-    &quot;$schema&quot;: &quot;../schema.json&quot;
-}</code></pre>
-</doc-codeblock></div>
-        </div>
-    </div>
-</div>
-</doc-tab>
-<doc-tab v-cloak id="settings-json">
-<template #title>settings.json</template>
-<p>This is where the ETS2LA settings interface will dump your settings. Settings will be explained later.</p>
-</doc-tab>
-</doc-tabs>
-<doc-anchor-target id="special-considerations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#special-considerations">#</doc-anchor-trigger>
-        <span>Special considerations</span>
-    </h3>
-</doc-anchor-target>
-<p>As all plugins run in their own processes, you need to remember that when importing things from the ETS2LA libraries, the data in those libraries will not be the same for all plugins.</p>
-<p>In addition to this you should remember that when returning any information from a plugin, whether it be using the tags or the return data values, you should not return large amounts of data. The larger the data, the more time it will take for the main process to extract it from the plugin. This will then slow down the entire program. Modules were made to combat this issue and those will be explained later.</p>
-<hr>
-<doc-anchor-target id="settings">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#settings">#</doc-anchor-trigger>
-        <span>Settings</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="using-settings-inside-of-the-plugin">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#using-settings-inside-of-the-plugin">#</doc-anchor-trigger>
-        <span>Using settings inside of the plugin</span>
-    </h3>
-</doc-anchor-target>
-<p>The settings interface has been made to be as simple to use as possible, here&#x27;s basically all you need to know:</p>
+   <doc-panel id="self-settings" collapsed>
+       <template #title><code v-pre>self.settings</code></template>
+<p>This helps you access the settings file of the plugin, example below:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">import ETS2LA.backend.settings as settings
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
-# You can get values like this
-VALUE1 = settings.Get(&quot;plugin_name&quot;, &quot;value1&quot;, &quot;default_value&quot;)
-VALUE2 = settings.Get(&quot;plugin_name&quot;, &quot;value2&quot;, &quot;default_value&quot;)
-
-# And you can also make a function to listen for changes in the settings
-# this is highly recommended as without such a function changing settings
-# from the user interface will not update the plugin
-def UpdateSettings(): # NOTE: You can optionally accept the settings json as an argument
-    global VALUE1, VALUE2
-    VALUE1 = settings.Get(&quot;plugin_name&quot;, &quot;value1&quot;, &quot;default_value&quot;)
-    VALUE2 = settings.Get(&quot;plugin_name&quot;, &quot;value2&quot;, &quot;default_value&quot;)
-
-settings.Listen(&quot;plugin_name&quot;, UpdateSettings)
-
-# You can also set values like this
-settings.Set(&quot;plugin_name&quot;, &quot;value1&quot;, &quot;new_value&quot;)
-# This will then call the UpdateSettings function as the file has been updated
-
-# Lastly you can get nested values like this
-VALUE3 = settings.Get(&quot;plugin_name&quot;, [&quot;nested&quot;, &quot;value3&quot;], &quot;default_value&quot;)
-# Same works for setting values
-settings.Set(&quot;plugin_name&quot;, [&quot;nested&quot;, &quot;value3&quot;], &quot;new_value&quot;)</code></pre>
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.settings.value_i_want_to_save = &quot;value&quot; # NOTE: Do not spam this! It will slow down HDDs and break SSDs!
+        the_value_is = self.settings.value_i_want_to_save</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="creating-the-settings-interface">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#creating-the-settings-interface">#</doc-anchor-trigger>
-        <span>Creating the settings interface</span>
-    </h3>
-</doc-anchor-target>
-<p>The settings interface is made to be as simple as possible, I&#x27;ve built a system that will automatically generate the javascript interface for you, depending on what you write in the plugin.json file.</p>
-<p>Here is the code for a very simple settings page.<br />
-<figure class="content-center">
-    <img src="../../assets/acc_settings.png" alt="">
-    <figcaption class="caption"></figcaption>
-</figure>
-</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">NOTE: This example uses the translation system, thus you only define the keys in the settings file!
+<p>Also note that you can still use the legacy settings system, it also provides a listen command (wherein the new system updates each second)</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+import ETS2LA.backend.settings as settings
 
-&quot;settings&quot;: [
-    {
-        &quot;specials&quot;: [
-            {
-                &quot;special&quot;: &quot;Title&quot;,
-                &quot;special_data&quot;: &quot;acc.settings.1.title&quot;
-            },
-            {
-                &quot;special&quot;: &quot;Description&quot;,
-                &quot;special_data&quot;: &quot;acc.settings.1.description&quot;
-            },
-            {
-                &quot;special&quot;: &quot;Separator&quot;
-            }
-        ]
-    },
-    {
-        &quot;name&quot;: &quot;acc.settings.2.name&quot;,
-        &quot;description&quot;: &quot;acc.settings.2.description&quot;,
-        &quot;key&quot;: &quot;distance&quot;,
-        &quot;type&quot;: {
-            &quot;type&quot;: &quot;number&quot;,
-            &quot;min&quot;: 10,
-            &quot;max&quot;: 100,
-            &quot;step&quot;: 1
-        }
-    }
-]</code></pre>
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        settings.Set(&quot;plugin_name&quot;, &quot;key&quot;, &quot;value&quot;)
+        the_value_is = settings.Get(&quot;plugin_name&quot;, &quot;key&quot;, &quot;default_value&quot;)
+
+    def update_settings(settings: dict): # when the settings update
+        the_value_is = settings[&quot;key&quot;]
+
+    settings.Listen(&quot;plugin_name&quot;, update_settings)</code></pre>
 </doc-codeblock></div>
-<p>You can see the schema for the different options of the settings file.<br />
-I also included a link to the Map plugin plugin.json file, it is a much more complex example.<br />
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
-    <div class="flex items-center text-blue-500 dark:text-blue-400">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">schema.json</span>
-    </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://raw.githubusercontent.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist/rewrite/ETS2LA/plugins/schema.json</span>
-    </div>
-    <a href="https://raw.githubusercontent.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist/rewrite/ETS2LA/plugins/schema.json" class="absolute block inset-0"></a>
-</div>
-<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
-    <div class="flex items-center text-blue-500 dark:text-blue-400">
-        <span class="inline-block mb-px">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
-        </span>
-        <span class="inline-block font-medium ml-2">plugin.json</span>
-    </div>
-    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
-        <span>https://raw.githubusercontent.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist/rewrite/ETS2LA/plugins/Map/plugin.json</span>
-    </div>
-    <a href="https://raw.githubusercontent.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist/rewrite/ETS2LA/plugins/Map/plugin.json" class="absolute block inset-0"></a>
-</div>
-</p>
+   </doc-panel>
+   <doc-panel id="self-plugins" collapsed>
+       <template #title><code v-pre>self.plugins</code></template>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -567,58 +338,39 @@ I also included a link to the Map plugin plugin.json file, it is a much more com
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Note</h5>
-<p>I recommend a json browser extension to make it easier to read the settings file.<br />
-<a href="https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa">https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa</a></p>
+<p>It is recommended to instead use the tag system, as it is much easier and safer.</p>
         </div>
     </div>
 </div>
-<hr>
-<doc-anchor-target id="modules">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#modules">#</doc-anchor-trigger>
-        <span>Modules</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="why-modules">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#why-modules">#</doc-anchor-trigger>
-        <span>Why modules?</span>
-    </h3>
-</doc-anchor-target>
-<p>Modules are our answer to the problem of sending large amounts of data between multiple processes. Let&#x27;s take for example capturing the screen. In 1.0 you would have one screencapture plugin that would send it&#x27;s data to all following plugins. This doesn&#x27;t really work in 2.0 because sending that image data over a pipe or queue would be very slow.</p>
-<p>Instead, we made modules. Now when declaring your <code v-pre>plugin.json</code> file, you can just add <code v-pre>modules: [&quot;ScreenCapture&quot;]</code> and the app will automatically load the <code v-pre>ScreenCapture</code> module for you. This means that each plugin has it&#x27;s own instance of the module in it&#x27;s own process. This removes the overhead of sending large amounts of data between processes.</p>
-<p>Another unexpected benefit is that each plugin now has the most up to date data from the module. Before since the app ran sequancially, a plugin running later in the loop will mean it&#x27;s screen capture data is multiple, even 10s, of milliseconds old.</p>
-<doc-anchor-target id="how-to-use-them">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-use-them">#</doc-anchor-trigger>
-        <span>How to use them?</span>
-    </h3>
-</doc-anchor-target>
-<p>Using modules is extremely simple, first you declare the plugin.json file like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-    &quot;modules&quot;: [&quot;ScreenCapture&quot;]
-}</code></pre>
-</doc-codeblock></div>
-<p>And then in the plugin you can use the modules as follows:</p>
+<p>This is how you can get the return value of any running plugins, example below:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python"># NOTE: You cannot import modules directly, this is just to use intellisense
-import ETS2LA.modules.ScreenCapture.main as Capture
-from ETS2LA.plugin.runner import PluginRunner
-from typing import cast
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
-runner: PluginRunner = None
-
-def Initialize():
-    global ScreenCapture
-    ScreenCapture = runner.modules.ScreenCapture
-    ScreenCapture = cast(Capture, ScreenCapture) # This is optional, but will provide intellisense
-
-def plugin():
-    image, fullImage = ScreenCapture.run()
-    ...</code></pre>
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        another_plugin_value = self.plugins.another_plugin_name
+        if another_plugin_value is None:
+            print(&quot;The plugin is not running or it hasn't returned data.&quot;)</code></pre>
 </doc-codeblock></div>
-<p>You can find a list of all modules and their variables in the following page:<br />
+   </doc-panel>
+   <doc-panel id="self-modules" collapsed>
+       <template #title><code v-pre>self.modules</code></template>
+<p>This is where you can access the running modules that you described in the <code v-pre>description</code> object (more on that later), example below:</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+
+    description = PluginDescription(
+        name=&quot;Plugin Name&quot;,
+        description=&quot;Plugin Description&quot;,
+        modules=[&quot;ScreenCapture&quot;]
+    )
+
+    def run(self):
+        image, fullImage = self.modules.ScreenCapture.run()</code></pre>
+</doc-codeblock></div>
+<p>
 <div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
     <div class="flex items-center text-blue-500 dark:text-blue-400">
         <span class="inline-block mb-px">
@@ -632,7 +384,811 @@ def plugin():
     <a href="../modules/" class="absolute block inset-0"></a>
 </div>
 </p>
-<hr>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The modules are loaded in the order they are declared in the <code v-pre>description</code> object. This means that if you have a module that depends on another module, you should declare the requirement module first.</p>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+   <doc-panel id="self-state" collapsed>
+       <template #title><code v-pre>self.state</code></template>
+<p>This is the simplified interface to show a loading state in the frontend, example below:</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+import time
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        # Initialize the state
+        self.state.text = &quot;Loading...&quot;
+        self.state.progress = 0
+        
+        for i in range(100):
+            # Update as a calculation progresses
+            self.state.text = f&quot;Loading... {i}%&quot;
+            self.state.progress = i/100
+            time.sleep(0.05)
+        
+        self.state.reset()</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="self-globals-tags" collapsed>
+       <template #title><code v-pre>self.globals.tags</code></template>
+<p>This is the preferred way to return and get data from other plugins. This makes sure that many plugin can return similar data (for example if the user has two object detection plugins on at the same time). It is an integral part of the new plugin system.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">plugins/Producer1/main.py</div>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.globals.tags.value_list = {
+            &quot;list&quot;: [&quot;value1&quot;, &quot;value2&quot;]
+        }</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">plugins/Producer2/main.py</div>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.globals.tags.value_list = {
+            &quot;list&quot;: [&quot;value3&quot;, &quot;value4&quot;]
+        }</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">plugins/Consumer/main.py</div>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        tag_value = self.globals.tags.my_tag
+        &quot;&quot;&quot;
+            tag_value = {
+                &quot;Producer1&quot;: {
+                    &quot;list&quot;: [&quot;value1&quot;, &quot;value2&quot;]
+                },
+                &quot;Producer2&quot;: {
+                    &quot;list&quot;: [&quot;value3&quot;, &quot;value4&quot;]
+                }
+            }
+        &quot;&quot;&quot;
+        merged_value = self.globals.tags.merge(tag_value)
+        &quot;&quot;&quot;
+            merged_value = {
+                &quot;list&quot;: [&quot;value1&quot;, &quot;value2&quot;, &quot;value3&quot;, &quot;value4&quot;]
+            }
+        &quot;&quot;&quot;</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>The tag system uses python multiprocessing queues to send data back and forth, for very large data amounts (like images) this will take up to 200ms to transfer. You should thus use a time tag to only update the data when it&#x27;s changed.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    last_data_update = 0
+    tag_value = None
+    def run(self):
+        update_time = self.globals.tags.update_time
+        if update_time != self.last_data_update:
+            self.last_data_update = update_time
+            self.tag_value = self.globals.tags.my_tag</code></pre>
+</doc-codeblock></div>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+   <doc-panel id="self-globals-settings" collapsed>
+       <template #title><code v-pre>self.globals.settings</code></template>
+<p>Same as <code v-pre>self.settings</code> except for the global settings file. Please note that this is read only, as multiple processes can access it at the same time. Legacy settings use the plugin name <code v-pre>&quot;global&quot;</code> to access the global settings.</p>
+   </doc-panel>
+</doc-panels>
+<p>Plugin class variables:</p>
+<doc-panels>
+   <doc-panel id="badge-variant-ghost-text-optional-size-m-fps-cap" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>- optional -</span>
+</span> <code v-pre>fps_cap</code></template>
+<p>This is a simple float to cap the fps of the plugin to a certain value. By default all plugins are capped to 30fps, and this can be changed by:</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    fps_cap = 60
+    ...</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-ghost-text-required-size-m-description" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>- required -</span>
+</span> <code v-pre>description</code></template>
+<p>This is the object that controls how the plugin is displayed and treated by the app. The <code v-pre>PluginDescription</code> object has the following parameters:</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    description = PluginDescription(
+        name=&quot;Plugin Name&quot;,
+        version=&quot;1.0.0&quot;,
+        description=&quot;Plugin Description&quot;,
+        dependencies=[&quot;Plugin1&quot;, &quot;Plugin2&quot;],
+        modules=[&quot;ScreenCapture&quot;],
+        comaptible_os=[&quot;Windows&quot;, &quot;Linux&quot;],
+        compatible_game=[&quot;ETS2&quot;, &quot;ATS&quot;],
+        update_log={
+            &quot;1.0.0&quot;: &quot;Initial release&quot;
+        }
+    )</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-ghost-text-required-size-m-author" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>- required -</span>
+</span> <code v-pre>author</code></template>
+<p>Similar to the <code v-pre>description</code> object, this is a string that contains the author of the plugin.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    author = Author(
+        name=&quot;Author Name&quot;,
+        url=&quot;https://wiki.ets2la.com&quot;,
+        icon=&quot;https://wiki.ets2la.com/assets/favicon.ico&quot;
+    )
+</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-ghost-text-optional-size-m-settings-menu" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
+    <span>- optional -</span>
+</span> <code v-pre>settings_menu</code></template>
+<p>The settings menu object that you can find out more about in the next section.</p>
+   </doc-panel>
+</doc-panels>
+<p>Plugin class functions and reserved variables:</p>
+<doc-panels>
+   <doc-panel id="badge-variant-success-text-usable-size-m-self-run" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
+    <span>usable</span>
+</span> <code v-pre>self.run()</code></template>
+<p>This is the main function of the plugin, and will be called every frame. This is where you should put your main logic.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        print(&quot;Hello World!&quot;) # printed at 30fps</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-success-text-usable-size-m-self-notify" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
+    <span>usable</span>
+</span> <code v-pre>self.notify()</code></template>
+<p>This is a function that will send a push notification to the frontend with the message and type provided by the arguments.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.notify(&quot;This is a notification&quot;, type=&quot;info&quot;)
+        # type: Literal[&quot;info&quot;, &quot;warning&quot;, &quot;error&quot;, &quot;success&quot;] = &quot;info&quot;</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-success-text-usable-size-m-self-ask" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
+    <span>usable</span>
+</span> <code v-pre>self.ask()</code></template>
+<p>This is a function that will ask the user a question and prompt them to click one of the options provided.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+
+def run(self):
+    answer = self.ask(&quot;Do you want to continue?&quot;, options=[&quot;Yes&quot;, &quot;No&quot;], description=&quot;This is a description&quot;)
+    if answer == &quot;Yes&quot;:
+        print(&quot;The user wants to continue&quot;)
+    else:
+        print(&quot;The user doesn't want to continue&quot;)</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-path" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.path</code></template>
+<p><strong>READ ONLY</strong><br />
+Used to store the path of the plugin (relative to the plugins folder).</p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-queue" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.*_queue</code></template>
+<p><strong>DO NOT USE</strong><br />
+The following queues are used to communicate with the backend, and should not be used by the plugin.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">self.return_queue
+self.plugins_queue
+self.plugins_return_queue
+self.settings_menu_queue
+self.settings_menu_return_queue
+self.frontend_queue
+self.frontend_return_queue
+self.immediate_queue
+self.immediate_return_queue
+self.state_queue
+self.performance_queue
+self.performance_return_queue</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-performance" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.performance</code></template>
+<p><strong>READ ONLY</strong><br />
+Used to store the performance data of the plugin. This is a list of <code v-pre>tuple(timestamp, time_to_execute)</code>. The app will save the last 30 seconds of performance data.</p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-ensure-settings-file" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.ensure_settings_file()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-ensure-functions" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.ensure_functions()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-new" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.__new__()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-load-modules" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.load_modules()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-init" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.__init__()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-settings-menu-thread" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.settings_menu_thread()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-frontend-thread" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.frontend_thread()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-performance-thread" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.performance_thread()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-plugin" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.plugin()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-before" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.before()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-after" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
+    <span>reserved</span>
+</span> <code v-pre>self.after()</code></template>
+<p><strong>DO NOT USE</strong></p>
+   </doc-panel>
+</doc-panels>
+<p>Example plugin:</p>
+<doc-panel id="open-close" collapsed>
+    <template #title>Open/Close</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">plugins/Sockets/main.py</div>
+<pre class="language-python"><code v-pre class="language-python"># This plugin was not made from the ground up for the new backend, so it is not perfectly optimized!
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class SettingsMenu(ETS2LASettingsMenu):
+    dynamic = False
+    plugin_name = &quot;Sockets&quot;
+    def render(self):
+        Title(&quot;Sockets Settings&quot;)
+        Description(&quot;This is the plugin that sends data to the visualization sockets.&quot;)
+        Slider(&quot;Data FPS&quot;, &quot;update_rate&quot;, 30, 10, 60, 1, description=&quot;How many times per second the data being sent to the clients is updated.&quot;, requires_restart=True)
+        return RenderUI()
+
+class Plugin(ETS2LAPlugin):
+    description = PluginDescription(
+        name=&quot;plugins.sockets&quot;,
+        version=&quot;1.0&quot;,
+        description=&quot;plugins.sockets.description&quot;,
+        modules=[&quot;TruckSimAPI&quot;],
+    )
+    
+    author = Author(
+        name=&quot;Tumppi066&quot;,
+        url=&quot;https://github.com/Tumppi066&quot;,
+        icon=&quot;https://avatars.githubusercontent.com/u/83072683?v=4&quot;
+    )
+    
+    settings_menu = SettingsMenu()
+    
+    send = &quot;&quot;
+    connected_clients = []
+    
+    def imports(self):
+        global multiprocessing, websockets, threading, logging, asyncio, json, os, zlib, time
+        import multiprocessing
+        import websockets
+        import threading
+        import logging
+        import asyncio
+        import json
+        import zlib
+        import time
+        import os
+
+    async def server(self, websocket):
+        print(&quot;Client Connected!&quot;)
+        self.connected_clients.append(websocket)  # Step 2: Add a client to the list when they connect
+        print(&quot;Number of connected clients: &quot;, len(self.connected_clients))
+        try:
+            while True:
+                if self.send:
+                    await websocket.send(self.send)
+                    # Wait for acknowledgment from client
+                    try:
+                        ack = await websocket.recv()
+                    except Exception as e:
+                        print(&quot;Client disconnected while receiving data.&quot;, str(e))
+                        break
+                    if ack != &quot;ok&quot;:
+                        print(f&quot;Unexpected message from client: {ack}&quot;)
+        except Exception as e:
+            print(&quot;Client disconnected due to exception.&quot;, str(e))
+        finally:
+            self.connected_clients.remove(websocket)  # Step 3: Remove a client from the list when they disconnect
+
+    def position(self, data):
+        send = &quot;&quot;
+        send += &quot;x:&quot; + str(data[&quot;truckPlacement&quot;][&quot;coordinateX&quot;]) + &quot;;&quot;
+        send += &quot;y:&quot; + str(data[&quot;truckPlacement&quot;][&quot;coordinateY&quot;]) + &quot;;&quot;
+        send += &quot;z:&quot; + str(data[&quot;truckPlacement&quot;][&quot;coordinateZ&quot;]) + &quot;;&quot;
+        rotationX = data[&quot;truckPlacement&quot;][&quot;rotationX&quot;] * 360
+        if rotationX &lt; 0: rotationX += 360
+        send += &quot;rx:&quot; + str(rotationX) + &quot;;&quot;
+        rotationY = data[&quot;truckPlacement&quot;][&quot;rotationY&quot;] * 360
+        send += &quot;ry:&quot; + str(rotationY) + &quot;;&quot;
+        rotationZ = data[&quot;truckPlacement&quot;][&quot;rotationZ&quot;] * 360
+        if rotationZ &lt; 0: rotationZ += 360
+        send += &quot;rz:&quot; + str(rotationZ) + &quot;;&quot;
+        return send
+
+    def traffic_lights(self, data):
+        data[&quot;TrafficLights&quot;] = self.globals.tags.TrafficLights
+        data[&quot;TrafficLights&quot;] = self.globals.tags.merge(data[&quot;TrafficLights&quot;])
+        try:
+            send = &quot;JSONTrafficLights:&quot; + json.dumps(data[&quot;TrafficLights&quot;]) + &quot;;&quot;
+        except:
+            for i in range(0, len(data[&quot;TrafficLights&quot;])):
+                data[&quot;TrafficLights&quot;][i] = data[&quot;TrafficLights&quot;][i].json()
+            send = &quot;JSONTrafficLights:&quot; + json.dumps(data[&quot;TrafficLights&quot;]) + &quot;;&quot;
+        return send
+
+    def speed(self, data):
+        data[&quot;targetSpeed&quot;] = self.globals.tags.acc
+        data[&quot;targetSpeed&quot;] = self.globals.tags.merge(data[&quot;targetSpeed&quot;])
+        
+        if data[&quot;targetSpeed&quot;] is None:
+            data[&quot;targetSpeed&quot;] = data[&quot;truckFloat&quot;][&quot;cruiseControlSpeed&quot;]
+                
+        send = &quot;speed:&quot; + str(data[&quot;truckFloat&quot;][&quot;speed&quot;]) + &quot;;&quot;
+        send += &quot;speedLimit:&quot; + str(data[&quot;truckFloat&quot;][&quot;speedLimit&quot;]) + &quot;;&quot;
+        send += &quot;cc:&quot; + str(data[&quot;targetSpeed&quot;]) + &quot;;&quot;
+        return send
+
+    def accelBrake(self, data):
+        send = &quot;accel:&quot; + str(data[&quot;truckFloat&quot;][&quot;gameThrottle&quot;]) + &quot;;&quot;
+        send += &quot;brake:&quot; + str(data[&quot;truckFloat&quot;][&quot;gameBrake&quot;]) + &quot;;&quot;
+        return send
+
+    lastVehicles = [&quot;&quot;]
+    lastVehicleString = &quot;&quot;
+    def vehicles(self, data):
+        data[&quot;vehicles&quot;] = self.globals.tags.vehicles
+        data[&quot;vehicles&quot;] = self.globals.tags.merge(data[&quot;vehicles&quot;])
+        
+        if data[&quot;vehicles&quot;] is None or type(data[&quot;vehicles&quot;]) != list or data[&quot;vehicles&quot;] == [] or type(data[&quot;vehicles&quot;][0]) != dict:
+            return &quot;JSONvehicles:[];&quot;
+        
+        try:    
+            if data[&quot;vehicles&quot;] == self.lastVehicles:
+                return self.lastVehicleString
+        except:
+            return self.lastVehicleString
+        
+        if data[&quot;vehicles&quot;] is not None:
+            newVehicles = []
+            try:
+                for vehicle in data[&quot;vehicles&quot;]:
+                    if isinstance(vehicle, dict):
+                        newVehicles.append(vehicle)
+                    elif isinstance(vehicle, list): # No clue why this happens, it's just sometimes single coordinates like this [31352.055901850657, 18157.970393701282]
+                        continue
+                    elif isinstance(vehicle, tuple):
+                        continue
+                    elif isinstance(vehicle, str):
+                        continue
+                    else:
+                        try:
+                            newVehicles.append(vehicle.json())
+                        except:
+                            try:
+                                newVehicles.append(vehicle.__dict__)
+                            except:
+                                pass
+            except:
+                pass
+                        
+            data[&quot;vehicles&quot;] = newVehicles
+        
+        if data[&quot;vehicles&quot;] is []:
+            return &quot;JSONvehicles:[];&quot;
+            
+        send = &quot;JSONvehicles:&quot; + json.dumps(data[&quot;vehicles&quot;]) + &quot;;&quot;
+        self.lastVehicles = data[&quot;vehicles&quot;]
+        self.lastVehicleString = send
+        return send
+
+    lastObjects = [&quot;&quot;]
+    lastObjectString = &quot;&quot;
+    def objects(self, data):
+        data[&quot;objects&quot;] = self.globals.tags.objects
+        data[&quot;objects&quot;] = self.globals.tags.merge(data[&quot;objects&quot;])
+        
+        if data[&quot;objects&quot;] is None or type(data[&quot;objects&quot;]) != list or data[&quot;objects&quot;] == [] or type(data[&quot;objects&quot;][0]) != dict:
+            return &quot;JSONobjects:[];&quot;
+        
+        try:    
+            if data[&quot;objects&quot;] == self.lastObjects:
+                return self.lastObjectString
+        except:
+            return self.lastObjectString
+        
+        if data[&quot;objects&quot;] is not None:
+            newObjects = []
+            try:
+                for obj in data[&quot;objects&quot;]:
+                    if isinstance(obj, dict):
+                        newObjects.append(obj)
+                    elif isinstance(obj, list): # No clue why this happens, it's just sometimes single coordinates like this [31352.055901850657, 18157.970393701282]
+                        continue
+                    elif isinstance(obj, tuple):
+                        continue
+                    elif isinstance(obj, str):
+                        continue
+                    else:
+                        try:
+                            newObjects.append(obj.json())
+                        except:
+                            try:
+                                newObjects.append(obj.__dict__)
+                            except:
+                                pass
+            except:
+                pass
+                        
+            data[&quot;objects&quot;] = newObjects
+        
+        if data[&quot;objects&quot;] is []:
+            return &quot;JSONobjects:[];&quot;
+            
+        send = &quot;JSONobjects:&quot; + json.dumps(data[&quot;objects&quot;]) + &quot;;&quot;
+        self.lastObjects = data[&quot;objects&quot;]
+        self.lastObjectString = send
+        return send
+
+    lastSteeringPoints = []
+    def steering(self, data):
+        try:
+            steeringPoints = []
+            data[&quot;steeringPoints&quot;] = self.plugins.Map
+            if data[&quot;steeringPoints&quot;] is not None:
+                for point in data[&quot;steeringPoints&quot;]:
+                    steeringPoints.append(point)
+                self.lastSteeringPoints = steeringPoints
+            else:
+                steeringPoints = self.lastSteeringPoints
+            
+            send = &quot;JSONsteeringPoints:&quot; + json.dumps(steeringPoints) + &quot;;&quot;
+            return send
+        except:
+            return &quot;JSONsteeringPoints:[];&quot;
+        
+    def status(self, data):
+        try:
+            data[&quot;status&quot;] = self.globals.tags.status
+            data[&quot;status&quot;] = self.globals.tags.merge(data[&quot;status&quot;])
+            if data[&quot;status&quot;] is None or type(data[&quot;status&quot;]) != dict:
+                return 'JSONstatus:{};'
+            send = &quot;JSONstatus:&quot; + json.dumps(data[&quot;status&quot;]) + &quot;;&quot;
+            return send
+        except:
+            logging.exception(&quot;Error in status&quot;)
+            return 'JSONstatus:{};'
+        
+    def acc_status(self, data):
+        try:
+            data[&quot;acc_status&quot;] = self.globals.tags.acc_status
+            data[&quot;acc_status&quot;] = self.globals.tags.merge(data[&quot;acc_status&quot;])
+            if data[&quot;acc_status&quot;] is None or type(data[&quot;acc_status&quot;]) != str:
+                return 'acc_status:ACC status error;'
+            send = &quot;acc_status:&quot; + data[&quot;acc_status&quot;] + &quot;;&quot;
+            return send
+        except:
+            logging.exception(&quot;Error in acc_status&quot;)
+            return 'acc_status:ACC status error;'
+        
+    lastHiglights = &quot;&quot;
+    def highlights(self, data):
+        try:
+            data[&quot;highlights&quot;] = self.globals.tags.highlights
+            data[&quot;highlights&quot;] = self.globals.tags.merge(data[&quot;highlights&quot;])
+            if data[&quot;highlights&quot;] is None or type(data[&quot;highlights&quot;]) != list:
+                data[&quot;highlights&quot;] = self.lastHiglights
+            else:
+                self.lastHiglights = data[&quot;highlights&quot;]
+                
+            send = &quot;highlights:&quot; + json.dumps(data[&quot;highlights&quot;]) + &quot;;&quot;
+            return send
+        except:
+            logging.exception(&quot;Error in highlights&quot;)
+            return 'highlights:[];'
+            
+    lastInstruct = [{}]
+    def instruct(self, data):
+        try:
+            data[&quot;instruct&quot;] = self.globals.tags.instruct
+            data[&quot;instruct&quot;] = self.globals.tags.merge(data[&quot;instruct&quot;])
+            if data[&quot;instruct&quot;] is None or type(data[&quot;instruct&quot;]) != list:
+                data[&quot;instruct&quot;] = self.lastInstruct
+            else:
+                self.lastInstruct = data[&quot;instruct&quot;]
+
+            send = &quot;instruct:&quot; + json.dumps(data[&quot;instruct&quot;][:4] + [data[&quot;instruct&quot;][-1]]) + &quot;;&quot;
+            return send
+        except:
+            return &quot;&quot;
+
+    def stopping_distance(self, data):
+        try:
+            data[&quot;stopping_distance&quot;] = self.globals.tags.stopping_distance
+            data[&quot;stopping_distance&quot;] = self.globals.tags.merge(data[&quot;stopping_distance&quot;])
+
+            if data[&quot;stopping_distance&quot;] is None or type(data[&quot;stopping_distance&quot;]) not in [int, float]:
+                data[&quot;stopping_distance&quot;] = -1
+
+            send = &quot;stopping_distance:&quot; + str(data[&quot;stopping_distance&quot;]) + &quot;;&quot;
+            return send
+        except:
+            return &quot;&quot;
+
+    def lateral_offset(self, data):
+        try:
+            data[&quot;lateral_offset&quot;] = self.globals.tags.lateral_offset
+            data[&quot;lateral_offset&quot;] = self.globals.tags.merge(data[&quot;lateral_offset&quot;])
+            
+            if data[&quot;lateral_offset&quot;] is None:
+                data[&quot;lateral_offset&quot;] = 0
+
+            send = &quot;lateral_offset:&quot; + str(data[&quot;lateral_offset&quot;]) + &quot;;&quot;
+            return send
+        except:
+            return &quot;&quot;
+
+    async def start_server(self, func):
+        async with websockets.serve(func, &quot;localhost&quot;, 37522):
+            await asyncio.Future() # run forever
+            
+    def run_server_thread(self):
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(self.start_server(self.server))
+        loop.run_forever()
+
+    def Initialize(self):
+        global TruckSimAPI
+        global socket
+        
+        TruckSimAPI = self.modules.TruckSimAPI
+        TruckSimAPI.TRAILER = True
+        
+        socket = threading.Thread(target=self.run_server_thread)
+        socket.start()
+        
+        print(&quot;Visualization sockets waiting for client...&quot;)
+        
+    def compress_data(self, data):
+        compressor = zlib.compressobj(wbits=28)
+        compressed_data = compressor.compress(data)
+        compressed_data += compressor.flush()
+        return compressed_data
+
+    # Example usage in your server function
+    def run(self):
+        self.fps_cap = self.settings.update_rate
+        if self.fps_cap is None:
+            self.fps_cap = 30
+            self.settings.update_rate = 30
+        
+        data = TruckSimAPI.run()
+
+        tempSend = &quot;&quot;
+        tempSend += self.position(data)
+        tempSend += self.speed(data)
+        tempSend += self.accelBrake(data)
+        tempSend += self.vehicles(data)
+        tempSend += self.objects(data)
+        tempSend += self.traffic_lights(data)
+        tempSend += self.steering(data)
+        tempSend += self.acc_status(data)
+        tempSend += self.status(data)
+        tempSend += self.highlights(data)
+        tempSend += self.instruct(data)
+        tempSend += self.stopping_distance(data)
+        tempSend += self.lateral_offset(data)
+
+        #Switch to zlib when on windows
+        if os.name == &quot;nt&quot;:
+            self.send = zlib.compress(tempSend.encode(&quot;utf-8&quot;), wbits=28)
+        else:
+            self.send = compress_data(tempSend.encode(&quot;utf-8&quot;))</code></pre>
+</doc-codeblock></div>
+</doc-panel>
+</doc-tab>
+<doc-tab v-cloak id="settingsmenu">
+<template #title>SettingsMenu</template>
+<p>The settings menu has two different modes:</p>
+<doc-panels>
+   <doc-panel id="dynamic-false" collapsed>
+       <template #title><code v-pre>dynamic: False</code></template>
+<p>In this mode the settings are built at app startup, and then they won&#x27;t be updated in the future. This is useful for settings that don&#x27;t need to be updated in real time.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class SettingsMenu(ETS2LASettingsMenu):
+    dynamic = False
+    plugin_name = &quot;PluginName&quot;
+    def render(self):
+        Title(&quot;Settings Title&quot;)
+        Description(&quot;Settings Description&quot;)
+        #       name           key     default min max step
+        Slider(&quot;Slider Name&quot;, &quot;slider_key&quot;, 50, 0, 100, 5, description=&quot;This is a slider&quot;, suffic=&quot;%&quot;)
+        return RenderUI()
+
+class Plugin(ETS2LAPlugin):
+    settings_menu = SettingsMenu()
+    ...</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Note</h5>
+<p>The settings don&#x27;t get updated, but any changes will be saved and reflected in the UI. You just can&#x27;t change the layout or values after the app has started.</p>
+        </div>
+    </div>
+</div>
+   </doc-panel>
+   <doc-panel id="dynamic-true" collapsed>
+       <template #title><code v-pre>dynamic: True</code></template>
+<p>In this mode the settings menu is updated in real time as long as the plugin is enabled. This way you can make interactive menus that show their status as it changes.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class SettingsMenu(ETS2LASettingsMenu):
+    dynamic = True
+    plugin_name = &quot;PluginName&quot;
+
+    def render(self):
+        # dynamic settings menus have access to self.plugin to access the running plugin object
+        update_rate = self.plugin.settings.update_rate
+        if update_rate is None:
+            update_rate = 1/5
+            self.plugin.settings.update_rate = 1/5
+
+        RefreshRate(self.plugin.settings.update_rate) # This will tell the frontend how often to update this menu.
+
+        Title(&quot;Settings Title&quot;)
+        Description(&quot;Settings Description&quot;)
+        
+        with EnabledLock(): # Will show the elements as blurred until the plugin is enabled.
+            Label(&quot;Value: &quot; + str(self.plugin.value))
+
+        return RenderUI()
+
+class Plugin(ETS2LAPlugin):
+    settings_menu = SettingsMenu()
+    value = 0
+    
+    ...
+
+    def run(self):
+        self.value = some_value
+
+    ...</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+</doc-panels>
+<p>For more information on the different components that you can use, please check out:<br />
+<div class="mb-6 px-5 py-4 flex justify-between relative border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded transition-colors duration-150">
+    <div class="flex items-center text-blue-500 dark:text-blue-400">
+        <span class="inline-block mb-px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" role="presentation" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"/><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z"/></svg>
+        </span>
+        <span class="inline-block font-medium ml-2">ui_components.md</span>
+    </div>
+    <div class="flex items-center text-xs text-gray-400 dark:text-dark-400">
+        <span>/developers/ui_components.md</span>
+    </div>
+    <a href="/developers/ui_components.md" class="absolute block inset-0"></a>
+</div>
+</p>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="special-considerations">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#special-considerations">#</doc-anchor-trigger>
+        <span>Special considerations</span>
+    </h3>
+</doc-anchor-target>
+<p>As all plugins run in their own processes, you need to remember that when importing things from the ETS2LA libraries, the data in those libraries will not be the same for all plugins.</p>
+<p>In addition to this you should remember that when returning any information from a plugin, whether it be using the tags or the return data values, you should not return large amounts of data. The larger the data, the more time it will take for the main process to extract it from the plugin. This will then slow down the entire program.</p>
 
                                 <div class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
