@@ -769,6 +769,36 @@ class Plugin(ETS2LAPlugin):
 ==-
 For more information on the different components that you can use, please check out:
 [!ref](/Developers/ui_components.md)
++++ Events
+Events are how the plugins can receive information that doesn't necessarily have any specific timing. This can be used to trigger a function when a certain thing happens in game or in other plugins.
+
+Currently available events are:
+- ToggleSteering(state: bool)
+- JobStarted(job: Job)
+- JobFinished(job: Job)
+- JobDelivered(job: Job)
+- JobCancelled(job: Job)
+- RefuelStarted(refuel: Refuel)
+- RefuelPayed(refuel: Refuel) - not my typo :)
+- VehicleChange(license_plate: str)
+
+Usage:
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    # Use the event name as the function name.
+    def ToggleSteering(self, state:bool, *args, **kwargs):
+        print(f"Steering is now {'enabled' if state else 'disabled'}")
+    ...
+```
+
+!!! Note
+Plugin made events are not yet in, for now you can only listen to events by the ETS2LA backend.
+!!!
+!!! Note
+For information on the different objects like `Job` please check the `ETS2LA/backend/classes.py` file.
+!!!
 +++
 ### Special considerations
 As all plugins run in their own processes, you need to remember that when importing things from the ETS2LA libraries, the data in those libraries will not be the same for all plugins. 
