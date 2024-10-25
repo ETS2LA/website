@@ -16,8 +16,8 @@ tags:
 
 Welcome! I am happy to know that you are interested in developing plugins for ETS2LA. This page will guide you through the process of creating your very own plugin.
 
-!!! Warning
-Keep in mind that ETS2LA V2.0 is not yet in a perfectly stable change. If you join the discord I can notify you of any breaking changes to the plugin APIs.
+!!! Info
+If you are any more questions then hit me up on discord, this page is for Backend V2, and it's still experimental so give me any feedback you have!
 !!!
 
 ## Introduction
@@ -26,209 +26,751 @@ As far as ETS2LA is concerned plugins are small programs that can interface with
 ### The basic structure of a plugin
 ```
 ETS2LA
-│   plugins
-│   └─── my_plugin
-│       │   main.py
-│       │   plugin.json
-│       │   settings.json
-|       |   ...
+└─── Plugin
+└─── UI
+
+plugins <- This is where you put your plugins
+└─── my_plugin
+    │   main.py
+    |   ...
+
+frontend
+└─── ...
 ```
-+++ main.py
-This is the main file of your plugin. The ETS2LA backend will run this file when the plugin is loaded.
-As far as ETS2LA specific code goes this is an example:
+
+Following is the structure of a plugin `main.py` file:
++++ Information on imports
+It's important to talk about how to import things in a plugin file. This is one of the compromises we had to make to make the backend as simple as possible.
+- You can import anything from ETS2LA libraries at the top of the file.
+- You can import any base python libraries at the top of the file.
+- You **shouldn't** import any other libraries at the top of the file.
+
+Why? Because at startup the app will read all the Plugin objects to build a list of plugins and their settings menus. If you import something large from a 3rd party library that will drastically slower the startup time and introduce additional RAM overhead.
+
+What should I do instead?
 ```python
-from ETS2LA.plugin.runner import PluginRunner
+# ETS2LA libraries
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
 
-# This is your plugin's access to the ETS2LA backend
-# we'll explore this more later
-runner: PluginRunner = None
+# Base python libraries
+import time
+import math
 
-# This function will get called when the plugin is loaded
-def Initialize():
-    ...
+class Plugin(ETS2LAPlugin):
+    def imports(self):
+        # Import the libraries you need here as
+        # this function will be called before any of the plugin code 
+        # (check the next section for more info on that)
+        global torch, np
+        import numpy as np
+        import torch
 
-# This function will be called every time the plugin is updated
-def plugin():
-    ...
-
-    # Your plugin can return data for other plugins to use directly, it can also return tags.
-    # We are slowly moving towards using tags instead of direct data, so you should use tags if possible.
-    return None, {
-        "tag": "value"
+    def run(self):
+        # Your plugin code here
         ...
-    }
-
 ```
-+++ plugin.json
-This file will decide how the program treats your plugin. It is also where you define the settings user interface. Below is a list of all the different keys that this file understands:
++++ Plugin
+As you saw in the last section this is the main class of the plugin. The class will handle all the plugin backend logic and communications. Following is a list of features and example code (you can also check the plugin class itself, as it is documented).
 
-==+ [!badge variant="success" text="name" size="m"] [!badge variant="ghost" text="translation key" corners="square" size="s"][!badge variant="dark" text="string" corners="square" size="s"]
-This will be the **name** of your plugin shown in the UI, it is recommended to use the translation key as show in the translation section later.
-==+ [!badge variant="success" text="authors" size="m"] [!badge variant="ghost" text="author_object" corners="square" size="s"][!badge variant="dark" text="array" corners="square" size="s"]
-This is a list of author objects, this is how a typical author object looks like:
-```json
-{
-    "name": "Tumppi066",
-    "url": "https://github.com/Tumppi066",
-    "avatar": "https://avatars.githubusercontent.com/u/83072683?v=4"
-}
+Features provided by the plugin class:
+==- `self.settings`
+This helps you access the settings file of the plugin, example below:
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.settings.value_i_want_to_save = "value" # NOTE: Do not spam this! It will slow down HDDs and break SSDs!
+        the_value_is = self.settings.value_i_want_to_save
 ```
-==+ [!badge variant="success" text="description" size="m"] [!badge variant="ghost" text="translation key" corners="square" size="s"][!badge variant="dark" text="string" corners="square" size="s"]
-This is the description shown in the UI, like with the name it is recommended to create a translation key.
-==+ [!badge variant="success" text="version" size="m"] [!badge variant="ghost" text="version" corners="square" size="s"][!badge variant="dark" text="string" corners="square" size="s"]
-It is recommended to use semantic versioning for this. (MAJOR.MINOR.PATCH)
-==- [!badge variant="warning" text="dependencies" size="m"] [!badge variant="ghost" text="string" corners="square" size="s"][!badge variant="dark" text="array" corners="square" size="s"]
-A list of the names of the plugins that this plugin depends on.
-!!! Warning
-This has not yet been implemented!
+Also note that you can still use the legacy settings system, it also provides a listen command (wherein the new system updates each second)
+```python
+from ETS2LA.Plugin import *
+import ETS2LA.backend.settings as settings
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        settings.Set("plugin_name", "key", "value")
+        the_value_is = settings.Get("plugin_name", "key", "default_value")
+
+    def update_settings(settings: dict): # when the settings update
+        the_value_is = settings["key"]
+
+    settings.Listen("plugin_name", update_settings)
+```
+==- `self.plugins`
+!!! Note
+It is recommended to instead use the tag system, as it is much easier and safer.
 !!!
-==- [!badge variant="warning" text="modules" size="m"] [!badge variant="ghost" text="module" corners="square" size="s"][!badge variant="dark" text="array" corners="square" size="s"]
-Modules will be explained a bit further down, as of writing the current list of modules is:
-- MapUtils
-- Raycasting
-- ScreenCapture
-- SDKController
-- ShowImage
-- Steering
-- TruckSimAPI
-==- [!badge variant="warning" text="compatible" size="m"] [!badge variant="ghost" text="os name" corners="square" size="s"][!badge variant="dark" text="array" corners="square" size="s"]
-The plugin won't be shown in the UI if the user is using an incompatible OS.
-Accepted values are:
-- Windows
-- Linux
-- MacOS
-==- [!badge variant="warning" text="settings" size="m"] [!badge variant="ghost" text="settings_object" corners="square" size="s"][!badge variant="dark" text="array" corners="square" size="s"]
-This is a large topic and will be explained further down.
+This is how you can get the return value of any running plugins, example below:
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        another_plugin_value = self.plugins.another_plugin_name
+        if another_plugin_value is None:
+            print("The plugin is not running or it hasn't returned data.")
+```
+==- `self.modules`
+This is where you can access the running modules that you described in the `description` object (more on that later), example below:
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+
+    description = PluginDescription(
+        name="Plugin Name",
+        description="Plugin Description",
+        modules=["ScreenCapture"]
+    )
+
+    def run(self):
+        image, fullImage = self.modules.ScreenCapture.run()
+```
+[!ref](/Developers/modules.md)
+!!! Warning
+The modules are loaded in the order they are declared in the `description` object. This means that if you have a module that depends on another module, you should declare the requirement module first.
+!!!
+==- `self.state`
+This is the simplified interface to show a loading state in the frontend, example below:
+```python
+from ETS2LA.Plugin import *
+import time
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        # Initialize the state
+        self.state.text = "Loading..."
+        self.state.progress = 0
+        
+        for i in range(100):
+            # Update as a calculation progresses
+            self.state.text = f"Loading... {i}%"
+            self.state.progress = i/100
+            time.sleep(0.05)
+        
+        self.state.reset()
+```
+==- `self.globals.tags`
+This is the preferred way to return and get data from other plugins. This makes sure that many plugin can return similar data (for example if the user has two object detection plugins on at the same time). It is an integral part of the new plugin system.
+```python plugins/Producer1/main.py
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.globals.tags.value_list = {
+            "list": ["value1", "value2"]
+        }
+```
+```python plugins/Producer2/main.py
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.globals.tags.value_list = {
+            "list": ["value3", "value4"]
+        }
+```
+```python plugins/Consumer/main.py
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        tag_value = self.globals.tags.my_tag
+        """
+            tag_value = {
+                "Producer1": {
+                    "list": ["value1", "value2"]
+                },
+                "Producer2": {
+                    "list": ["value3", "value4"]
+                }
+            }
+        """
+        merged_value = self.globals.tags.merge(tag_value)
+        """
+            merged_value = {
+                "list": ["value1", "value2", "value3", "value4"]
+            }
+        """
+```
+!!! Warning
+The tag system uses python multiprocessing queues to send data back and forth, for very large data amounts (like images) this will take up to 200ms to transfer. You should thus use a time tag to only update the data when it's changed.
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    last_data_update = 0
+    tag_value = None
+    def run(self):
+        update_time = self.globals.tags.update_time
+        if update_time != self.last_data_update:
+            self.last_data_update = update_time
+            self.tag_value = self.globals.tags.my_tag
+```
+!!!
+==- `self.globals.settings`
+Same as `self.settings` except for the global settings file. Please note that this is read only, as multiple processes can access it at the same time. Legacy settings use the plugin name `"global"` to access the global settings.
+==-
+Plugin class variables:
+==- [!badge variant="ghost" text="- optional -" size="m"] `fps_cap`
+This is a simple float to cap the fps of the plugin to a certain value. By default all plugins are capped to 30fps, and this can be changed by:
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    fps_cap = 60
+    ...
+```
+==- [!badge variant="ghost" text="- required -" size="m"] `description`
+This is the object that controls how the plugin is displayed and treated by the app. The `PluginDescription` object has the following parameters:
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    description = PluginDescription(
+        name="Plugin Name",
+        version="1.0.0",
+        description="Plugin Description",
+        dependencies=["Plugin1", "Plugin2"],
+        modules=["ScreenCapture"],
+        comaptible_os=["Windows", "Linux"],
+        compatible_game=["ETS2", "ATS"],
+        update_log={
+            "1.0.0": "Initial release"
+        }
+    )
+```
+==- [!badge variant="ghost" text="- required -" size="m"] `author`
+Similar to the `description` object, this is a string that contains the author of the plugin.
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    author = Author(
+        name="Author Name",
+        url="https://wiki.ets2la.com",
+        icon="https://wiki.ets2la.com/assets/favicon.ico"
+    )
+
+```
+==- [!badge variant="ghost" text="- optional -" size="m"] `settings_menu`
+The settings menu object that you can find out more about in the next section.
 ==-
 
-!!! Note about intellisense
-We provide a json schema for autocomplete, you can import it by adding this to the top of the json file
-```json
-{
-    "$schema": "../schema.json"
-}
+Plugin class functions and reserved variables:
+
+==- [!badge variant="success" text="usable" size="m"] `self.run()`
+This is the main function of the plugin, and will be called every frame. This is where you should put your main logic.
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        print("Hello World!") # printed at 30fps
 ```
+==- [!badge variant="success" text="usable" size="m"] `self.notify()`
+This is a function that will send a push notification to the frontend with the message and type provided by the arguments.
+```python
+from ETS2LA.Plugin import *
+
+class Plugin(ETS2LAPlugin):
+    def run(self):
+        self.notify("This is a notification", type="info")
+        # type: Literal["info", "warning", "error", "success"] = "info"
+```
+==- [!badge variant="success" text="usable" size="m"] `self.ask()`
+This is a function that will ask the user a question and prompt them to click one of the options provided.
+```python
+from ETS2LA.Plugin import *
+
+def run(self):
+    answer = self.ask("Do you want to continue?", options=["Yes", "No"], description="This is a description")
+    if answer == "Yes":
+        print("The user wants to continue")
+    else:
+        print("The user doesn't want to continue")
+```
+==- [!badge variant="danger" text="reserved" size="m"] `self.path`
+**READ ONLY**
+Used to store the path of the plugin (relative to the plugins folder).
+==- [!badge variant="danger" text="reserved" size="m"] `self.*_queue`
+**DO NOT USE**
+The following queues are used to communicate with the backend, and should not be used by the plugin.
+```
+self.return_queue
+self.plugins_queue
+self.plugins_return_queue
+self.settings_menu_queue
+self.settings_menu_return_queue
+self.frontend_queue
+self.frontend_return_queue
+self.immediate_queue
+self.immediate_return_queue
+self.state_queue
+self.performance_queue
+self.performance_return_queue
+```
+==- [!badge variant="danger" text="reserved" size="m"] `self.performance`
+**READ ONLY**
+Used to store the performance data of the plugin. This is a list of `tuple(timestamp, time_to_execute)`. The app will save the last 30 seconds of performance data.
+==- [!badge variant="danger" text="reserved" size="m"] `self.ensure_settings_file()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.ensure_functions()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.__new__()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.load_modules()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.__init__()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.settings_menu_thread()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.frontend_thread()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.performance_thread()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.plugin()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.before()`
+**DO NOT USE**
+==- [!badge variant="danger" text="reserved" size="m"] `self.after()`
+**DO NOT USE**
+==-
+Example plugin:
+==- Open/Close
+```python plugins/Sockets/main.py
+# This plugin was not made from the ground up for the new backend, so it is not perfectly optimized!
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class SettingsMenu(ETS2LASettingsMenu):
+    dynamic = False
+    plugin_name = "Sockets"
+    def render(self):
+        Title("Sockets Settings")
+        Description("This is the plugin that sends data to the visualization sockets.")
+        Slider("Data FPS", "update_rate", 30, 10, 60, 1, description="How many times per second the data being sent to the clients is updated.", requires_restart=True)
+        return RenderUI()
+
+class Plugin(ETS2LAPlugin):
+    description = PluginDescription(
+        name="plugins.sockets",
+        version="1.0",
+        description="plugins.sockets.description",
+        modules=["TruckSimAPI"],
+    )
+    
+    author = Author(
+        name="Tumppi066",
+        url="https://github.com/Tumppi066",
+        icon="https://avatars.githubusercontent.com/u/83072683?v=4"
+    )
+    
+    settings_menu = SettingsMenu()
+    
+    send = ""
+    connected_clients = []
+    
+    def imports(self):
+        global multiprocessing, websockets, threading, logging, asyncio, json, os, zlib, time
+        import multiprocessing
+        import websockets
+        import threading
+        import logging
+        import asyncio
+        import json
+        import zlib
+        import time
+        import os
+
+    async def server(self, websocket):
+        print("Client Connected!")
+        self.connected_clients.append(websocket)  # Step 2: Add a client to the list when they connect
+        print("Number of connected clients: ", len(self.connected_clients))
+        try:
+            while True:
+                if self.send:
+                    await websocket.send(self.send)
+                    # Wait for acknowledgment from client
+                    try:
+                        ack = await websocket.recv()
+                    except Exception as e:
+                        print("Client disconnected while receiving data.", str(e))
+                        break
+                    if ack != "ok":
+                        print(f"Unexpected message from client: {ack}")
+        except Exception as e:
+            print("Client disconnected due to exception.", str(e))
+        finally:
+            self.connected_clients.remove(websocket)  # Step 3: Remove a client from the list when they disconnect
+
+    def position(self, data):
+        send = ""
+        send += "x:" + str(data["truckPlacement"]["coordinateX"]) + ";"
+        send += "y:" + str(data["truckPlacement"]["coordinateY"]) + ";"
+        send += "z:" + str(data["truckPlacement"]["coordinateZ"]) + ";"
+        rotationX = data["truckPlacement"]["rotationX"] * 360
+        if rotationX < 0: rotationX += 360
+        send += "rx:" + str(rotationX) + ";"
+        rotationY = data["truckPlacement"]["rotationY"] * 360
+        send += "ry:" + str(rotationY) + ";"
+        rotationZ = data["truckPlacement"]["rotationZ"] * 360
+        if rotationZ < 0: rotationZ += 360
+        send += "rz:" + str(rotationZ) + ";"
+        return send
+
+    def traffic_lights(self, data):
+        data["TrafficLights"] = self.globals.tags.TrafficLights
+        data["TrafficLights"] = self.globals.tags.merge(data["TrafficLights"])
+        try:
+            send = "JSONTrafficLights:" + json.dumps(data["TrafficLights"]) + ";"
+        except:
+            for i in range(0, len(data["TrafficLights"])):
+                data["TrafficLights"][i] = data["TrafficLights"][i].json()
+            send = "JSONTrafficLights:" + json.dumps(data["TrafficLights"]) + ";"
+        return send
+
+    def speed(self, data):
+        data["targetSpeed"] = self.globals.tags.acc
+        data["targetSpeed"] = self.globals.tags.merge(data["targetSpeed"])
+        
+        if data["targetSpeed"] is None:
+            data["targetSpeed"] = data["truckFloat"]["cruiseControlSpeed"]
+                
+        send = "speed:" + str(data["truckFloat"]["speed"]) + ";"
+        send += "speedLimit:" + str(data["truckFloat"]["speedLimit"]) + ";"
+        send += "cc:" + str(data["targetSpeed"]) + ";"
+        return send
+
+    def accelBrake(self, data):
+        send = "accel:" + str(data["truckFloat"]["gameThrottle"]) + ";"
+        send += "brake:" + str(data["truckFloat"]["gameBrake"]) + ";"
+        return send
+
+    lastVehicles = [""]
+    lastVehicleString = ""
+    def vehicles(self, data):
+        data["vehicles"] = self.globals.tags.vehicles
+        data["vehicles"] = self.globals.tags.merge(data["vehicles"])
+        
+        if data["vehicles"] is None or type(data["vehicles"]) != list or data["vehicles"] == [] or type(data["vehicles"][0]) != dict:
+            return "JSONvehicles:[];"
+        
+        try:    
+            if data["vehicles"] == self.lastVehicles:
+                return self.lastVehicleString
+        except:
+            return self.lastVehicleString
+        
+        if data["vehicles"] is not None:
+            newVehicles = []
+            try:
+                for vehicle in data["vehicles"]:
+                    if isinstance(vehicle, dict):
+                        newVehicles.append(vehicle)
+                    elif isinstance(vehicle, list): # No clue why this happens, it's just sometimes single coordinates like this [31352.055901850657, 18157.970393701282]
+                        continue
+                    elif isinstance(vehicle, tuple):
+                        continue
+                    elif isinstance(vehicle, str):
+                        continue
+                    else:
+                        try:
+                            newVehicles.append(vehicle.json())
+                        except:
+                            try:
+                                newVehicles.append(vehicle.__dict__)
+                            except:
+                                pass
+            except:
+                pass
+                        
+            data["vehicles"] = newVehicles
+        
+        if data["vehicles"] is []:
+            return "JSONvehicles:[];"
+            
+        send = "JSONvehicles:" + json.dumps(data["vehicles"]) + ";"
+        self.lastVehicles = data["vehicles"]
+        self.lastVehicleString = send
+        return send
+
+    lastObjects = [""]
+    lastObjectString = ""
+    def objects(self, data):
+        data["objects"] = self.globals.tags.objects
+        data["objects"] = self.globals.tags.merge(data["objects"])
+        
+        if data["objects"] is None or type(data["objects"]) != list or data["objects"] == [] or type(data["objects"][0]) != dict:
+            return "JSONobjects:[];"
+        
+        try:    
+            if data["objects"] == self.lastObjects:
+                return self.lastObjectString
+        except:
+            return self.lastObjectString
+        
+        if data["objects"] is not None:
+            newObjects = []
+            try:
+                for obj in data["objects"]:
+                    if isinstance(obj, dict):
+                        newObjects.append(obj)
+                    elif isinstance(obj, list): # No clue why this happens, it's just sometimes single coordinates like this [31352.055901850657, 18157.970393701282]
+                        continue
+                    elif isinstance(obj, tuple):
+                        continue
+                    elif isinstance(obj, str):
+                        continue
+                    else:
+                        try:
+                            newObjects.append(obj.json())
+                        except:
+                            try:
+                                newObjects.append(obj.__dict__)
+                            except:
+                                pass
+            except:
+                pass
+                        
+            data["objects"] = newObjects
+        
+        if data["objects"] is []:
+            return "JSONobjects:[];"
+            
+        send = "JSONobjects:" + json.dumps(data["objects"]) + ";"
+        self.lastObjects = data["objects"]
+        self.lastObjectString = send
+        return send
+
+    lastSteeringPoints = []
+    def steering(self, data):
+        try:
+            steeringPoints = []
+            data["steeringPoints"] = self.plugins.Map
+            if data["steeringPoints"] is not None:
+                for point in data["steeringPoints"]:
+                    steeringPoints.append(point)
+                self.lastSteeringPoints = steeringPoints
+            else:
+                steeringPoints = self.lastSteeringPoints
+            
+            send = "JSONsteeringPoints:" + json.dumps(steeringPoints) + ";"
+            return send
+        except:
+            return "JSONsteeringPoints:[];"
+        
+    def status(self, data):
+        try:
+            data["status"] = self.globals.tags.status
+            data["status"] = self.globals.tags.merge(data["status"])
+            if data["status"] is None or type(data["status"]) != dict:
+                return 'JSONstatus:{};'
+            send = "JSONstatus:" + json.dumps(data["status"]) + ";"
+            return send
+        except:
+            logging.exception("Error in status")
+            return 'JSONstatus:{};'
+        
+    def acc_status(self, data):
+        try:
+            data["acc_status"] = self.globals.tags.acc_status
+            data["acc_status"] = self.globals.tags.merge(data["acc_status"])
+            if data["acc_status"] is None or type(data["acc_status"]) != str:
+                return 'acc_status:ACC status error;'
+            send = "acc_status:" + data["acc_status"] + ";"
+            return send
+        except:
+            logging.exception("Error in acc_status")
+            return 'acc_status:ACC status error;'
+        
+    lastHiglights = ""
+    def highlights(self, data):
+        try:
+            data["highlights"] = self.globals.tags.highlights
+            data["highlights"] = self.globals.tags.merge(data["highlights"])
+            if data["highlights"] is None or type(data["highlights"]) != list:
+                data["highlights"] = self.lastHiglights
+            else:
+                self.lastHiglights = data["highlights"]
+                
+            send = "highlights:" + json.dumps(data["highlights"]) + ";"
+            return send
+        except:
+            logging.exception("Error in highlights")
+            return 'highlights:[];'
+            
+    lastInstruct = [{}]
+    def instruct(self, data):
+        try:
+            data["instruct"] = self.globals.tags.instruct
+            data["instruct"] = self.globals.tags.merge(data["instruct"])
+            if data["instruct"] is None or type(data["instruct"]) != list:
+                data["instruct"] = self.lastInstruct
+            else:
+                self.lastInstruct = data["instruct"]
+
+            send = "instruct:" + json.dumps(data["instruct"][:4] + [data["instruct"][-1]]) + ";"
+            return send
+        except:
+            return ""
+
+    def stopping_distance(self, data):
+        try:
+            data["stopping_distance"] = self.globals.tags.stopping_distance
+            data["stopping_distance"] = self.globals.tags.merge(data["stopping_distance"])
+
+            if data["stopping_distance"] is None or type(data["stopping_distance"]) not in [int, float]:
+                data["stopping_distance"] = -1
+
+            send = "stopping_distance:" + str(data["stopping_distance"]) + ";"
+            return send
+        except:
+            return ""
+
+    def lateral_offset(self, data):
+        try:
+            data["lateral_offset"] = self.globals.tags.lateral_offset
+            data["lateral_offset"] = self.globals.tags.merge(data["lateral_offset"])
+            
+            if data["lateral_offset"] is None:
+                data["lateral_offset"] = 0
+
+            send = "lateral_offset:" + str(data["lateral_offset"]) + ";"
+            return send
+        except:
+            return ""
+
+    async def start_server(self, func):
+        async with websockets.serve(func, "localhost", 37522):
+            await asyncio.Future() # run forever
+            
+    def run_server_thread(self):
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(self.start_server(self.server))
+        loop.run_forever()
+
+    def Initialize(self):
+        global TruckSimAPI
+        global socket
+        
+        TruckSimAPI = self.modules.TruckSimAPI
+        TruckSimAPI.TRAILER = True
+        
+        socket = threading.Thread(target=self.run_server_thread)
+        socket.start()
+        
+        print("Visualization sockets waiting for client...")
+        
+    def compress_data(self, data):
+        compressor = zlib.compressobj(wbits=28)
+        compressed_data = compressor.compress(data)
+        compressed_data += compressor.flush()
+        return compressed_data
+
+    # Example usage in your server function
+    def run(self):
+        self.fps_cap = self.settings.update_rate
+        if self.fps_cap is None:
+            self.fps_cap = 30
+            self.settings.update_rate = 30
+        
+        data = TruckSimAPI.run()
+
+        tempSend = ""
+        tempSend += self.position(data)
+        tempSend += self.speed(data)
+        tempSend += self.accelBrake(data)
+        tempSend += self.vehicles(data)
+        tempSend += self.objects(data)
+        tempSend += self.traffic_lights(data)
+        tempSend += self.steering(data)
+        tempSend += self.acc_status(data)
+        tempSend += self.status(data)
+        tempSend += self.highlights(data)
+        tempSend += self.instruct(data)
+        tempSend += self.stopping_distance(data)
+        tempSend += self.lateral_offset(data)
+
+        #Switch to zlib when on windows
+        if os.name == "nt":
+            self.send = zlib.compress(tempSend.encode("utf-8"), wbits=28)
+        else:
+            self.send = compress_data(tempSend.encode("utf-8"))
+```
+==-
++++ SettingsMenu
+The settings menu has two different modes:
+==- `dynamic: False`
+In this mode the settings are built at app startup, and then they won't be updated in the future. This is useful for settings that don't need to be updated in real time.
+```python
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class SettingsMenu(ETS2LASettingsMenu):
+    dynamic = False
+    plugin_name = "PluginName"
+    def render(self):
+        Title("Settings Title")
+        Description("Settings Description")
+        #       name           key     default min max step
+        Slider("Slider Name", "slider_key", 50, 0, 100, 5, description="This is a slider", suffic="%")
+        return RenderUI()
+
+class Plugin(ETS2LAPlugin):
+    settings_menu = SettingsMenu()
+    ...
+```
+!!! Note
+The settings don't get updated, but any changes will be saved and reflected in the UI. You just can't change the layout or values after the app has started.
 !!!
-+++ settings.json
-This is where the ETS2LA settings interface will dump your settings. Settings will be explained later.
+==- `dynamic: True`
+In this mode the settings menu is updated in real time as long as the plugin is enabled. This way you can make interactive menus that show their status as it changes.
+```python
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class SettingsMenu(ETS2LASettingsMenu):
+    dynamic = True
+    plugin_name = "PluginName"
+
+    def render(self):
+        # dynamic settings menus have access to self.plugin to access the running plugin object
+        update_rate = self.plugin.settings.update_rate
+        if update_rate is None:
+            update_rate = 1/5
+            self.plugin.settings.update_rate = 1/5
+
+        RefreshRate(self.plugin.settings.update_rate) # This will tell the frontend how often to update this menu.
+
+        Title("Settings Title")
+        Description("Settings Description")
+        
+        with EnabledLock(): # Will show the elements as blurred until the plugin is enabled.
+            Label("Value: " + str(self.plugin.value))
+
+        return RenderUI()
+
+class Plugin(ETS2LAPlugin):
+    settings_menu = SettingsMenu()
+    value = 0
+    
+    ...
+
+    def run(self):
+        self.value = some_value
+
+    ...
+```
+==-
+For more information on the different components that you can use, please check out:
+[!ref](/Developers/ui_components.md)
 +++
 ### Special considerations
 As all plugins run in their own processes, you need to remember that when importing things from the ETS2LA libraries, the data in those libraries will not be the same for all plugins. 
 
-In addition to this you should remember that when returning any information from a plugin, whether it be using the tags or the return data values, you should not return large amounts of data. The larger the data, the more time it will take for the main process to extract it from the plugin. This will then slow down the entire program. Modules were made to combat this issue and those will be explained later.
-
-- - -
-
-## Settings
-### Using settings inside of the plugin
-The settings interface has been made to be as simple to use as possible, here's basically all you need to know:
-```python
-import ETS2LA.backend.settings as settings
-
-# You can get values like this
-VALUE1 = settings.Get("plugin_name", "value1", "default_value")
-VALUE2 = settings.Get("plugin_name", "value2", "default_value")
-
-# And you can also make a function to listen for changes in the settings
-# this is highly recommended as without such a function changing settings
-# from the user interface will not update the plugin
-def UpdateSettings(): # NOTE: You can optionally accept the settings json as an argument
-    global VALUE1, VALUE2
-    VALUE1 = settings.Get("plugin_name", "value1", "default_value")
-    VALUE2 = settings.Get("plugin_name", "value2", "default_value")
-
-settings.Listen("plugin_name", UpdateSettings)
-
-# You can also set values like this
-settings.Set("plugin_name", "value1", "new_value")
-# This will then call the UpdateSettings function as the file has been updated
-
-# Lastly you can get nested values like this
-VALUE3 = settings.Get("plugin_name", ["nested", "value3"], "default_value")
-# Same works for setting values
-settings.Set("plugin_name", ["nested", "value3"], "new_value")
-```
-### Creating the settings interface
-The settings interface is made to be as simple as possible, I've built a system that will automatically generate the javascript interface for you, depending on what you write in the plugin.json file.
-
-Here is the code for a very simple settings page.
-![](../assets/acc_settings.png)
-```json
-NOTE: This example uses the translation system, thus you only define the keys in the settings file!
-
-"settings": [
-    {
-        "specials": [
-            {
-                "special": "Title",
-                "special_data": "acc.settings.1.title"
-            },
-            {
-                "special": "Description",
-                "special_data": "acc.settings.1.description"
-            },
-            {
-                "special": "Separator"
-            }
-        ]
-    },
-    {
-        "name": "acc.settings.2.name",
-        "description": "acc.settings.2.description",
-        "key": "distance",
-        "type": {
-            "type": "number",
-            "min": 10,
-            "max": 100,
-            "step": 1
-        }
-    }
-]
-```
-You can see the schema for the different options of the settings file.
-I also included a link to the Map plugin plugin.json file, it is a much more complex example.
-[!ref](https://raw.githubusercontent.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist/rewrite/ETS2LA/plugins/schema.json)[!ref](https://raw.githubusercontent.com/ETS2LA/Euro-Truck-Simulator-2-Lane-Assist/rewrite/ETS2LA/plugins/Map/plugin.json)
-!!! Note
-I recommend a json browser extension to make it easier to read the settings file.
-https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa
-!!!
-
-- - -
-
-## Modules
-### Why modules?
-Modules are our answer to the problem of sending large amounts of data between multiple processes. Let's take for example capturing the screen. In 1.0 you would have one screencapture plugin that would send it's data to all following plugins. This doesn't really work in 2.0 because sending that image data over a pipe or queue would be very slow.
-
-Instead, we made modules. Now when declaring your `plugin.json` file, you can just add `modules: ["ScreenCapture"]` and the app will automatically load the `ScreenCapture` module for you. This means that each plugin has it's own instance of the module in it's own process. This removes the overhead of sending large amounts of data between processes.
-
-Another unexpected benefit is that each plugin now has the most up to date data from the module. Before since the app ran sequancially, a plugin running later in the loop will mean it's screen capture data is multiple, even 10s, of milliseconds old. 
-
-### How to use them?
-Using modules is extremely simple, first you declare the plugin.json file like this:
-```json
-{
-    "modules": ["ScreenCapture"]
-}
-```
-And then in the plugin you can use the modules as follows:
-```python
-# NOTE: You cannot import modules directly, this is just to use intellisense
-import ETS2LA.modules.ScreenCapture.main as Capture
-from ETS2LA.plugin.runner import PluginRunner
-from typing import cast
-
-runner: PluginRunner = None
-
-def Initialize():
-    global ScreenCapture
-    ScreenCapture = runner.modules.ScreenCapture
-    ScreenCapture = cast(Capture, ScreenCapture) # This is optional, but will provide intellisense
-
-def plugin():
-    image, fullImage = ScreenCapture.run()
-    ...
-```
-You can find a list of all modules and their variables in the following page:
-[!ref](/Developers/modules.md)
-
-- - -
+In addition to this you should remember that when returning any information from a plugin, whether it be using the tags or the return data values, you should not return large amounts of data. The larger the data, the more time it will take for the main process to extract it from the plugin. This will then slow down the entire program.
