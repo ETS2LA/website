@@ -726,7 +726,7 @@ class Plugin(ETS2LAPlugin):
     ...
 ```
 !!! Note
-The settings don't get updated, but any changes will be saved and reflected in the UI. You just can't change the layout or values after the app has started.
+The settings get updated, and any changes will be saved and reflected in the UI. You just can't change the layout or values after the app has started.
 !!!
 ==- `dynamic: True`
 In this mode the settings menu is updated in real time as long as the plugin is enabled. This way you can make interactive menus that show their status as it changes.
