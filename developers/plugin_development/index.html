@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/documentation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783182964851">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783957844195">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../assets/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.6.0.783182964851" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783957844195" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783182964851" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783957844195" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783182964851" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783182964851" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783957844195" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783957844195" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -609,6 +609,37 @@ def run(self):
         print(&quot;The user wants to continue&quot;)
     else:
         print(&quot;The user doesn't want to continue&quot;)</code></pre>
+</doc-codeblock></div>
+   </doc-panel>
+   <doc-panel id="badge-variant-success-text-usable-size-m-self-dialog" collapsed>
+       <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
+    <span>usable</span>
+</span> <code v-pre>self.dialog()</code></template>
+<p>Will show a dialog on the UI, with the form presented.</p>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class Dialog(ETS2LADialog):
+    def render(self):
+        with Form():
+            Title(&quot;This is a dialog&quot;)
+            Description(&quot;This is a description&quot;)
+            Input(&quot;Input&quot;, &quot;string_input&quot;, &quot;string&quot;, &quot;default value&quot;, description=&quot;This is an input&quot;)
+            Checkbox(&quot;Checkbox&quot;, &quot;checkbox&quot;, False, description=&quot;This is a checkbox&quot;)
+            # Use a custom button with the target set to &quot;submit&quot; if you don't like the default style of:
+            # Button(&quot;Submit&quot;, &quot;&quot;, &quot;submit&quot;, border=False)
+
+class Plugin(ETS2LAPlugin):
+    ...
+    def run(self):
+        # Will block until the user clicks on submit
+        data = self.dialog(Dialog())
+        # Data will contain all the values the USER CHANGED
+        # for example if the user didn't change the checkbox, then the data will be:
+        # data = {&quot;string_input&quot;: &quot;The user changed this&quot;}
+        # and if the user changed all values then it will be
+        # data = {&quot;string_input&quot;: &quot;The user changed this&quot;, &quot;checkbox&quot;: True}</code></pre>
 </doc-codeblock></div>
    </doc-panel>
    <doc-panel id="badge-variant-danger-text-reserved-size-m-self-path" collapsed>
