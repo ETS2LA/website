@@ -293,6 +293,33 @@ def run(self):
     else:
         print("The user doesn't want to continue")
 ```
+==- [!badge variant="success" text="usable" size="m"] `self.dialog()`
+Will show a dialog on the UI, with the form presented.
+```python
+from ETS2LA.Plugin import *
+from ETS2LA.UI import *
+
+class Dialog(ETS2LADialog):
+    def render(self):
+        with Form():
+            Title("This is a dialog")
+            Description("This is a description")
+            Input("Input", "string_input", "string", "default value", description="This is an input")
+            Checkbox("Checkbox", "checkbox", False, description="This is a checkbox")
+            # Use a custom button with the target set to "submit" if you don't like the default style of:
+            # Button("Submit", "", "submit", border=False)
+
+class Plugin(ETS2LAPlugin):
+    ...
+    def run(self):
+        # Will block until the user clicks on submit
+        data = self.dialog(Dialog())
+        # Data will contain all the values the USER CHANGED
+        # for example if the user didn't change the checkbox, then the data will be:
+        # data = {"string_input": "The user changed this"}
+        # and if the user changed all values then it will be
+        # data = {"string_input": "The user changed this", "checkbox": True}
+```
 ==- [!badge variant="danger" text="reserved" size="m"] `self.path`
 **READ ONLY**
 Used to store the path of the plugin (relative to the plugins folder).
