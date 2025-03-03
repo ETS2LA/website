@@ -3,7 +3,7 @@ authors:
   - name: Tumppi066
     link: https://github.com/Tumppi066
     avatar: https://avatars.githubusercontent.com/u/83072683?v=4
-date: 2024-9-20
+date: 2025-3-3
 icon: shield-lock
 order: -1
 ---
@@ -23,16 +23,14 @@ We take your privacy seriously. As such, we collect as little identifiable infor
 This is a very simple summary for normal people. We also have a proper [GDPR policy](https://ets2la.github.io/documentation/gdpr/). You might want to read that as well.
 
 # The information we store
-We only store the following **identifiable** information:
-- You encrypted Discord user id. This is necessary to link your Discord account to a user account in our database.
+We only store the following **identifiable** and **optional** information:
+- You Discord user id. This is necessary to link your Discord account to a user account in our database.
 - Your Discord username, this is used to display your username in the app.
 
-We also store the following **non-identifiable** and **optional** information:
-- Your ETS2LA settings.
-- Your latest ETS2LA logs.
-- A list of all the jobs you've completed while having ETS2LA open.
+We also store the following **non-identifiable** information:
+- A list of all the jobs you've completed while having ETS2LA open and while being logged in.
   - This information includes start, end, distance, time, income, truck statistics, and more. Check this [page](https://ets2la.github.io/documentation/developers/modules/#trucksimapi) for a full list of all the information available to us.
-- Usage statistics
+- General usage statistics.
   - This includes used plugins and the amount of time you've spent in the app. It also includes the amount of time you've spent with different app features enabled / disabled.
 
 # How we use your information
