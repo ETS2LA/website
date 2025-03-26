@@ -3,7 +3,7 @@ authors:
   - name: Tumppi066
     link: https://github.com/Tumppi066
     avatar: https://avatars.githubusercontent.com/u/83072683?v=4
-date: 2025-3-3
+date: 2025-3-26
 icon: shield-lock
 order: -1
 ---
@@ -24,7 +24,7 @@ This is a very simple summary for normal people. We also have a proper [GDPR pol
 
 # The information we store
 We only store the following **identifiable** and **optional** information:
-- You Discord user id. This is necessary to link your Discord account to a user account in our database.
+- Your Discord user id. This is necessary to link your Discord account to a user account in our database.
 - Your Discord username, this is used to display your username in the app.
 
 We also store the following **non-identifiable** information:

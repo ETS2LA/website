@@ -10,6 +10,10 @@ tags:
   - tutorial
 ---
 
+!!! Warning
+This page is not up to date. You should check the code for the modules to get the most up to date information. The information for `TruckSimAPI` is correct, as we use that internally as a reference.
+!!!
+
 ### MapUtils
 !!! Warning
 This module also requires the **TruckSimAPI** module to be enabled!

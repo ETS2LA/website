@@ -20,6 +20,10 @@ Welcome! I am happy to know that you are interested in developing plugins for ET
 If you are any more questions then hit me up on discord, this page is for Backend V2, and it's still experimental so give me any feedback you have!
 !!!
 
+!!! Warning
+This page is not up to date. It can provide some guidelines but you sould check code from the app. A good example are the `Sockets` plugins.
+!!!
+
 ## Introduction
 ### What is a plugin?
 As far as ETS2LA is concerned plugins are small programs that can interface with ETS2LA or the game. A large change from version 1 is that in 2.0 all plugins run in their own **processes**. This is not just threading, but entire seperate processes. The backend will handle all communications in and out of the plugin, so you can write the plugins just like you would write any python program.

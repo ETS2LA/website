@@ -1,6 +1,6 @@
 {
   "version": "3.6.0",
-  "created": "2024-10-25T14.28.26Z",
+  "created": "2025-03-26T12:52:44Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -9,19 +9,10 @@
       "path": "404.html"
     },
     {
-      "path": "assets\\acc_settings.png"
-    },
-    {
       "path": "assets\\favicon.ico"
     },
     {
       "path": "assets\\markdownlogo.png"
-    },
-    {
-      "path": "assets\\navigation.mp4"
-    },
-    {
-      "path": "assets\\settings.png"
     },
     {
       "path": "assets\\vehicle_detect.mp4"
@@ -46,25 +37,25 @@
       "path": "developers\\plugin_development\\index.html"
     },
     {
+      "path": "faq\\index.html"
+    },
+    {
       "path": "gdpr\\index.html"
     },
     {
-      "path": "guides\\installation\\beta-1\\index.html"
+      "path": "guides\\installation\\installer\\index.html"
     },
     {
       "path": "guides\\translation\\image.png"
     },
     {
-      "path": "guides\\translation\\jsontranslation\\index.html"
+      "path": "guides\\translation\\manual\\index.html"
     },
     {
       "path": "index.html"
     },
     {
       "path": "media\\index.html"
-    },
-    {
-      "path": "others\\annotation\\index.html"
     },
     {
       "path": "privacy-policy\\index.html"
@@ -118,19 +109,10 @@
       "path": "support-us\\index.html"
     },
     {
-      "path": "tags\\ai\\index.html"
-    },
-    {
-      "path": "tags\\annotation\\index.html"
-    },
-    {
       "path": "tags\\index.html"
     },
     {
       "path": "tags\\tutorial\\index.html"
-    },
-    {
-      "path": "tags\\vehicle-detection\\index.html"
     }
   ]
 }

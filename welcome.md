@@ -18,25 +18,22 @@ order: 100
 
 ### Features
 #### :icon-git-branch: Full access to simulator data
-Like many other applications we use a telemetry server in the ETS2 directory to get live data from the game. **However unlike others** we also have access to the games' road and prefab network to build a true full self-driving experience without the need for compute expensive vision models. **This also means that ETS2LA will work regardless of the camera or game version.*** You can now get those perfect cinematic shots without the need to hop onto multiplayer!
+Like many other applications we use a telemetry server in the ETS2 directory to get live data from the game. **However unlike others** we also have access to the games' road and prefab network to build a true full self-driving experience without the need for compute expensive vision models. You can now get those perfect cinematic shots without the need to hop onto multiplayer!
 
 #### :icon-globe: Multilingual
-We provide an easy to use translation framework for anyone to translate the app into their own language. The app will reload said language file on the fly, so you can see your the changes instantly.
+We provide an easy to use translation framework to translate ETS2LA into any language. Anyone can do this and the translations status is entirely driven by community efforts!
 
-#### :icon-location: Custom made navigation system
-ETS2LA has a custom made A* based navigation system to find the shortest path to your destination**. This system is used because the game's own navigation system path cannot be accessed from the telemetry provided by the game.
+#### :icon-location: Seamless navigation
+We have direct access to the in-game navigation route. ETS2LA will drive you to your destination, wherever it may be. This works with any map mod as long as the road data for said mod or mod combination has been extracted.
 
-#### :icon-log: State of the art custom AI models
-We use state of the art AI models that are trained on a large dataset of custom annotated images created and labeled by our community! This allows us to have a much more accurate and reliable experience than what you would get out of the box.
+#### :icon-log: No expensive AI models
+ETS2LA is entirely handwritten and relies on absolutely no AI. This means that ETS2LA is much more lightweight and performance efficient than many comparable programs. We've also heavily implemented multiprocessing ensuring that each plugin has it's own CPU core to run on.
 
 #### :icon-terminal: A rich developer experience
-We've built an easy to use backend that will let anyone create beautiful and functional plugins for ETS2LA. You can define an entire settings page with just a few lines of json. We also have a powerful event system that will let you listen to any events or keybinds from the game or within the app. 
+ETS2LA includes an easy to use backend that will let anyone create beautiful and functional plugins for ETS2LA. You can define an entire settings page with just a few python code. We've also made a powerful event system that will let you listen to any events or keybinds from the game or within the app. 
 
 #### :icon-project: A beautiful and modern user interface
-Built on top of NextJS and shadcn, we've made an easy to use and beautiful interface that will let you easily find what you need. We also include a visualization of the current state around the truck built with godot. Said visualization is highly inspired by a certain EV company...
+Built on top of NextJS and shadcn, we've made an easy to use and beautiful interface that is highly inspired by real world self driving solutions.
 
 * * * 
-\* The base self driving will work on any camera or game version, including VR use. But we still use vision models for vehicle detection, the app will not detect other vehicles and objects outside of the interior camera view.
-\*\* The navigation system currently finds the **shortest path**. This is not guaranteed to be the **fastest path**.
-* * *
 [!ref Screenshots and Videos](/media.md)
