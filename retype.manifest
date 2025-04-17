@@ -1,6 +1,6 @@
 {
   "version": "3.6.0",
-  "created": "2025-03-26T12:52:44Z",
+  "created": "2025-04-17T18:08:36Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -15,16 +15,20 @@
       "path": "assets\\markdownlogo.png"
     },
     {
-      "path": "assets\\vehicle_detect.mp4"
+      "path": "assets\\vehicle_detect.mp4",
+      "old": true
     },
     {
-      "path": "assets\\vehicledeetectionannotation\\annotation_example.png"
+      "path": "assets\\vehicledeetectionannotation\\annotation_example.png",
+      "old": true
     },
     {
-      "path": "assets\\vehicledeetectionannotation\\blurry_vehicle.png"
+      "path": "assets\\vehicledeetectionannotation\\blurry_vehicle.png",
+      "old": true
     },
     {
-      "path": "assets\\visualization.mp4"
+      "path": "assets\\visualization.mp4",
+      "old": true
     },
     {
       "path": "CNAME",
@@ -53,6 +57,9 @@
     },
     {
       "path": "index.html"
+    },
+    {
+      "path": "license\\index.html"
     },
     {
       "path": "media\\index.html"
