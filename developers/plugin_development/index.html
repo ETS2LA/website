@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/documentation">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.7.0.799170972682">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.10.1.804527873937">
 
     <!-- See retype.com -->
-    <meta name="generator" content="Retype 3.7.0">
+    <meta name="generator" content="Retype 3.10.1">
 
     <!-- Primary Meta Tags -->
     <title>Plugin Development</title>
@@ -29,36 +29,36 @@
     <meta property="twitter:title" content="Plugin Development">
     <meta property="twitter:description" content="Welcome! I am happy to know that you are interested in developing plugins for ETS2LA.">
 
-    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link href="../../assets/favicon.ico" rel="icon">
-    <link href="../../resources/css/retype.css?v=3.7.0.799170972682" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.10.1.804527873937" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.7.0.799170972682" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.7.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.7.0.799170972682" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.7.0.799170972682" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.10.1.804527873937" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.10.1" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.10.1.804527873937" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.10.1.804527873937" defer></script>
 </head>
 <body>
-    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
-        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    <div id="retype-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
     
-        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+        <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
             <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
                 <!-- Mobile menu button skeleton -->
-                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-                <div v-cloak id="docs-sidebar-toggle"></div>
+                <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="retype-sidebar-left-toggle-button"></div>
         
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-2xl">
+                        <a id="retype-branding-logo" href="../../" class="flex items-center leading-snug text-2xl">
                             <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
                                 <img class="max-h-10 dark:hidden md:inline-block" src="../../assets/favicon.ico">
                                 <img class="max-h-10 hidden dark:inline-block" src="../../assets/favicon.ico">
                             </span>
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">ETS2LA</span>
-                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">2.0.0</span>
+                            <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">ETS2LA</span>
+                        </a><span id="retype-branding-label" class="hidden mt-1 px-2 py-1 ml-4 text-xs font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-md md:inline-block">2.0.0</span>
                     </div>
         
                     <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -66,13 +66,13 @@
         
                 <div class="flex justify-between md:grow">
                     <!-- Top Nav -->
-                    <nav class="hidden md:flex">
+                    <nav id="retype-header-nav" class="hidden md:flex">
                         <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
                             <li class="mr-6">
                                 <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/Tumppi066/Euro-Truck-Simulator-2-Lane-Assist" target="_blank">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                         <g fill="currentColor">
-                                            <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/>
+                                            <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
                                         </g>
                                     </svg>
                                     <span>Github</span>
@@ -108,7 +108,7 @@
                     </div>
         
                     <div v-cloak class="flex justify-end grow">
-                        <div id="docs-mobile-search-button"></div>
+                        <div id="retype-mobile-search-button"></div>
                         <doc-search-desktop></doc-search-desktop>
         
                         <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
@@ -118,9 +118,9 @@
             </div>
         </header>
     
-        <div class="container relative flex bg-white">
+        <div id="retype-container" class="container relative flex bg-white">
             <!-- Sidebar Skeleton -->
-            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-white border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
             
                 <div class="flex items-center h-16 px-6">
                     <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
@@ -155,7 +155,7 @@
                                         <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/Tumppi066/Euro-Truck-Simulator-2-Lane-Assist" target="_blank">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px mr-1" width="18" height="18" viewBox="0 0 24 24" role="presentation">
                                                 <g fill="currentColor">
-                                                    <path d="M12 1C5.9225 1 1 5.9225 1 12C1 16.8675 4.14875 20.9787 8.52125 22.4362C9.07125 22.5325 9.2775 22.2025 9.2775 21.9137C9.2775 21.6525 9.26375 20.7862 9.26375 19.865C6.5 20.3737 5.785 19.1912 5.565 18.5725C5.44125 18.2562 4.905 17.28 4.4375 17.0187C4.0525 16.8125 3.5025 16.3037 4.42375 16.29C5.29 16.2762 5.90875 17.0875 6.115 17.4175C7.105 19.0812 8.68625 18.6137 9.31875 18.325C9.415 17.61 9.70375 17.1287 10.02 16.8537C7.5725 16.5787 5.015 15.63 5.015 11.4225C5.015 10.2262 5.44125 9.23625 6.1425 8.46625C6.0325 8.19125 5.6475 7.06375 6.2525 5.55125C6.2525 5.55125 7.17375 5.2625 9.2775 6.67875C10.1575 6.43125 11.0925 6.3075 12.0275 6.3075C12.9625 6.3075 13.8975 6.43125 14.7775 6.67875C16.8813 5.24875 17.8025 5.55125 17.8025 5.55125C18.4075 7.06375 18.0225 8.19125 17.9125 8.46625C18.6138 9.23625 19.04 10.2125 19.04 11.4225C19.04 15.6437 16.4688 16.5787 14.0213 16.8537C14.42 17.1975 14.7638 17.8575 14.7638 18.8887C14.7638 20.36 14.75 21.5425 14.75 21.9137C14.75 22.2025 14.9563 22.5462 15.5063 22.4362C19.8513 20.9787 23 16.8537 23 12C23 5.9225 18.0775 1 12 1Z"/>
+                                                    <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"/>
                                                 </g>
                                             </svg>
                                             <span>Github</span>
@@ -177,11 +177,11 @@
             <div class="grow min-w-0 dark:bg-dark-850">
                 <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
                 <div class="flex">
-                    <div class="min-w-0 p-4 grow md:px-16">
+                    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
                         <main class="relative pb-12 lg:pt-2">
-                            <div class="docs-markdown" id="docs-content">
+                            <div class="retype-markdown" id="retype-content">
                                 <!-- Rendered if sidebar right is enabled -->
-                                <div id="docs-sidebar-right-toggle"></div>
+                                <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
 <doc-anchor-target id="plugin-development" class="break-words">
     <h1>
@@ -189,7 +189,7 @@
         <span>Plugin Development</span>
     </h1>
 </doc-anchor-target>
-<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center print:justify-center">
     <div class="flex items-center">
         <div>By</div>
         <div class="ml-2 flex items-center">
@@ -206,10 +206,10 @@
 <hr>
 <p>Welcome! I am happy to know that you are interested in developing plugins for ETS2LA. This page will guide you through the process of creating your very own plugin.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -218,22 +218,25 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
+            <h5>Info</h5>
 <p>If you are any more questions then hit me up on discord, this page is for Backend V2, and it&#x27;s still experimental so give me any feedback you have!</p>
         </div>
     </div>
 </div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
 <p>This page is not up to date. It can provide some guidelines but you sould check code from the app. A good example are the <code v-pre>Sockets</code> plugins.</p>
         </div>
     </div>
@@ -258,7 +261,7 @@
     </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">ETS2LA
+<pre translate="no" class="language-none"><code v-pre class="language-none">ETS2LA
 └─── Plugin
 └─── UI
 
@@ -283,7 +286,7 @@ frontend
 <p>Why? Because at startup the app will read all the Plugin objects to build a list of plugins and their settings menus. If you import something large from a 3rd party library that will drastically slower the startup time and introduce additional RAM overhead.</p>
 <p>What should I do instead?</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python"># ETS2LA libraries
+<pre translate="no" class="language-python"><code v-pre class="language-python"># ETS2LA libraries
 from ETS2LA.Plugin import *
 from ETS2LA.UI import *
 
@@ -310,11 +313,11 @@ class Plugin(ETS2LAPlugin):
 <p>As you saw in the last section this is the main class of the plugin. The class will handle all the plugin backend logic and communications. Following is a list of features and example code (you can also check the plugin class itself, as it is documented).</p>
 <p>Features provided by the plugin class:</p>
 <doc-panels>
-   <doc-panel id="self-settings" collapsed>
+   <doc-panel id="selfsettings" collapsed>
        <template #title><code v-pre>self.settings</code></template>
 <p>This helps you access the settings file of the plugin, example below:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
@@ -323,7 +326,7 @@ class Plugin(ETS2LAPlugin):
 </doc-codeblock></div>
 <p>Also note that you can still use the legacy settings system, it also provides a listen command (wherein the new system updates each second)</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 import ETS2LA.backend.settings as settings
 
 class Plugin(ETS2LAPlugin):
@@ -337,11 +340,11 @@ class Plugin(ETS2LAPlugin):
     settings.Listen(&quot;plugin_name&quot;, update_settings)</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="self-plugins" collapsed>
+   <doc-panel id="selfplugins" collapsed>
        <template #title><code v-pre>self.plugins</code></template>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
@@ -359,7 +362,7 @@ class Plugin(ETS2LAPlugin):
 </div>
 <p>This is how you can get the return value of any running plugins, example below:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
@@ -368,11 +371,11 @@ class Plugin(ETS2LAPlugin):
             print(&quot;The plugin is not running or it hasn't returned data.&quot;)</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="self-modules" collapsed>
+   <doc-panel id="selfmodules" collapsed>
        <template #title><code v-pre>self.modules</code></template>
 <p>This is where you can access the running modules that you described in the <code v-pre>description</code> object (more on that later), example below:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
 
@@ -400,27 +403,29 @@ class Plugin(ETS2LAPlugin):
 </div>
 </p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
 <p>The modules are loaded in the order they are declared in the <code v-pre>description</code> object. This means that if you have a module that depends on another module, you should declare the requirement module first.</p>
         </div>
     </div>
 </div>
    </doc-panel>
-   <doc-panel id="self-state" collapsed>
+   <doc-panel id="selfstate" collapsed>
        <template #title><code v-pre>self.state</code></template>
 <p>This is the simplified interface to show a loading state in the frontend, example below:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 import time
 
 class Plugin(ETS2LAPlugin):
@@ -438,12 +443,12 @@ class Plugin(ETS2LAPlugin):
         self.state.reset()</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="self-globals-tags" collapsed>
+   <doc-panel id="selfglobalstags" collapsed>
        <template #title><code v-pre>self.globals.tags</code></template>
 <p>This is the preferred way to return and get data from other plugins. This makes sure that many plugin can return similar data (for example if the user has two object detection plugins on at the same time). It is an integral part of the new plugin system.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <div class="codeblock-title">plugins/Producer1/main.py</div>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
@@ -453,7 +458,7 @@ class Plugin(ETS2LAPlugin):
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <div class="codeblock-title">plugins/Producer2/main.py</div>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
@@ -463,7 +468,7 @@ class Plugin(ETS2LAPlugin):
 </doc-codeblock></div>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <div class="codeblock-title">plugins/Consumer/main.py</div>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
@@ -486,20 +491,22 @@ class Plugin(ETS2LAPlugin):
         &quot;&quot;&quot;</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
                 </g></g>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
+            <h5>Warning</h5>
 <p>The tag system uses python multiprocessing queues to send data back and forth, for very large data amounts (like images) this will take up to 200ms to transfer. You should thus use a time tag to only update the data when it&#x27;s changed.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     last_data_update = 0
@@ -514,33 +521,33 @@ class Plugin(ETS2LAPlugin):
     </div>
 </div>
    </doc-panel>
-   <doc-panel id="self-globals-settings" collapsed>
+   <doc-panel id="selfglobalssettings" collapsed>
        <template #title><code v-pre>self.globals.settings</code></template>
 <p>Same as <code v-pre>self.settings</code> except for the global settings file. Please note that this is read only, as multiple processes can access it at the same time. Legacy settings use the plugin name <code v-pre>&quot;global&quot;</code> to access the global settings.</p>
    </doc-panel>
 </doc-panels>
 <p>Plugin class variables:</p>
 <doc-panels>
-   <doc-panel id="badge-variant-ghost-text-optional-size-m-fps-cap" collapsed>
+   <doc-panel id="badge-variantghost-text--optional---sizem-fps_cap" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
     <span>- optional -</span>
 </span> <code v-pre>fps_cap</code></template>
 <p>This is a simple float to cap the fps of the plugin to a certain value. By default all plugins are capped to 30fps, and this can be changed by:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     fps_cap = 60
     ...</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-ghost-text-required-size-m-description" collapsed>
+   <doc-panel id="badge-variantghost-text--required---sizem-description" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
     <span>- required -</span>
 </span> <code v-pre>description</code></template>
 <p>This is the object that controls how the plugin is displayed and treated by the app. The <code v-pre>PluginDescription</code> object has the following parameters:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     description = PluginDescription(
@@ -557,13 +564,13 @@ class Plugin(ETS2LAPlugin):
     )</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-ghost-text-required-size-m-author" collapsed>
+   <doc-panel id="badge-variantghost-text--required---sizem-author" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
     <span>- required -</span>
 </span> <code v-pre>author</code></template>
 <p>Similar to the <code v-pre>description</code> object, this is a string that contains the author of the plugin.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     author = Author(
@@ -574,7 +581,7 @@ class Plugin(ETS2LAPlugin):
 </code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-ghost-text-optional-size-m-settings-menu" collapsed>
+   <doc-panel id="badge-variantghost-text--optional---sizem-settings_menu" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 bg-white border border-gray-300 dark:text-dark-350 dark:border-dark-450 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
     <span>- optional -</span>
 </span> <code v-pre>settings_menu</code></template>
@@ -583,26 +590,26 @@ class Plugin(ETS2LAPlugin):
 </doc-panels>
 <p>Plugin class functions and reserved variables:</p>
 <doc-panels>
-   <doc-panel id="badge-variant-success-text-usable-size-m-self-run" collapsed>
+   <doc-panel id="badge-variantsuccess-textusable-sizem-selfrun" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
     <span>usable</span>
 </span> <code v-pre>self.run()</code></template>
 <p>This is the main function of the plugin, and will be called every frame. This is where you should put your main logic.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
         print(&quot;Hello World!&quot;) # printed at 30fps</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-success-text-usable-size-m-self-notify" collapsed>
+   <doc-panel id="badge-variantsuccess-textusable-sizem-selfnotify" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
     <span>usable</span>
 </span> <code v-pre>self.notify()</code></template>
 <p>This is a function that will send a push notification to the frontend with the message and type provided by the arguments.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     def run(self):
@@ -610,13 +617,13 @@ class Plugin(ETS2LAPlugin):
         # type: Literal[&quot;info&quot;, &quot;warning&quot;, &quot;error&quot;, &quot;success&quot;] = &quot;info&quot;</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-success-text-usable-size-m-self-ask" collapsed>
+   <doc-panel id="badge-variantsuccess-textusable-sizem-selfask" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
     <span>usable</span>
 </span> <code v-pre>self.ask()</code></template>
 <p>This is a function that will ask the user a question and prompt them to click one of the options provided.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 def run(self):
     answer = self.ask(&quot;Do you want to continue?&quot;, options=[&quot;Yes&quot;, &quot;No&quot;], description=&quot;This is a description&quot;)
@@ -626,13 +633,13 @@ def run(self):
         print(&quot;The user doesn't want to continue&quot;)</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-success-text-usable-size-m-self-dialog" collapsed>
+   <doc-panel id="badge-variantsuccess-textusable-sizem-selfdialog" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
     <span>usable</span>
 </span> <code v-pre>self.dialog()</code></template>
 <p>Will show a dialog on the UI, with the form presented.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 from ETS2LA.UI import *
 
 class Dialog(ETS2LADialog):
@@ -657,21 +664,21 @@ class Plugin(ETS2LAPlugin):
         # data = {&quot;string_input&quot;: &quot;The user changed this&quot;, &quot;checkbox&quot;: True}</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-path" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfpath" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.path</code></template>
 <p><strong>READ ONLY</strong><br />
 Used to store the path of the plugin (relative to the plugins folder).</p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-queue" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-self_queue" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.*_queue</code></template>
 <p><strong>DO NOT USE</strong><br />
 The following queues are used to communicate with the backend, and should not be used by the plugin.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">self.return_queue
+<pre translate="no" class="language-none"><code v-pre class="language-none">self.return_queue
 self.plugins_queue
 self.plugins_return_queue
 self.settings_menu_queue
@@ -685,74 +692,74 @@ self.performance_queue
 self.performance_return_queue</code></pre>
 </doc-codeblock></div>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-performance" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfperformance" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.performance</code></template>
 <p><strong>READ ONLY</strong><br />
 Used to store the performance data of the plugin. This is a list of <code v-pre>tuple(timestamp, time_to_execute)</code>. The app will save the last 30 seconds of performance data.</p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-ensure-settings-file" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfensure_settings_file" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.ensure_settings_file()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-ensure-functions" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfensure_functions" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.ensure_functions()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-new" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-self__new__" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.__new__()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-load-modules" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfload_modules" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.load_modules()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-init" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-self__init__" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.__init__()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-settings-menu-thread" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfsettings_menu_thread" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.settings_menu_thread()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-frontend-thread" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selffrontend_thread" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.frontend_thread()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-performance-thread" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfperformance_thread" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.performance_thread()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-plugin" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfplugin" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.plugin()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-before" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfbefore" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.before()</code></template>
 <p><strong>DO NOT USE</strong></p>
    </doc-panel>
-   <doc-panel id="badge-variant-danger-text-reserved-size-m-self-after" collapsed>
+   <doc-panel id="badge-variantdanger-textreserved-sizem-selfafter" collapsed>
        <template #title><span class="no-link inline-flex align-middle items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
     <span>reserved</span>
 </span> <code v-pre>self.after()</code></template>
@@ -760,11 +767,11 @@ Used to store the performance data of the plugin. This is a list of <code v-pre>
    </doc-panel>
 </doc-panels>
 <p>Example plugin:</p>
-<doc-panel id="open-close" collapsed>
+<doc-panel id="openclose" collapsed>
     <template #title>Open/Close</template>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
 <div class="codeblock-title">plugins/Sockets/main.py</div>
-<pre class="language-python"><code v-pre class="language-python"># This plugin was not made from the ground up for the new backend, so it is not perfectly optimized!
+<pre translate="no" class="language-python"><code v-pre class="language-python"># This plugin was not made from the ground up for the new backend, so it is not perfectly optimized!
 from ETS2LA.Plugin import *
 from ETS2LA.UI import *
 
@@ -1134,7 +1141,7 @@ class Plugin(ETS2LAPlugin):
        <template #title><code v-pre>dynamic: False</code></template>
 <p>In this mode the settings are built at app startup, and then they won&#x27;t be updated in the future. This is useful for settings that don&#x27;t need to be updated in real time.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 from ETS2LA.UI import *
 
 class SettingsMenu(ETS2LASettingsMenu):
@@ -1152,8 +1159,8 @@ class Plugin(ETS2LAPlugin):
     ...</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
@@ -1174,7 +1181,7 @@ class Plugin(ETS2LAPlugin):
        <template #title><code v-pre>dynamic: True</code></template>
 <p>In this mode the settings menu is updated in real time as long as the plugin is enabled. This way you can make interactive menus that show their status as it changes.</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 from ETS2LA.UI import *
 
 class SettingsMenu(ETS2LASettingsMenu):
@@ -1242,7 +1249,7 @@ class Plugin(ETS2LAPlugin):
 </ul>
 <p>Usage:</p>
 <div class="codeblock-wrapper"><doc-codeblock line-numbers>
-<pre class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
+<pre translate="no" class="language-python"><code v-pre class="language-python">from ETS2LA.Plugin import *
 
 class Plugin(ETS2LAPlugin):
     # Use the event name as the function name.
@@ -1251,8 +1258,8 @@ class Plugin(ETS2LAPlugin):
     ...</code></pre>
 </doc-codeblock></div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
@@ -1269,8 +1276,8 @@ class Plugin(ETS2LAPlugin):
     </div>
 </div>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr-lg rounded-br-lg doc-callout bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
             <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
@@ -1297,7 +1304,7 @@ class Plugin(ETS2LAPlugin):
 <p>As all plugins run in their own processes, you need to remember that when importing things from the ETS2LA libraries, the data in those libraries will not be the same for all plugins.</p>
 <p>In addition to this you should remember that when returning any information from a plugin, whether it be using the tags or the return data values, you should not return large amounts of data. The larger the data, the more time it will take for the main process to extract it from the plugin. This will then slow down the entire program.</p>
 
-                                <div class="flex items-center mt-6 mb-6 clear-both">
+                                <div id="retype-tags" class="flex items-center mt-6 mb-6 clear-both">
                                     <span>
                                         <a href="../../tags/">
                                             <svg class="inline-block -mb-px mr-1.5 text-blue-500 dark:text-blue-400" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" overflow="visible" fill="currentColor"><g><path d="M21.3 9.88l-8.59-8.59C12.52 1.11 12.27 1 12 1H2c-.55 0-1 .45-1 1v10c0 .27.11.52.29.71l8.59 8.58c.57.57 1.32.88 2.12.88s1.55-.31 2.12-.88l7.17-7.17a3.009 3.009 0 00.01-4.24zm-1.42 2.82l-7.17 7.17c-.39.39-1.02.39-1.42 0L3 11.59V3h8.59l8.29 8.29c.39.39.39 1.03 0 1.41z" /><path d="M7.01 6C6.45 6 6 6.45 6 7s.45 1 1 1 1-.45 1-1-.44-1-.99-1z" /></g></svg>
@@ -1311,9 +1318,9 @@ class Plugin(ETS2LAPlugin):
                                 <!-- Required only on API pages -->
                                 <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
                             </div>
-                            <footer class="clear-both">
+                            <footer id="retype-content-footer" class="clear-both">
                             
-                                <nav class="flex mt-14">
+                                <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
                                         <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../guides/translation/manual/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
@@ -1337,16 +1344,16 @@ class Plugin(ETS2LAPlugin):
                             </footer>
                         </main>
                 
-                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
-                            <footer class="flex flex-wrap items-center justify-between">
-                                <div>
+                        <div id="retype-page-footer" class="print:border-none border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between print:justify-center">
+                                <div id="retype-footer-links" class="print:hidden">
                                     <ul class="flex flex-wrap items-center text-sm">
                                         <li>
                                             <a class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="../../license/">License</a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Tumppi066 &amp; Contributors © All rights reserved.</p></div>
+                                <div id="retype-copyright" class="print:justify-center docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Tumppi066 &amp; Contributors © All rights reserved.</p></div>
                             </footer>
                         </div>
                     </div>
@@ -1373,7 +1380,7 @@ class Plugin(ETS2LAPlugin):
     </div>
 
 
-    <div id="docs-overlay-target"></div>
+    <div id="retype-overlay-target"></div>
 
     <script data-cfasync="false">window.__DOCS__ = { "title": "Plugin Development", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
