@@ -5,7 +5,7 @@ authors:
     avatar: https://avatars.githubusercontent.com/u/83072683?v=4
 date: 2024-8-29
 icon: heart
-order: 0
+order: 2
 ---
 !!! Thank you!
 Just your presence in the community is enough to keep us going! However if you do want to support us in other ways, then this page will tell you how to do that.

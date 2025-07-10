@@ -1,6 +1,7 @@
 ---
 icon: image
 label: Media
+order: 2
 ---
 !!! Note
 This page will be expanded upon later.
