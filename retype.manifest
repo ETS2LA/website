@@ -1,6 +1,6 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-10T21.21.35Z",
+  "created": "2025-07-10T21.44.57Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -35,10 +35,12 @@
       "old": true
     },
     {
-      "path": "developers\\modules\\index.html"
+      "path": "developers\\modules\\index.html",
+      "old": true
     },
     {
-      "path": "developers\\plugin_development\\index.html"
+      "path": "developers\\plugin_development\\index.html",
+      "old": true
     },
     {
       "path": "faq\\index.html"
@@ -50,10 +52,7 @@
       "path": "guides\\installation\\installer\\index.html"
     },
     {
-      "path": "guides\\translation\\image.png"
-    },
-    {
-      "path": "guides\\translation\\manual\\index.html"
+      "path": "guides\\translation\\index.html"
     },
     {
       "path": "index.html"
