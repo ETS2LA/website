@@ -1,12 +1,15 @@
 {
   "version": "3.11.0",
-  "created": "2025-07-10T21.44.57Z",
+  "created": "2025-08-12T11.40.28Z",
   "files": [
     {
       "path": ".nojekyll"
     },
     {
       "path": "404.html"
+    },
+    {
+      "path": "ads.txt"
     },
     {
       "path": "assets\\favicon.ico"
@@ -41,9 +44,6 @@
     {
       "path": "developers\\plugin_development\\index.html",
       "old": true
-    },
-    {
-      "path": "faq\\index.html"
     },
     {
       "path": "gdpr\\index.html"
@@ -82,7 +82,8 @@
       "path": "resources\\js\\lunr.js"
     },
     {
-      "path": "resources\\js\\prism.js"
+      "path": "resources\\js\\prism.js",
+      "old": true
     },
     {
       "path": "resources\\js\\retype.js"
@@ -112,13 +113,22 @@
       "path": "sitemap.xml.gz"
     },
     {
-      "path": "support-us\\index.html"
-    },
-    {
       "path": "tags\\index.html"
     },
     {
       "path": "tags\\tutorial\\index.html"
+    },
+    {
+      "path": "troubleshooting\\crashing\\index.html"
+    },
+    {
+      "path": "troubleshooting\\installer-fails\\index.html"
+    },
+    {
+      "path": "troubleshooting\\not-working\\index.html"
+    },
+    {
+      "path": "troubleshooting\\remote-connection\\index.html"
     },
     {
       "path": "vtcs\\index.html"

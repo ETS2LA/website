@@ -33,16 +33,18 @@ branding:
   # logoDark: /assets/firstTimeSetup/logo.png    # Path to a logo file to use in dark mode
   # logoAlign: right            # Align the logo to the right or the left
   label: 0.3.0                 # Optional label
-                              # To remove the label, remove this config
-  colors:
-    label:                    # Label colors
-      text: "#ffffff"   # Custom color for the label background
-      background: "#c65c15"         # Custom color for the label text
 
 # -----------------------------------------------------------------------------
 
 links:                        # Custom links to add to the top bar
                               # See also: footer.links
+  - text: Developers                # The text to use for the link
+    link: https://ets2la.com/developers # Link to an internal file or external URL
+    icon: code         # A custom icon name, :emoji:, <svg>, or
+                              # a path to a file
+    iconAlign: left           # Icon alignment, to the left or right
+    target: blank             # Custom target
+    
   - text: Github                # The text to use for the link
     link: https://github.com/Tumppi066/Euro-Truck-Simulator-2-Lane-Assist # Link to an internal file or external URL
     icon: mark-github         # A custom icon name, :emoji:, <svg>, or
@@ -50,12 +52,6 @@ links:                        # Custom links to add to the top bar
     iconAlign: left           # Icon alignment, to the left or right
     target: blank             # Custom target
 
-  - text: Developers                # The text to use for the link
-    link: https://ets2la.com/developers # Link to an internal file or external URL
-    icon: code         # A custom icon name, :emoji:, <svg>, or
-                              # a path to a file
-    iconAlign: left           # Icon alignment, to the left or right
-    target: blank             # Custom target
 
 # -----------------------------------------------------------------------------
 
