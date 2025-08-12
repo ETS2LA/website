@@ -10,9 +10,9 @@ title: Doesn't work!
 ---
 !!! Notice
 Please check these pages for other common issues, what you are looking for might not be on this page.
-[Crashing](https://ets2la.com/Troubleshooting/crashing) *(ets2la.com)*
-[Installer Fails](https://ets2la.com/Troubleshooting/installer-fails) *(ets2la.com)*
-[Remote Connection](https://ets2la.com/Troubleshooting/remote-connection) *(ets2la.com)* 
+[Crashing](https://ets2la.com/troubleshooting/crashing) *(ets2la.com)*
+[Installer Fails](https://ets2la.com/troubleshooting/installer-fails) *(ets2la.com)*
+[Remote Connection](https://ets2la.com/troubleshooting/remote-connection) *(ets2la.com)* 
 !!!
 
 ---
