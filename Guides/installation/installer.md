@@ -6,7 +6,7 @@ authors:
 date: 2025-3-21
 icon: cloud
 title: With the Installer
-order: 0
+order: 1
 tags: 
   - tutorial
 ---
