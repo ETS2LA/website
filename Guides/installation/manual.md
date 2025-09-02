@@ -6,6 +6,7 @@ authors:
 date: 2025-09-02
 icon: move-to-bottom
 title: Manually
+order: 1
 tags: 
   - tutorial
 ---
@@ -13,7 +14,7 @@ tags:
 This guide will walk you through installing ETS2LA **manually**.
 
 #### Download the requirements
-==- [!badge variant="ghost" text="1"] ‎ [!badge variant="ghost" text="Optional"] ‎ [!badge variant="dark" text="astral.sh uv"]
+==- [!badge variant="ghost" text="1"] ‎ [!badge variant="ghost" text="Required"] ‎ [!badge variant="dark" text="uv"]
 You can download `uv` from [here](https://docs.astral.sh/uv/getting-started/installation/) *(astral.sh)*.
 ==- [!badge variant="ghost" text="2"] ‎ [!badge variant="ghost" text="Required"] ‎ [!badge variant="dark" text="Git"]
 Most people will already have `git` installed, if you don't then get it from [here](https://git-scm.com/) *git-scm.com*.
