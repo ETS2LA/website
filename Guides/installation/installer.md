@@ -24,7 +24,7 @@ Most people will already have ran `vc_redist` once, but in the case that you've 
 You can now download the installer from [here](https://github.com/ETS2LA/installer/releases/latest) *(github.com)*.
 ===
 
-#### Installing the app
+#### Installing ETS2LA
 Just run the installer exe file you downloaded in the previous step. It will ask you for a few things, such as where to install the app and whether you want a desktop shortcut.
 
 #### What to do once ETS2LA is open?
