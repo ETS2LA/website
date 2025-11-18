@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ets2la.github.io/documentation/sitemap.xml.gz
+Sitemap: https://ets2la.com/sitemap.xml.gz
