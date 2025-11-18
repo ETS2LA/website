@@ -21,7 +21,7 @@ output: wiki               # Custom path to the output directory
 # -----------------------------------------------------------------------------
 
 #url: example.com              # The base URL of your website
-url: https://ets2la.github.io/documentation         # Can also be a sub-domain
+url: https://ets2la.com        # Can also be a sub-domain
 #url: example.com/docs         # Can also include a sub-folder path
 #url: https://example.com/docs # Can also include a protocol
 
@@ -39,7 +39,7 @@ branding:
 links:                        # Custom links to add to the top bar
                               # See also: footer.links
   - text: Developers                # The text to use for the link
-    link: https://ets2la.com/developers # Link to an internal file or external URL
+    link: https://docs.ets2la.com # Link to an internal file or external URL
     icon: code         # A custom icon name, :emoji:, <svg>, or
                               # a path to a file
     iconAlign: left           # Icon alignment, to the left or right
