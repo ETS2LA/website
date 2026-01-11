@@ -7,4 +7,4 @@ order: 2
 This page will be expanded upon later.
 !!!
 
-[!embed](https://www.youtube.com/watch?v=EgZp05tA5ks&t=3m30s)
+[!embed](https://youtu.be/k3A6IcjQG6U?si=ppKrfNnkJPYLu_BT&t=32)
