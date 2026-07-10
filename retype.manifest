@@ -1,6 +1,6 @@
 {
-  "version": "3.11.0",
-  "created": "2025-08-12T11.40.28Z",
+  "version": "4.6.0",
+  "created": "2026-07-10T18:42:01Z",
   "files": [
     {
       "path": ".nojekyll"
@@ -12,10 +12,19 @@
       "path": "ads.txt"
     },
     {
+      "path": "assets\\failedtoloadmapdata.png"
+    },
+    {
       "path": "assets\\favicon.ico"
     },
     {
       "path": "assets\\markdownlogo.png"
+    },
+    {
+      "path": "assets\\navigationdisabled.png"
+    },
+    {
+      "path": "assets\\opaqueoverlay.png"
     },
     {
       "path": "assets\\vehicle_detect.mp4",
@@ -34,8 +43,7 @@
       "old": true
     },
     {
-      "path": "CNAME",
-      "old": true
+      "path": "CNAME"
     },
     {
       "path": "developers\\modules\\index.html",
@@ -46,25 +54,46 @@
       "old": true
     },
     {
+      "path": "gdpr.md"
+    },
+    {
       "path": "gdpr\\index.html"
     },
     {
-      "path": "guides\\installation\\installer\\index.html"
+      "path": "help\\faq.md"
     },
     {
-      "path": "guides\\translation\\index.html"
+      "path": "help\\faq\\index.html"
+    },
+    {
+      "path": "help\\installation.md"
+    },
+    {
+      "path": "help\\installation\\index.html"
     },
     {
       "path": "index.html"
     },
     {
+      "path": "license.md"
+    },
+    {
       "path": "license\\index.html"
     },
     {
-      "path": "media\\index.html"
+      "path": "llms.txt"
     },
     {
-      "path": "privacy-policy\\index.html"
+      "path": "others\\privacy-policy.md"
+    },
+    {
+      "path": "others\\privacy-policy\\index.html"
+    },
+    {
+      "path": "others\\vtcs.md"
+    },
+    {
+      "path": "others\\vtcs\\index.html"
     },
     {
       "path": "resources\\css\\retype.css"
@@ -77,6 +106,9 @@
     },
     {
       "path": "resources\\js\\config.js"
+    },
+    {
+      "path": "resources\\js\\instagram.js"
     },
     {
       "path": "resources\\js\\lunr.js"
@@ -110,28 +142,14 @@
       "path": "robots.txt"
     },
     {
-      "path": "sitemap.xml.gz"
+      "path": "sitemap.xml"
     },
     {
-      "path": "tags\\index.html"
+      "path": "sitemap.xml.gz",
+      "old": true
     },
     {
-      "path": "tags\\tutorial\\index.html"
-    },
-    {
-      "path": "troubleshooting\\crashing\\index.html"
-    },
-    {
-      "path": "troubleshooting\\installer-fails\\index.html"
-    },
-    {
-      "path": "troubleshooting\\not-working\\index.html"
-    },
-    {
-      "path": "troubleshooting\\remote-connection\\index.html"
-    },
-    {
-      "path": "vtcs\\index.html"
+      "path": "welcome.md"
     }
   ]
 }

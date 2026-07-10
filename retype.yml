@@ -32,7 +32,7 @@ branding:
   logo: /assets/favicon.ico             # Path to a logo file
   # logoDark: /assets/firstTimeSetup/logo.png    # Path to a logo file to use in dark mode
   # logoAlign: right            # Align the logo to the right or the left
-  label: 0.3.0                 # Optional label
+  label: 3.4.22                 # Optional label
 
 # -----------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ links:                        # Custom links to add to the top bar
     target: blank             # Custom target
     
   - text: Github                # The text to use for the link
-    link: https://github.com/Tumppi066/Euro-Truck-Simulator-2-Lane-Assist # Link to an internal file or external URL
+    link: https://github.com/ETS2LA/ETS2LA # Link to an internal file or external URL
     icon: mark-github         # A custom icon name, :emoji:, <svg>, or
                               # a path to a file
     iconAlign: left           # Icon alignment, to the left or right

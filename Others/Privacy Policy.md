@@ -3,17 +3,21 @@ authors:
   - name: Tumppi066
     link: https://github.com/Tumppi066
     avatar: https://avatars.githubusercontent.com/u/83072683?v=4
-date: 2025-3-26
+date: 2026-7-10
 icon: shield-lock
 order: -1
 ---
+
+
 # Privacy Policy
+# THIS PAGE IS OUT OF DATE. CURRENTLY ETS2LA CONTAINS NO IDENTIFIABLE INFORMATION, OR ACCOUNT LOGIN. WE WILL UPDATE THIS PAGE AND LINK HERE ONCE THOSE FEATURES ARE IMPLEMENTED.
+
 1. Introduction
 2. The information we store
 3. How we use your information
 4. Data Retention
 5. Unregistered Users
-6. Changes to this Privacy Policy
+6. Changes to this Privacy Policy   
 
 # Introduction
 This privacy policy applies to our cloud services, which you need to explicitly enable by logging in. If you don't enable the cloud, ETS2LA will not collect any identifiable data whatsoever. Our websites (like the one you are currently on) might collect data about you via their hosts and DNS providers. You can find out more about this in our GDPR policy linked below.
