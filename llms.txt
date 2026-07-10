@@ -1,0 +1,15 @@
+﻿# ETS2LA
+
+> ETS2LA is a project that aims to finally bring self-driving technology to SCS Software's Truck Simulators. This page includes some information, but if you want to read all the documentation then please head over to our website!
+
+- [ETS2LA](https://ets2la.com/welcome.md): ETS2LA
+
+## Support
+
+- [Installation](https://ets2la.com/help/installation.md): Download the latest installer from https://ets2la.com/downloads. See the webpage for instructions on which file to download.
+- [Frequently Asked Questions](https://ets2la.com/help/faq.md): This page compiles various frequently asked questions and their answers. Please use the search functionality, and the table of contents on the right side of this page to navigate.
+
+## Others
+
+- [VTCs](https://ets2la.com/others/vtcs.md): That's totally fair! We provide two ways for VTC owners to detect ETS2LA. One of these is via the log files, just look for any log containing ets2la and you'll be golden.
+- [Privacy Policy](https://ets2la.com/others/privacy-policy.md): Introduction

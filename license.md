@@ -1,185 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="4.6.0.837024426728">
-
-    <!-- See retype.com -->
-    <meta name="generator" content="Retype 4.6.0">
-
-    <!-- Primary Meta Tags -->
-    <title>License</title>
-    <meta name="title" content="License">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://ets2la.com/license/">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://ets2la.com/sitemap.xml">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ets2la.com/license/">
-    <meta property="og:title" content="License">
-    <meta property="og:site_name" content="ETS2LA">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://ets2la.com/license/">
-    <meta name="twitter:title" content="License">
-
-    <!-- Alternate Markdown -->
-    <link rel="alternate" type="text/markdown" href="https://ets2la.com/license.md">
-
-    <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
-
-    <link id="retype-favicon" rel="icon" href="../assets/favicon.ico" />
-    <link href="../resources/css/retype.css?v=4.6.0.837024426728" rel="stylesheet">
-
-    <script data-cfasync="false" src="../resources/js/config.js?v=4.6.0.837024426728" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=4.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=4.6.0.837024426728" data-turbo-eval="false" defer></script>
-</head>
-<body>
-    <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
-    <div class="absolute bottom-0 left-0" style="top: 5rem; right: 50%"></div>
-
-    <header id="retype-header" class="sticky top-0 z-30 flex w-full h-16 bg-header-bg border-b border-header-border md:h-20">
-        <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
-            <!-- Mobile menu button skeleton -->
-            <button v-cloak class="skeleton retype-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-hidden rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
-            <div v-cloak id="retype-sidebar-left-toggle-button"></div>
-    
-            <!-- Logo -->
-            <div class="flex items-center justify-between h-full py-2 md:w-75">
-                <div class="flex items-center px-2 md:px-6">
-                    <a id="retype-branding-logo" href="https://ets2la.com/" class="flex items-center leading-snug text-2xl">
-                        <span class="w-10 mr-2 grow-0 shrink-0 overflow-hidden">
-                            <img class="max-h-10 md:inline-block" src="../assets/favicon.ico" alt="">
-                        </span>
-                        <span class="dark:text-white font-bold line-clamp-1 md:line-clamp-2">ETS2LA</span>
-                    </a><span id="retype-branding-label" class="inline-flex mt-1 px-2 py-1 ml-4 text-xs font-medium leading-none items-center rounded-md bg-branding-label-bg text-branding-label-text ring-1 ring-branding-label-border ring-inset md:inline-block">3.4.22</span>
-                </div>
-    
-                <span class="hidden h-8 border-r md:inline-block border-base-border"></span>
-            </div>
-    
-            <div class="flex justify-between md:grow">
-                <!-- Top Nav -->
-                <nav id="retype-header-nav" class="hidden md:flex">
-                    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
-                        <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://docs.ets2la.com" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                    <path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/>
-                                </svg>
-                                <span>Developers</span>
-                            </a>
-                        </li>
-                        <li class="mr-6">
-                            <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/ETS2LA/ETS2LA" target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                    <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
-                                </svg>
-                                <span>Github</span>
-                            </a>
-                        </li>
-    
-                    </ul>
-                </nav>
-    
-                <div v-cloak class="flex justify-end grow">
-                    <div id="retype-mobile-search-button"></div>
-                    <doc-search-desktop></doc-search-desktop>
-    
-                    <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
-                    <doc-history></doc-history>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <div id="retype-container" class="container relative flex bg-white">
-        <!-- Sidebar Skeleton -->
-        <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-sidebar-left-bg border-sidebar-left-border sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton">
-        
-            <div class="flex items-center h-16 px-6">
-                <input id="retype-filter-input-mock" class="w-full h-10 pl-8 px-3 py-2 transition-colors duration-200 ease-linear bg-filter-bg border border-filter-border rounded-lg shadow-none md:text-sm hover:border-filter-border-hover focus:outline-hidden focus:border-filter-border-focus placeholder-filter-placeholder" type="text">
-            </div>
-        
-            <div class="pl-6 mt-1 mb-4">
-                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-                <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-            </div>
-        
-            <div class="shrink-0 mt-auto bg-transparent dark:border-base-border">
-                <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                    <span class="text-xs whitespace-nowrap">Powered by</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Sidebar component -->
-        <doc-sidebar v-cloak>
-            <template #sidebar-footer>
-                <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-base-border">
-        
-                    <div class="py-3 px-6 md:hidden border-b dark:border-base-border">
-                        <nav>
-                            <ul class="flex flex-wrap justify-center items-center">
-                                <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://docs.ets2la.com" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"/>
-                                        </svg>
-                                        <span>Developers</span>
-                                    </a>
-                                </li>
-                                <li class="mr-6">
-                                    <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-header-text font-header-text hover:text-header-text-hover" href="https://github.com/ETS2LA/ETS2LA" target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="block shrink-0 mr-1.5" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"/>
-                                        </svg>
-                                        <span>Github</span>
-                                    </a>
-                                </li>
-        
-                            </ul>
-                        </nav>
-                    </div>
-        
-                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-350 dark:text-dark-400 hover:text-gray-600 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
-                        <span class="text-xs whitespace-nowrap">Powered by</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
-                    </a>
-                </div>
-            </template>
-        </doc-sidebar>
-
-        <div class="grow min-w-0 bg-body-bg">
-            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
-<div class="flex">
-    <div id="retype-main" class="min-w-0 p-4 grow md:px-16">
-        <main class="relative pb-12 lg:pt-2">
-            <div class="relative retype-markdown" id="retype-content">
-                <!-- Rendered if sidebar right is enabled -->
-                <div id="retype-sidebar-right-toggle"></div>
-                <doc-page-actions></doc-page-actions>
-
-                <!-- Page content  -->
-<h1 id="license">License</h1>
-<div id="license-code-1" class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">                    GNU GENERAL PUBLIC LICENSE
+```
+                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- Copyright (C) 2007 Free Software Foundation, Inc. &lt;https://fsf.org/&gt;
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -250,35 +73,35 @@ modification follow.
 
   0. Definitions.
 
-  &quot;This License&quot; refers to version 3 of the GNU General Public License.
+  "This License" refers to version 3 of the GNU General Public License.
 
-  &quot;Copyright&quot; also means copyright-like laws that apply to other kinds of
+  "Copyright" also means copyright-like laws that apply to other kinds of
 works, such as semiconductor masks.
 
-  &quot;The Program&quot; refers to any copyrightable work licensed under this
-License.  Each licensee is addressed as &quot;you&quot;.  &quot;Licensees&quot; and
-&quot;recipients&quot; may be individuals or organizations.
+  "The Program" refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as "you".  "Licensees" and
+"recipients" may be individuals or organizations.
 
-  To &quot;modify&quot; a work means to copy from or adapt all or part of the work
+  To "modify" a work means to copy from or adapt all or part of the work
 in a fashion requiring copyright permission, other than the making of an
-exact copy.  The resulting work is called a &quot;modified version&quot; of the
-earlier work or a work &quot;based on&quot; the earlier work.
+exact copy.  The resulting work is called a "modified version" of the
+earlier work or a work "based on" the earlier work.
 
-  A &quot;covered work&quot; means either the unmodified Program or a work based
+  A "covered work" means either the unmodified Program or a work based
 on the Program.
 
-  To &quot;propagate&quot; a work means to do anything with it that, without
+  To "propagate" a work means to do anything with it that, without
 permission, would make you directly or secondarily liable for
 infringement under applicable copyright law, except executing it on a
 computer or modifying a private copy.  Propagation includes copying,
 distribution (with or without modification), making available to the
 public, and in some countries other activities as well.
 
-  To &quot;convey&quot; a work means any kind of propagation that enables other
+  To "convey" a work means any kind of propagation that enables other
 parties to make or receive copies.  Mere interaction with a user through
 a computer network, with no transfer of a copy, is not conveying.
 
-  An interactive user interface displays &quot;Appropriate Legal Notices&quot;
+  An interactive user interface displays "Appropriate Legal Notices"
 to the extent that it includes a convenient and prominently visible
 feature that (1) displays an appropriate copyright notice, and (2)
 tells the user that there is no warranty for the work (except to the
@@ -289,27 +112,27 @@ menu, a prominent item in the list meets this criterion.
 
   1. Source Code.
 
-  The &quot;source code&quot; for a work means the preferred form of the work
-for making modifications to it.  &quot;Object code&quot; means any non-source
+  The "source code" for a work means the preferred form of the work
+for making modifications to it.  "Object code" means any non-source
 form of a work.
 
-  A &quot;Standard Interface&quot; means an interface that either is an official
+  A "Standard Interface" means an interface that either is an official
 standard defined by a recognized standards body, or, in the case of
 interfaces specified for a particular programming language, one that
 is widely used among developers working in that language.
 
-  The &quot;System Libraries&quot; of an executable work include anything, other
+  The "System Libraries" of an executable work include anything, other
 than the work as a whole, that (a) is included in the normal form of
 packaging a Major Component, but which is not part of that Major
 Component, and (b) serves only to enable use of the work with that
 Major Component, or to implement a Standard Interface for which an
 implementation is available to the public in source code form.  A
-&quot;Major Component&quot;, in this context, means a major essential component
+"Major Component", in this context, means a major essential component
 (kernel, window system, and so on) of the specific operating system
 (if any) on which the executable work runs, or a compiler used to
 produce the work, or an object code interpreter used to run it.
 
-  The &quot;Corresponding Source&quot; for a work in object code form means all
+  The "Corresponding Source" for a work in object code form means all
 the source code needed to generate, install, and (for an executable
 work) run the object code and to modify the work, including scripts to
 control those activities.  However, it does not include the work's
@@ -395,7 +218,7 @@ terms of section 4, provided that you also meet all of these conditions:
     b) The work must carry prominent notices stating that it is
     released under this License and any conditions added under section
     7.  This requirement modifies the requirement in section 4 to
-    &quot;keep intact all notices&quot;.
+    "keep intact all notices".
 
     c) You must license the entire work, as a whole, under this
     License to anyone who comes into possession of a copy.  This
@@ -414,7 +237,7 @@ terms of section 4, provided that you also meet all of these conditions:
 works, which are not by their nature extensions of the covered work,
 and which are not combined with it such as to form a larger program,
 in or on a volume of a storage or distribution medium, is called an
-&quot;aggregate&quot; if the compilation and its resulting copyright are not
+"aggregate" if the compilation and its resulting copyright are not
 used to limit the access or legal rights of the compilation's users
 beyond what the individual works permit.  Inclusion of a covered work
 in an aggregate does not cause this License to apply to the other
@@ -472,12 +295,12 @@ in one of these ways:
 from the Corresponding Source as a System Library, need not be
 included in conveying the object code work.
 
-  A &quot;User Product&quot; is either (1) a &quot;consumer product&quot;, which means any
+  A "User Product" is either (1) a "consumer product", which means any
 tangible personal property which is normally used for personal, family,
 or household purposes, or (2) anything designed or sold for incorporation
 into a dwelling.  In determining whether a product is a consumer product,
 doubtful cases shall be resolved in favor of coverage.  For a particular
-product received by a particular user, &quot;normally used&quot; refers to a
+product received by a particular user, "normally used" refers to a
 typical or common use of that class of product, regardless of the status
 of the particular user or of the way in which the particular user
 actually uses, or expects or is expected to use, the product.  A product
@@ -485,7 +308,7 @@ is a consumer product regardless of whether the product has substantial
 commercial, industrial or non-consumer uses, unless such uses represent
 the only significant mode of use of the product.
 
-  &quot;Installation Information&quot; for a User Product means any methods,
+  "Installation Information" for a User Product means any methods,
 procedures, authorization keys, or other information required to install
 and execute modified versions of a covered work in that User Product from
 a modified version of its Corresponding Source.  The information must
@@ -520,7 +343,7 @@ unpacking, reading or copying.
 
   7. Additional Terms.
 
-  &quot;Additional permissions&quot; are terms that supplement the terms of this
+  "Additional permissions" are terms that supplement the terms of this
 License by making exceptions from one or more of its conditions.
 Additional permissions that are applicable to the entire Program shall
 be treated as though they were included in this License, to the extent
@@ -563,8 +386,8 @@ that material) supplement the terms of this License with terms:
     any liability that these contractual assumptions directly impose on
     those licensors and authors.
 
-  All other non-permissive additional terms are considered &quot;further
-restrictions&quot; within the meaning of section 10.  If the Program as you
+  All other non-permissive additional terms are considered "further
+restrictions" within the meaning of section 10.  If the Program as you
 received it, or any part of it, contains a notice stating that it is
 governed by this License along with a term that is a further
 restriction, you may remove that term.  If a license document contains
@@ -628,7 +451,7 @@ receives a license from the original licensors, to run, modify and
 propagate that work, subject to this License.  You are not responsible
 for enforcing compliance by third parties with this License.
 
-  An &quot;entity transaction&quot; is a transaction transferring control of an
+  An "entity transaction" is a transaction transferring control of an
 organization, or substantially all assets of one, or subdividing an
 organization, or merging organizations.  If propagation of a covered
 work results from an entity transaction, each party to that
@@ -648,17 +471,17 @@ sale, or importing the Program or any portion of it.
 
   11. Patents.
 
-  A &quot;contributor&quot; is a copyright holder who authorizes use under this
+  A "contributor" is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based.  The
-work thus licensed is called the contributor's &quot;contributor version&quot;.
+work thus licensed is called the contributor's "contributor version".
 
-  A contributor's &quot;essential patent claims&quot; are all patent claims
+  A contributor's "essential patent claims" are all patent claims
 owned or controlled by the contributor, whether already acquired or
 hereafter acquired, that would be infringed by some manner, permitted
 by this License, of making, using, or selling its contributor version,
 but do not include claims that would be infringed only as a
 consequence of further modification of the contributor version.  For
-purposes of this definition, &quot;control&quot; includes the right to grant
+purposes of this definition, "control" includes the right to grant
 patent sublicenses in a manner consistent with the requirements of
 this License.
 
@@ -667,10 +490,10 @@ patent license under the contributor's essential patent claims, to
 make, use, sell, offer for sale, import and otherwise run, modify and
 propagate the contents of its contributor version.
 
-  In the following three paragraphs, a &quot;patent license&quot; is any express
+  In the following three paragraphs, a "patent license" is any express
 agreement or commitment, however denominated, not to enforce a patent
 (such as an express permission to practice a patent or covenant not to
-sue for patent infringement).  To &quot;grant&quot; such a patent license to a
+sue for patent infringement).  To "grant" such a patent license to a
 party means to make such an agreement or commitment not to enforce a
 patent against the party.
 
@@ -682,7 +505,7 @@ then you must either (1) cause the Corresponding Source to be so
 available, or (2) arrange to deprive yourself of the benefit of the
 patent license for this particular work, or (3) arrange, in a manner
 consistent with the requirements of this License, to extend the patent
-license to downstream recipients.  &quot;Knowingly relying&quot; means you have
+license to downstream recipients.  "Knowingly relying" means you have
 actual knowledge that, but for the patent license, your conveying the
 covered work in a country, or your recipient's use of the covered work
 in a country, would infringe one or more identifiable patents in that
@@ -696,7 +519,7 @@ or convey a specific copy of the covered work, then the patent license
 you grant is automatically extended to all recipients of the covered
 work and works based on it.
 
-  A patent license is &quot;discriminatory&quot; if it does not include within
+  A patent license is "discriminatory" if it does not include within
 the scope of its coverage, prohibits the exercise of, or is
 conditioned on the non-exercise of one or more of the rights that are
 specifically granted under this License.  You may not convey a covered
@@ -747,7 +570,7 @@ address new problems or concerns.
 
   Each version is given a distinguishing version number.  If the
 Program specifies that a certain numbered version of the GNU General
-Public License &quot;or any later version&quot; applies to it, you have the
+Public License "or any later version" applies to it, you have the
 option of following the terms and conditions either of that numbered
 version or of any later version published by the Free Software
 Foundation.  If the Program does not specify a version number of the
@@ -768,7 +591,7 @@ later version.
 
   THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
 APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
-HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM &quot;AS IS&quot; WITHOUT WARRANTY
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
 OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
 THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
@@ -807,10 +630,10 @@ free software which everyone can redistribute and change under these terms.
   To do so, attach the following notices to the program.  It is safest
 to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
-the &quot;copyright&quot; line and a pointer to where the full notice is found.
+the "copyright" line and a pointer to where the full notice is found.
 
-    &lt;one line to give the program's name and a brief idea of what it does.&gt;
-    Copyright (C) &lt;year&gt;  &lt;name of author&gt;
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) <year>  <name of author>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -823,82 +646,31 @@ the &quot;copyright&quot; line and a pointer to where the full notice is found.
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Also add information on how to contact you by electronic and paper mail.
 
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    &lt;program&gt;  Copyright (C) &lt;year&gt;  &lt;name of author&gt;
+    <program>  Copyright (C) <year>  <name of author>
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
 
 The hypothetical commands `show w' and `show c' should show the appropriate
 parts of the General Public License.  Of course, your program's commands
-might be different; for a GUI interface, you would use an &quot;about box&quot;.
+might be different; for a GUI interface, you would use an "about box".
 
   You should also get your employer (if you work as a programmer) or school,
-if any, to sign a &quot;copyright disclaimer&quot; for the program, if necessary.
+if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU GPL, see
-&lt;https://www.gnu.org/licenses/&gt;.
+<https://www.gnu.org/licenses/>.
 
   The GNU General Public License does not permit incorporating your program
 into proprietary programs.  If your program is a subroutine library, you
 may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
-&lt;https://www.gnu.org/licenses/why-not-lgpl.html&gt;.</code></pre>
-</doc-codeblock></div>
-
-                
-                <!-- Required only on API pages -->
-                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
-            </div>
-            <footer id="retype-content-footer" class="clear-both">
-            
-            </footer>
-        </main>
-
-        <div id="retype-page-footer" class="print:border-none border-t border-base-border pt-6 mb-8">
-            <footer class="flex flex-wrap items-center justify-between print:justify-center">
-                <div id="retype-footer-links" class="print:hidden">
-                    <ul class="flex flex-wrap items-center text-sm">
-                        <li>
-                            <a class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-footer-link hover:text-footer-link-hover md:mb-0" href="../license/">License</a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="retype-copyright" class="print:justify-center py-2 text-footer-text font-footer-link text-sm leading-relaxed"><p>Tumppi066 &amp; Contributors © All rights reserved.</p></div>
-            </footer>
-        </div>
-    </div>
-
-    <!-- Rendered if sidebar right is enabled -->
-    <!-- Sidebar right skeleton-->
-    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-sidebar-right-bg border-sidebar-right-border lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:translate-x-0 sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton">
-        <div class="pl-5">
-            <div class="w-32 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-            <div class="w-48 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-            <div class="w-40 h-3 mb-4 bg-skeleton-bg rounded-full loading"></div>
-        </div>
-    </div>
-
-    <!-- User should be able to hide sidebar right -->
-    <doc-sidebar-right v-cloak></doc-sidebar-right>
-</div>
-
-        </div>
-    </div>
-
-    <doc-search-mobile></doc-search-mobile>
-    <doc-back-to-top></doc-back-to-top>
-</div>
-
-
-    <div id="retype-overlay-target"></div>
-
-        <script data-cfasync="false">window.__DOCS__ = { "title": "License", level: 1, icon: "file", hasPrism: false, hasInstagram: false, hasMermaid: false, hasMath: false, tocDepth: 23, "md": "/license.md" }</script>
-</body>
-</html>
+<https://www.gnu.org/licenses/why-not-lgpl.html>.
+```

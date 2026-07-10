@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ets2la.com/sitemap.xml.gz
+Sitemap: https://ets2la.com/sitemap.xml
