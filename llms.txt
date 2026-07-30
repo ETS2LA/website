@@ -6,7 +6,7 @@
 
 ## Support
 
-- [Installation](https://ets2la.com/help/installation.md): Download the latest installer from https://ets2la.com/downloads. See the webpage for instructions on which file to download.
+- [Installation](https://ets2la.com/help/installation.md): Download the latest installer from https://ets2la.com/download. See the webpage for instructions on which file to download.
 - [Frequently Asked Questions](https://ets2la.com/help/faq.md): This page compiles various frequently asked questions and their answers. Please use the search functionality, and the table of contents on the right side of this page to navigate.
 
 ## Others
