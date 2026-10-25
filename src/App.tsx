@@ -1,6 +1,7 @@
 import "./index.css";
 import { HeaderBar } from "./Components/HeaderBar";
 import { FooterBar } from "./Components/FooterBar";
+import { HeroPage } from "./Pages/HeroPage";
 import { DownloadPage } from "./Pages/DownloadPage";
 import { useRoute } from "./Components/useRoute";
 
@@ -9,9 +10,9 @@ export function App() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <HeaderBar active={route === "download" ? "download" : undefined} />
+      <HeaderBar active={route} />
       <main className="flex-1">
-        {route === "download" ? <DownloadPage /> : null}
+        {route === "download" ? <DownloadPage /> : <HeroPage />}
       </main>
       <FooterBar />
     </div>

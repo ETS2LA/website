@@ -71,86 +71,90 @@ export function DownloadPage() {
   const recommended = PLATFORMS.find((p) => p.id === os) ?? null;
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:py-16">
-      <h1 className="text-3xl font-semibold text-text-h">Download ETS2LA</h1>
-      <p className="mt-3 max-w-prose text-text-l">
-        Choose a download source below. Please note that only the latest release is available here, for historical releases please visit the release page of the selected source.
-      </p>
+    <>
+      <section className="w-full h-[40vh] bg-bg-dark">
+        <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
+          <h1 className="text-4xl!">Download ETS2LA</h1>
+          <p className="max-w-2xl">Choose a download source below. Please note that only the latest release is available here, for historical releases please visit the release page of the selected source.</p>
+        </div>
+      </section>
 
-      <div
-        role="radiogroup"
-        aria-label="Download source"
-        className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2"
-      >
-        {(Object.keys(SOURCES) as SourceId[]).map((id) => {
-          const item = SOURCES[id];
-          const selected = id === sourceId;
+      <div className="mx-auto w-full max-w-5xl px-4 pt-10">
+        <div
+          role="radiogroup"
+          aria-label="Download source"
+          className="grid grid-cols-1 gap-3 sm:grid-cols-2"
+        >
+          {(Object.keys(SOURCES) as SourceId[]).map((id) => {
+            const item = SOURCES[id];
+            const selected = id === sourceId;
 
-          return (
-            <button
-              key={id}
-              type="button"
-              role="radio"
-              aria-checked={selected}
-              onClick={() => setSourceId(id)}
-              className={`rounded-lg border p-4 text-left transition-colors flex flex-col ${
-                selected
-                  ? "border-accent-border bg-accent-darker"
-                  : "border-border bg-bg-dark hover:bg-bg-darker"
-              }`}
-            >
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-semibold text-text-h">
-                  {item.label}
-                </span>
-              </div>
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="mt-6 rounded-lg border border-border bg-bg-dark p-5">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <p>
-            Downloads are served from{" "}
-            <span className="text-text-h">{source.host}</span>
-          </p>
-
-          <a
-            href={source.releasesUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="button button-small"
-          >
-            View all releases
-          </a>
+            return (
+              <button
+                key={id}
+                type="button"
+                role="radio"
+                aria-checked={selected}
+                onClick={() => setSourceId(id)}
+                className={`rounded-lg border p-4 text-left transition-colors flex flex-col ${
+                  selected
+                    ? "border-accent-border bg-accent-darker"
+                    : "border-border bg-bg-dark hover:bg-bg-darker"
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-semibold text-text-h">
+                    {item.label}
+                  </span>
+                </div>
+              </button>
+            );
+          })}
         </div>
 
-        {source.note && (
-          <p className="mt-4 rounded-md border border-border bg-bg-darker px-3 py-2 text-sm text-text-l">
-            {source.note}
-          </p>
-        )}
+        <div className="mt-6 rounded-lg border border-border bg-bg-dark p-5">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p>
+              Downloads are served from{" "}
+              <span className="text-text-h">{source.host}</span>
+            </p>
 
-        <a
-          href={
-            recommended ? downloadUrl(source, recommended.file) : source.assetBase
-          }
-          className="mt-5 flex w-full! justify-between gap-3 rounded-lg border button px-4 py-3 transition-colors"
-        >
-          <span className="flex flex-col gap-1">
-            <span className="font-semibold text-text-h">
-              {recommended
-                ? `Download for ${recommended.os}`
-                : "Download latest release"}
+            <a
+              href={source.releasesUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="button button-small"
+            >
+              View all releases
+            </a>
+          </div>
+
+          {source.note && (
+            <p className="mt-4 rounded-md border border-border bg-bg-darker px-3 py-2 text-sm text-text-l">
+              {source.note}
+            </p>
+          )}
+
+          <a
+            href={
+              recommended ? downloadUrl(source, recommended.file) : source.assetBase
+            }
+            className="mt-5 flex w-full! justify-between gap-3 rounded-lg border button px-4 py-3 transition-colors"
+          >
+            <span className="flex flex-col gap-1">
+              <span className="font-semibold text-text-h">
+                {recommended
+                  ? `Download for ${recommended.os}`
+                  : "Download latest release"}
+              </span>
             </span>
-          </span>
-        </a>
+          </a>
 
-        <p className="description mt-3">
-          {recommended?.detail ?? "Please select your platform from the release page."}
-        </p>
+          <p className="description mt-3">
+            {recommended?.detail ?? "Please select your platform from the release page."}
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

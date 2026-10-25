@@ -1,7 +1,7 @@
 import logo from "../logo.svg";
 
 type HeaderBarProps = {
-  active?: "docs" | "plugins" | "account" | "download";
+  active: string;
 };
 
 const navItems = [
