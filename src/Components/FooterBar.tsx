@@ -23,6 +23,12 @@ export function FooterBar() {
           >
             Developer Documentation
           </a>
+          <a
+            href="#/legal/privacy"
+            className="transition-colors hover:text-text-h"
+          >
+            Privacy Policy
+          </a>
         </nav>
       </div>
     </footer>

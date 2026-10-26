@@ -4,8 +4,6 @@ import { readdir } from "node:fs/promises";
 import path from "node:path";
 import index from "./index.html";
 
-const HELP_DIR = path.join(process.cwd(), "help");
-
 /** `Install the plugin!` -> "install-the-plugin" */
 function slugify(text: string): string {
   return text
@@ -42,6 +40,14 @@ function summarize(pages: HelpPage[]): HelpSummary[] {
 }
 
 /**
+ * Removes HTML comments. `marked` passes raw HTML through untouched, so
+ * authoring notes would otherwise ship to the client in the page source.
+ */
+function stripComments(markdown: string): string {
+  return markdown.replace(/<!--[\s\S]*?-->/g, "");
+}
+
+/**
  * Renders an alert callout (`> [!TIP]`) to a styled block. Must run on the
  * raw markdown; everything else is left to `marked`.
  */
@@ -75,11 +81,24 @@ function slugFor(file: string): string {
 }
 
 async function loadHelpPages(): Promise<HelpPage[]> {
+  return loadMarkdownPages("help", "#/help");
+}
+
+/**
+ * Loads markdown pages from a folder at the repo root. Files are ordered by
+ * filename, so a numeric prefix (`01-foo.md`) controls the order without
+ * affecting the slug. `index.md` is pinned first and maps to the folder root.
+ */
+async function loadMarkdownPages(
+  folder: string,
+  baseHref: string,
+): Promise<HelpPage[]> {
+  const dir = path.join(process.cwd(), folder);
   let files: string[];
   try {
-    files = await readdir(HELP_DIR);
+    files = await readdir(dir);
   } catch {
-    return []; // no help directory yet
+    return []; // folder doesn't exist yet
   }
 
   const markdownFiles = files.filter((file) => file.endsWith(".md")).sort();
@@ -87,14 +106,22 @@ async function loadHelpPages(): Promise<HelpPage[]> {
   const pages = await Promise.all(
     markdownFiles.map(async (file, index) => {
       const slug = slugFor(file);
-      const markdown = await Bun.file(path.join(HELP_DIR, file)).text();
-      const title = markdown.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? file.replace(/\.md$/, "");
+      const markdown = await Bun.file(path.join(dir, file)).text();
+      const title =
+        markdown.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? file.replace(/\.md$/, "");
 
-      const helpHref = slug === "" ? "#/help" : `#/help/${slug}`;
-      const html = (md.parse(renderAlerts(markdown)) as string).replaceAll(
-        "__HELPHREF__",
-        helpHref,
+      const href = slug === "" ? baseHref : `${baseHref}/${slug}`;
+      // Bare in-page anchors (`[text](#some-heading)`) must carry the page
+      // route too, otherwise the hash router reads `#some-heading` as a new
+      // route. Links that already start with a route (`](#/download)`) are
+      // left alone.
+      const withRouteLinks = markdown.replace(
+        /\]\(#([^)/][^)]*)\)/g,
+        "](__HELPHREF__#$1)",
       );
+      const html = (
+        md.parse(renderAlerts(stripComments(withRouteLinks))) as string
+      ).replaceAll("__HELPHREF__", href);
 
       // Drop the leading <h1>: the page already renders the title in the hero.
       const withoutTitle = html.replace(/^\s*<h1\b[^>]*>.*?<\/h1>/, "").trim();
@@ -146,6 +173,22 @@ const server = serve({
           html,
           pages: summarize(await loadHelpPages()),
         });
+      },
+    },
+
+    /**
+     * Legal pages (privacy policy, terms, ...) come from markdown files in
+     * `legal/` and are served at `#/legal/<filename>`.
+     */
+    "/api/legal/:slug": {
+      async GET(req) {
+        const pages = await loadMarkdownPages("legal", "#/legal");
+        const page = pages.find((item) => item.slug === req.params.slug);
+        if (!page) {
+          return Response.json({ error: "Page not found" }, { status: 404 });
+        }
+        const { slug, title, html } = page;
+        return Response.json({ slug, title, html });
       },
     },
 

@@ -20,7 +20,7 @@ then you can completely disable the overlay in the `Display` settings.
 ## Why doesn't it drive?
 
 1. Make sure you have enabled the `Lane Assist` and `Adaptive Cruise Control` plugins, and that
-you have enabled the driving assists. (see [getting started](#/help/getting-started#3-use-your-keybinds) for details).
+you have enabled the driving assists. (see [getting started](#/help#3-use-your-keybinds) for details).
 2. Make sure you are currently driving on a road. ETS2LA cannot start driving inside company areas,
 ferries or intersections. We will only begin driving once you are on a road.
 3. Make sure that the SDK is loaded and compatible. **Close the game** and
