@@ -1,4 +1,5 @@
 import logo from "../logo.svg";
+import { useAuth } from "./useAuth";
 
 type HeaderBarProps = {
   active: string;
@@ -12,6 +13,8 @@ const navItems = [
 ] as const;
 
 export function HeaderBar({ active }: HeaderBarProps) {
+  const { account } = useAuth();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-bg-dark/90 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-2 px-4">
@@ -40,11 +43,8 @@ export function HeaderBar({ active }: HeaderBarProps) {
         </nav>
 
         <div className="ml-auto flex items-center gap-2">
-          <a
-            href="#/account"
-            className={`button button-small`}
-          >
-            Account
+          <a href="#/account" className="button button-small">
+            {account ? account.username : "Account"}
           </a>
         </div>
       </div>

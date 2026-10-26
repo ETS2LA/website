@@ -169,7 +169,7 @@ export function PluginsPage() {
               </div>
             )}
 
-            <p className="description mt-4">Served from {plugins.source}</p>
+            <p className="description mt-4">Downloads available through ETS2LA.</p>
           </>
         )}
       </div>

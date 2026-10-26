@@ -5,6 +5,8 @@ import { HeroPage } from "./Pages/HeroPage";
 import { DownloadPage } from "./Pages/DownloadPage";
 import { PluginsPage } from "./Pages/PluginsPage";
 import { HelpPage } from "./Pages/HelpPage";
+import { AccountPage } from "./Pages/AccountPage";
+import { AuthProvider } from "./Components/useAuth";
 import { useRoute } from "./Components/useRoute";
 
 export function App() {
@@ -15,22 +17,26 @@ export function App() {
     : "";
 
   return (
-    <div className="flex min-h-screen flex-col bg-bg-dark">
-      <HeaderBar active={route.split("/")[0] ?? ""} />
-      <main className="flex-1">
-        {route === "download" ? (
-          <DownloadPage />
-        ) : route === "plugins" ? (
-          <PluginsPage />
-        ) : route === "help" || route.startsWith("help/") ? (
-          <HelpPage slug={helpSlug} section={helpSection} />
-        ) : (
-          <HeroPage />
-        )}
-        <br/>
-      </main>
-      <FooterBar />
-    </div>
+    <AuthProvider>
+      <div className="flex min-h-screen flex-col bg-bg-dark">
+        <HeaderBar active={route.split("/")[0] ?? ""} />
+        <main className="flex-1">
+          {route === "download" ? (
+            <DownloadPage />
+          ) : route === "plugins" ? (
+            <PluginsPage />
+          ) : route === "account" ? (
+            <AccountPage />
+          ) : route === "help" || route.startsWith("help/") ? (
+            <HelpPage slug={helpSlug} section={helpSection} />
+          ) : (
+            <HeroPage />
+          )}
+          <br/>
+        </main>
+        <FooterBar />
+      </div>
+    </AuthProvider>
   );
 }
 

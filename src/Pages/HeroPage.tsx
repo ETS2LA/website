@@ -27,7 +27,7 @@ function NewsCard({ article }: { article: NewsArticle }) {
       onFocus={() => setExpanded(true)}
       onBlur={() => setExpanded(false)}
       tabIndex={0}
-      className={`flex flex-col w-full ${background} border rounded-sm p-4 transition-all outline-none ${
+      className={`flex flex-col justify-between w-full ${background} border rounded-sm p-4 transition-all outline-none ${
         expanded ? "border-accent-dark" : "border-bg-darker"
       }`}
     >
