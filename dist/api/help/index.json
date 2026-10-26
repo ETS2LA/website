@@ -1,0 +1,19 @@
+{
+  "slug": "",
+  "title": "Getting Started",
+  "html": "<div class=\"help-alert help-alert-note\"><p>This guide is also available as a 4 minute <a href=\"https://youtu.be/My-mk4lXr00?si=c2c2fJbJFGPr2uDo\">video walkthrough</a>.</p>\n</div><h2 id=\"1-install-ets2la\"><a class=\"help-anchor\" href=\"#/help#1-install-ets2la\" aria-label=\"Link to this section\">#</a>1. Install ETS2LA</h2>\n<p>Download the installer for your platform from the <a href=\"#/download\">download page</a>,\nthen run it and follow the prompts.</p>\n<table>\n<thead>\n<tr>\n<th>Platform</th>\n<th>File</th>\n<th>Requirements</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Windows</td>\n<td><code>ETS2LA-win-*.msi</code></td>\n<td>Included</td>\n</tr>\n<tr>\n<td>Linux</td>\n<td><code>ETS2LA-linux-*.AppImage</code></td>\n<td>GLIBC 2.43</td>\n</tr>\n</tbody></table>\n<div class=\"help-alert help-alert-tip\"><p>ETS2LA is version specific, make sure you&#39;re on a game version listed in the\nlatest release notes.</p>\n</div><h2 id=\"2-follow-the-ets2la-onboarding\"><a class=\"help-anchor\" href=\"#/help#2-follow-the-ets2la-onboarding\" aria-label=\"Link to this section\">#</a>2. Follow the ETS2LA onboarding</h2>\n<p>When you first launch ETS2LA, it will guide you through the onboarding process.\nThis onboarding process contains everything you need to get started.</p>\n<h2 id=\"3-use-your-keybinds\"><a class=\"help-anchor\" href=\"#/help#3-use-your-keybinds\" aria-label=\"Link to this section\">#</a>3. Use Your Keybinds</h2>\n<p>Once you&#39;ve got some plugins enabled, you can enable their features by using \nkeybinds, by default these are the following:</p>\n<table>\n<thead>\n<tr>\n<th>Action</th>\n<th>Keybind</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>RES / Increase</td>\n<td><code>Up Arrow</code></td>\n</tr>\n<tr>\n<td>SET / Decrease</td>\n<td><code>Down Arrow</code></td>\n</tr>\n<tr>\n<td>MODE / Cancel</td>\n<td><code>Left Arrow</code></td>\n</tr>\n<tr>\n<td>Next / Confirm</td>\n<td><code>Right Arrow</code></td>\n</tr>\n</tbody></table>\n<p>The TLDR is that you can use the <strong>RES</strong> and <strong>SET</strong> buttons to enable, and \nthe <strong>MODE</strong> button to disable driving assistance.</p>\n<h2 id=\"troubleshooting\"><a class=\"help-anchor\" href=\"#/help#troubleshooting\" aria-label=\"Link to this section\">#</a>Troubleshooting</h2>\n<p>If something isn&#39;t working, the <a href=\"#/help/faq\">FAQ</a> covers the most common\nissues. Still stuck? Ask in the <code>#support</code> channel on <a href=\"https://ets2la.com/discord\">Discord</a>.</p>",
+  "pages": [
+    {
+      "slug": "",
+      "title": "Getting Started"
+    },
+    {
+      "slug": "faq",
+      "title": "Frequently Asked Questions"
+    },
+    {
+      "slug": "vtcs",
+      "title": "Instructions for VTCs"
+    }
+  ]
+}

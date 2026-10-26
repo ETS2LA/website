@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSectionFocus } from "../Components/useSectionFocus";
+import { useDocumentTitle } from "../Components/useDocumentTitle";
 
 /**
  * Renders a markdown-backed page. `endpoint` is an API path like
@@ -43,6 +44,8 @@ export function MarkdownPage({
     state.status === "ready",
     state.status === "ready" ? state.title : "",
   );
+
+  useDocumentTitle(state.status === "ready" ? state.title : "");
 
   if (state.status === "loading") {
     return (

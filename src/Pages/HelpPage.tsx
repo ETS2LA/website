@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSectionFocus } from "../Components/useSectionFocus";
+import { useDocumentTitle } from "../Components/useDocumentTitle";
 
 type HelpSummary = { slug: string; title: string };
 
@@ -34,9 +35,9 @@ export function HelpPage({
     let active = true;
     setState({ status: "loading" });
 
-    // The index page lives at `index.md`, requested as `/api/help/index`.
+    // The index page lives at `index.md`, requested as `api/help/index.json`.
     const apiSlug = slug === "" ? "index" : slug;
-    fetch(`/api/help/${encodeURIComponent(apiSlug)}`)
+    fetch(`api/help/${encodeURIComponent(apiSlug)}.json`)
       .then((res) => {
         if (!res.ok) throw new Error(String(res.status));
         return res.json() as Promise<HelpResponse>;
@@ -54,6 +55,10 @@ export function HelpPage({
     section,
     state.status === "ready",
     state.status === "ready" ? state.data.slug : "",
+  );
+
+  useDocumentTitle(
+    state.status === "ready" ? state.data.title : "Help",
   );
 
   const pages = state.status === "ready" ? state.data.pages : [];

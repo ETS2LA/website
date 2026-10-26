@@ -1,0 +1,16 @@
+{
+  "pages": [
+    {
+      "slug": "",
+      "title": "Getting Started"
+    },
+    {
+      "slug": "faq",
+      "title": "Frequently Asked Questions"
+    },
+    {
+      "slug": "vtcs",
+      "title": "Instructions for VTCs"
+    }
+  ]
+}

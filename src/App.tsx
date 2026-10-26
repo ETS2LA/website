@@ -9,11 +9,27 @@ import { MarkdownPage } from "./Pages/MarkdownPage";
 import { AccountPage } from "./Pages/AccountPage";
 import { AuthProvider } from "./Components/useAuth";
 import { useRoute } from "./Components/useRoute";
+import { useDocumentTitle } from "./Components/useDocumentTitle";
+
+/** Tab titles for the routes that have a fixed one. */
+const PAGE_TITLES: Record<string, string> = {
+  download: "Download",
+  plugins: "Plugins",
+  account: "Account",
+};
 
 export function App() {
   const route = useRoute();
   const [path = "", section = ""] = route.split("#");
   const helpSlug = path.startsWith("help/") ? path.slice("help/".length) : "";
+
+  // Markdown-backed routes (help, legal) set their own title from the markdown
+  // heading, so they pass `null` and leave it alone until the page loads.
+  const isMarkdownRoute =
+    path.startsWith("help") || path.startsWith("legal/");
+  useDocumentTitle(
+    isMarkdownRoute ? null : (PAGE_TITLES[path] ?? ""),
+  );
 
   return (
     <AuthProvider>
@@ -27,7 +43,7 @@ export function App() {
           ) : path === "account" ? (
             <AccountPage />
           ) : path.startsWith("legal/") ? (
-            <MarkdownPage endpoint={`/api/${path}`} section={section} />
+            <MarkdownPage endpoint={`api/${path}.json`} section={section} />
           ) : path === "help" || path.startsWith("help/") ? (
             <HelpPage slug={helpSlug} section={section} />
           ) : (

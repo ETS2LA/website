@@ -1,0 +1,19 @@
+{
+  "slug": "vtcs",
+  "title": "Instructions for VTCs",
+  "html": "<div class=\"help-alert help-alert-note\"><p>We&#39;re always open for questions and suggestions, you can reach out to <strong>@Tumppi066</strong> on\non <a href=\"https://ets2la.com/discord\">Discord</a> for any questions.</p>\n</div><h2 id=\"i-want-to-block-the-use-of-ets2la-inwith-my-vtcprogram\"><a class=\"help-anchor\" href=\"#/help/vtcs#i-want-to-block-the-use-of-ets2la-inwith-my-vtcprogram\" aria-label=\"Link to this section\">#</a>I want to block the use of ETS2LA in/with my VTC/Program</h2>\n<p>That&#39;s totally fair! We provide two ways for VTC owners to detect ETS2LA. \nOne of these is via the log files, just look for any log containing <code>ets2la</code> \nand you&#39;ll be golden. We also provide a more reliable way through the plugin&#39;s \nvirtual memory. For more information on how to read this check it&#39;s \n<a href=\"https://github.com/ETS2LA/plugin\">GitHub page</a>, the first virtual memory entry \nlisted in the readme is used to detect ETS2LA, and how much it&#39;s being used.</p>\n<p>If you want to display a notice inside ETS2LA, contact us via Discord to provide\nus with a way to detect if you app is open. Anything goes, so long as it doesn&#39;t\nchange between updates.</p>\n<h2 id=\"i-want-to-work-with-ets2la\"><a class=\"help-anchor\" href=\"#/help/vtcs#i-want-to-work-with-ets2la\" aria-label=\"Link to this section\">#</a>I want to work with ETS2LA</h2>\n<p>We provide developer documentation you can access via the footer. If you need more \ninfo or want to talk to me then contact us on Discord or via <code>contact@ets2la.com</code>.</p>",
+  "pages": [
+    {
+      "slug": "",
+      "title": "Getting Started"
+    },
+    {
+      "slug": "faq",
+      "title": "Frequently Asked Questions"
+    },
+    {
+      "slug": "vtcs",
+      "title": "Instructions for VTCs"
+    }
+  ]
+}
