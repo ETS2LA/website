@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 
-/** Normalizes `#/docs/` -> "docs", `#/` -> "". */
+/**
+ * Normalizes the hash into a route, keeping any `#section` suffix:
+ * `#/docs/` -> "docs", `#/help/faq#setup` -> "help/faq#setup".
+ */
 function readPath(): string {
   const hash = window.location.hash.replace(/^#\/?/, "");
-  return hash.replace(/\/+$/, "");
+  const [route, section] = hash.split("#");
+  const trimmed = (route ?? "").replace(/\/+$/, "");
+  return section ? `${trimmed}#${section}` : trimmed;
 }
 
 /** Minimal hash-based router: returns the current path, e.g. "download". */

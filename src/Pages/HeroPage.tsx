@@ -1,91 +1,77 @@
-import logo from "../logo.svg";
+import { useState } from "react";
 import { useNews, type NewsArticle } from "../Components/useNews";
+import { MarkdownText, renderInline } from "../Components/Markdown";
 
-const IMPORTANCE_STYLES: Record<string, string> = {
-  Informational: "border-accent-border text-text-accent",
-  Warning: "border-warning/60 text-warning",
-  Critical: "border-danger/60 text-danger",
+const IMPORTANCE_BG: Record<string, string> = {
+  Critical: "bg-accent-dark/50",
+  Warning: "bg-accent-dark/30",
 };
+const DEFAULT_BG = "bg-control-bg-dark";
 
-/** Renders inline `**bold**` and `` `code` `` spans. */
-function renderInline(text: string, keyPrefix: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
-  return parts.map((part, i) => {
-    const key = `${keyPrefix}-${i}`;
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={key} className="font-semibold text-text-h">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    if (part.startsWith("`") && part.endsWith("`")) {
-      return (
-        <code
-          key={key}
-          className="rounded bg-code-bg px-1 py-0.5 font-mono text-[11px]"
-        >
-          {part.slice(1, -1)}
-        </code>
-      );
-    }
-    return <span key={key}>{part}</span>;
-  });
-}
-
-/** Light markdown renderer: bullet lines, bold and inline code. */
-function ArticleContent({ content }: { content: string }) {
-  return (
-    <div className="space-y-1.5 text-sm text-text-l">
-      {content.split("\n").map((line, i) => {
-        if (line.trim() === "") return null;
-        if (line.startsWith("- ")) {
-          return (
-            <div key={i} className="flex gap-2">
-              <span className="text-description" aria-hidden="true">
-                •
-              </span>
-              <span>{renderInline(line.slice(2), `l${i}`)}</span>
-            </div>
-          );
-        }
-        return <p key={i}>{renderInline(line, `l${i}`)}</p>;
-      })}
-    </div>
-  );
+/** `2026-10-24T10:56:14.370216Z` -> `24.10.2026 10:56` */
+function formatDate(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${pad(date.getDate())}.${pad(date.getMonth() + 1)}.${date.getFullYear()} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
 }
 
 function NewsCard({ article }: { article: NewsArticle }) {
-  const badge =
-    IMPORTANCE_STYLES[article.importance] ?? IMPORTANCE_STYLES.Informational;
+  const [expanded, setExpanded] = useState(false);
+  const background = IMPORTANCE_BG[article.importance] ?? DEFAULT_BG;
 
   return (
-    <article
+    <div
+      onMouseEnter={() => setExpanded(true)}
+      onMouseLeave={() => setExpanded(false)}
+      onFocus={() => setExpanded(true)}
+      onBlur={() => setExpanded(false)}
       tabIndex={0}
-      className="group relative min-h-36 rounded-lg border border-border bg-bg-dark p-5 outline-none transition-colors focus-visible:border-accent-border"
+      className={`flex flex-col w-full ${background} border rounded-sm p-4 transition-all outline-none ${
+        expanded ? "border-accent-dark" : "border-bg-darker"
+      }`}
     >
-      <div className="flex items-start justify-between gap-3">
-        <h3 className="text-base font-semibold text-text-h">
-          {article.title}
-        </h3>
-        <span
-          className={`shrink-0 rounded-full border px-2 py-0.5 text-xs ${badge}`}
-        >
-          {article.importance}
-        </span>
-      </div>
-      <p className="mt-2 text-sm text-text-l">{article.contentSummary}</p>
-      <p className="description mt-3">
-        {article.author} · {new Date(article.createdAt).toLocaleDateString()}
-      </p>
+      <p className="font-semibold">{renderInline(article.title, "t")}</p>
 
-      <div className="pointer-events-none absolute inset-0 flex flex-col gap-2 overflow-y-auto rounded-lg bg-bg-darker p-5 opacity-0 transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-        <h3 className="text-base font-semibold text-text-h">
-          {article.title}
-        </h3>
-        <ArticleContent content={article.content} />
+      <div
+        className={`grid transition-all duration-150 ease-in-out ${
+          expanded
+            ? "grid-rows-[0fr] opacity-0"
+            : "grid-rows-[1fr] opacity-100"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="description mt-1">
+            {renderInline(article.contentSummary, "s")}
+          </p>
+        </div>
       </div>
-    </article>
+
+      <div
+        className={`grid transition-all duration-150 ease-in-out ${
+          expanded
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-1 space-y-2 text-[12px] text-text-l/80">
+            <MarkdownText content={article.content} />
+          </div>
+        </div>
+      </div>
+
+      {expanded ? (
+        <p className="description mt-2">
+          <span className="font-semibold">{article.author}</span>
+          {article.expiresAt
+            ? ` until ${formatDate(article.expiresAt)}`
+            : ` at ${formatDate(article.createdAt)}`}
+        </p>
+      ) : (
+        <p className="description mt-2 font-semibold">{article.author}</p>
+      )}
+    </div>
   );
 }
 
@@ -94,7 +80,7 @@ export function HeroPage() {
 
   return (
     <>
-      <section className="w-full h-[40vh] bg-bg-dark">
+      <section className="w-full h-[40vh] bg-bg">
         <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
           <h1 className="text-4xl!">ETS2LA</h1>
           <p>Self-driving, maps, privacy focused dashcams, and more for SCS Truck Simulators.</p>
@@ -107,7 +93,7 @@ export function HeroPage() {
               href="https://docs.ets2la.com"
               target="_blank"
               rel="noreferrer"
-              className="button"
+              className="button border-control/50!"
             >
               Developer Docs
             </a>
@@ -130,12 +116,12 @@ export function HeroPage() {
             <h2 className="mb-4 text-lg font-semibold text-text-h">
               Latest news
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {news.articles.map((article) => (
                 <NewsCard key={article.id} article={article} />
               ))}
             </div>
-            <p className="description mt-4">Served from {news.source}</p>
+            <p className="description mt-4">Also available inside ETS2LA.</p>
           </section>
         )}
       </div>

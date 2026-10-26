@@ -1,0 +1,181 @@
+import { useEffect, useRef, useState } from "react";
+
+type HelpSummary = { slug: string; title: string };
+
+type HelpResponse = {
+  slug: string;
+  title: string;
+  html: string;
+  pages: HelpSummary[];
+};
+
+type State =
+  | { status: "loading" }
+  | { status: "error" }
+  | { status: "ready"; data: HelpResponse };
+
+/**
+ * Renders a help page from `#/help/<slug>`. Content comes from markdown files
+ * in the repository's `help/` folder. `section` is an optional heading anchor
+ * (`#/help/faq#supported-versions`).
+ */
+export function HelpPage({
+  slug,
+  section,
+}: {
+  slug: string;
+  section: string;
+}) {
+  const [state, setState] = useState<State>({ status: "loading" });
+  const [focused, setFocused] = useState(true);
+  const articleRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let active = true;
+    setState({ status: "loading" });
+
+    // The index page lives at `index.md`, requested as `/api/help/index`.
+    const apiSlug = slug === "" ? "index" : slug;
+    fetch(`/api/help/${encodeURIComponent(apiSlug)}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(String(res.status));
+        return res.json() as Promise<HelpResponse>;
+      })
+      .then((data) => active && setState({ status: "ready", data }))
+      .catch(() => active && setState({ status: "error" }));
+
+    return () => {
+      active = false;
+    };
+  }, [slug]);
+
+  // Scroll to the requested heading once the page content is in the DOM.
+  useEffect(() => {
+    if (state.status !== "ready") return;
+    const target = section
+      ? document.getElementById(decodeURIComponent(section))
+      : null;
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [state.status, section, state.status === "ready" && state.data.slug]);
+
+  // Highlight the shared section, then release the dimming on first interaction.
+  useEffect(() => {
+    if (!section) {
+      setFocused(false);
+      return;
+    }
+    setFocused(true);
+  }, [section]);
+
+  useEffect(() => {
+    if (!focused) return;
+    const release = () => setFocused(false);
+    const events = ["wheel", "keydown", "pointerdown", "touchstart"] as const;
+    for (const event of events) {
+      window.addEventListener(event, release, { passive: true });
+    }
+    return () => {
+      for (const event of events) window.removeEventListener(event, release);
+    };
+  }, [focused]);
+
+  // Dim everything except the shared section, and highlight its heading.
+  useEffect(() => {
+    const article = articleRef.current;
+    if (!article || state.status !== "ready") return;
+
+    const children = [...article.children];
+    const id = section ? decodeURIComponent(section) : "";
+    const focusIndex = id
+      ? children.findIndex((el) => el.id === id)
+      : -1;
+
+    // No anchor, or the anchor doesn't exist -> leave the page as-is.
+    if (focusIndex < 0) {
+      setFocused(false);
+      return;
+    }
+
+    const level = Number(children[focusIndex]!.tagName[1] ?? 9);
+    let end = children.length;
+    for (let i = focusIndex + 1; i < children.length; i++) {
+      const tag = children[i]!.tagName;
+      if (/^H[1-4]$/.test(tag) && Number(tag[1]) <= level) {
+        end = i;
+        break;
+      }
+    }
+
+    children.forEach((el, i) => {
+      const inSection = i >= focusIndex && i < end;
+      el.classList.toggle("help-dimmed", focused && !inSection);
+      if (inSection && i === focusIndex) el.classList.add("help-highlighted");
+    });
+
+    return () => {
+      article
+        .querySelectorAll(".help-dimmed,.help-highlighted")
+        .forEach((el) => el.classList.remove("help-dimmed", "help-highlighted"));
+    };
+  }, [focused, section, state.status, state.status === "ready" && state.data.slug]);
+
+  const pages = state.status === "ready" ? state.data.pages : [];
+
+  return (
+    <>
+      <section className="w-full h-[40vh] bg-bg">
+        <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
+          <h1 className="text-4xl!">
+            {state.status === "ready" ? state.data.title : "Help"}
+          </h1>
+          <p className="max-w-2xl">
+            Guides and answers for installing and using ETS2LA.
+          </p>
+        </div>
+      </section>
+
+      <div className="mx-auto w-full max-w-5xl px-4 pt-10">
+        {pages.length > 0 && (
+          <nav className="mb-6 flex flex-wrap items-center gap-2">
+            {pages.map((page) => (
+              <a
+                key={page.slug}
+                href={page.slug === "" ? "#/help" : `#/help/${page.slug}`}
+                className={`rounded-sm border px-3 py-1.5 text-[12px] transition-all ${
+                  page.slug === slug
+                    ? "border-accent-dark text-text-h"
+                    : "border-bg-darker text-text-l hover:border-accent-dark"
+                }`}
+              >
+                {page.title}
+              </a>
+            ))}
+          </nav>
+        )}
+
+        {state.status === "loading" && (
+          <div className="space-y-3">
+            <div className="h-6 w-1/3 animate-pulse rounded bg-control-bg-dark" />
+            <div className="h-4 w-2/3 animate-pulse rounded bg-control-bg-dark" />
+            <div className="h-4 w-1/2 animate-pulse rounded bg-control-bg-dark" />
+          </div>
+        )}
+
+        {state.status === "error" && (
+          <p className="description">
+            Could not load this help page. It may have been moved or removed.
+          </p>
+        )}
+
+        {state.status === "ready" && (
+          <article
+            ref={articleRef}
+            className="help-content mt-10"
+            // Content is authored by us in the repository's help/*.md files.
+            dangerouslySetInnerHTML={{ __html: state.data.html }}
+          />
+        )}
+      </div>
+    </>
+  );
+}

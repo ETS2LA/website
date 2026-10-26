@@ -16,12 +16,13 @@ type Platform = {
   id: PlatformId;
   os: string;
   file: string;
-  detail: string;
+  detail?: string;
 };
 
 const SOURCES: Record<SourceId, Source> = {
   global: {
     label: "Global",
+    note: "This is the default source for all users outside China. You will install and update from GitHub.",
     releasesUrl: "https://github.com/ETS2LA/ETS2LA/releases",
     assetBase: "https://github.com/ETS2LA/ETS2LA/releases/latest",
     host: "github.com",
@@ -40,8 +41,7 @@ const PLATFORMS: Platform[] = [
   {
     id: "windows",
     os: "Windows",
-    file: "ETS2LA-win-release.msi",
-    detail: "Requirements are included in the installer.",
+    file: "ETS2LA-win-release.msi"
   },
   {
     id: "linux",
@@ -58,6 +58,9 @@ function detectOS(): PlatformId | null {
   return null;
 }
 
+/** Shared card surface, matching the news cards on the home page. */
+const CARD_BG = "bg-control-bg-dark";
+
 /** `${assetBase}/download/${file}` apparently works on both GitHub and CNB. */
 function downloadUrl(source: Source, file: string) {
   return `${source.assetBase}/download/${file}`;
@@ -72,7 +75,7 @@ export function DownloadPage() {
 
   return (
     <>
-      <section className="w-full h-[40vh] bg-bg-dark">
+      <section className="w-full h-[40vh] bg-bg">
         <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
           <h1 className="text-4xl!">Download ETS2LA</h1>
           <p className="max-w-2xl">Choose a download source below. Please note that only the latest release is available here, for historical releases please visit the release page of the selected source.</p>
@@ -83,7 +86,7 @@ export function DownloadPage() {
         <div
           role="radiogroup"
           aria-label="Download source"
-          className="grid grid-cols-1 gap-3 sm:grid-cols-2"
+          className="grid grid-cols-1 gap-2 sm:grid-cols-2"
         >
           {(Object.keys(SOURCES) as SourceId[]).map((id) => {
             const item = SOURCES[id];
@@ -96,63 +99,69 @@ export function DownloadPage() {
                 role="radio"
                 aria-checked={selected}
                 onClick={() => setSourceId(id)}
-                className={`rounded-lg border p-4 text-left transition-colors flex flex-col ${
+                className={`flex flex-col w-full text-left rounded-sm border p-4 transition-all outline-none ${CARD_BG} ${
                   selected
-                    ? "border-accent-border bg-accent-darker"
-                    : "border-border bg-bg-dark hover:bg-bg-darker"
+                    ? "border-accent-dark"
+                    : "border-bg-darker hover:border-accent-dark"
                 }`}
               >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-semibold text-text-h">
-                    {item.label}
-                  </span>
-                </div>
+                <span className="font-semibold text-text-h">{item.label}</span>
+                <span className="description mt-1">
+                  Downloads are served from {item.host}
+                </span>
               </button>
             );
           })}
         </div>
 
-        <div className="mt-6 rounded-lg border border-border bg-bg-dark p-5">
+        <div className="mt-2 rounded-sm border border-bg-darker bg-control-bg-dark p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <p>
+            <p className="description text-[14px]">
               Downloads are served from{" "}
-              <span className="text-text-h">{source.host}</span>
+              <span className="font-semibold text-text-l">{source.host}</span>
             </p>
 
             <a
               href={source.releasesUrl}
               target="_blank"
               rel="noreferrer"
-              className="button button-small"
+              className="description"
             >
               View all releases
             </a>
           </div>
 
-          {source.note && (
-            <p className="mt-4 rounded-md border border-border bg-bg-darker px-3 py-2 text-sm text-text-l">
-              {source.note}
-            </p>
-          )}
-
           <a
             href={
               recommended ? downloadUrl(source, recommended.file) : source.assetBase
             }
-            className="mt-5 flex w-full! justify-between gap-3 rounded-lg border button px-4 py-3 transition-colors"
+            className="mt-4 flex w-full! items-center justify-between gap-3 rounded-sm border border-accent-dark bg-accent-dark/30 px-4 py-3 transition-colors hover:bg-accent-dark/50"
           >
-            <span className="flex flex-col gap-1">
-              <span className="font-semibold text-text-h">
-                {recommended
-                  ? `Download for ${recommended.os}`
-                  : "Download latest release"}
-              </span>
+            <span className="font-semibold text-text-h">
+              {recommended
+                ? `Download for ${recommended.os}`
+                : "Download latest release"}
             </span>
+            <div className="flex gap-2">
+              {recommended && (
+                <span className="description">
+                  {recommended.file}
+                </span>
+              )}
+            </div>
           </a>
 
-          <p className="description mt-3">
-            {recommended?.detail ?? "Please select your platform from the release page."}
-          </p>
+          {source.note && (
+            <p className="description mt-3 rounded-sm border border-bg-darker bg-bg-dark px-3 py-2">
+              {source.note}
+            </p>
+          )}
+
+          {recommended && recommended.detail && (
+            <p className="description mt-3">
+              {recommended.detail}
+            </p>
+          )}
         </div>
       </div>
     </>

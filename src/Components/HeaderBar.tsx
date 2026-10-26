@@ -5,7 +5,9 @@ type HeaderBarProps = {
 };
 
 const navItems = [
-  { id: "docs", label: "Docs", href: "#/docs" },
+  { id: "", label: "Home", href: "#/" },
+  { id: "download", label: "Download", href: "#/download" },
+  { id: "help", label: "Help", href: "#/help" },
   { id: "plugins", label: "Plugins", href: "#/plugins" },
 ] as const;
 
@@ -26,9 +28,9 @@ export function HeaderBar({ active }: HeaderBarProps) {
             <a
               key={item.id}
               href={item.href}
-              className={`rounded-md px-3 py-1.5 text-sm transition-colors hover:bg-bg ${
+              className={`rounded-md px-3 py-1.5 text-sm transition-colors hover:bg-control/50 ${
                 active === item.id
-                  ? "text-text-h bg-bg"
+                  ? "text-text-h bg-control/40"
                   : "text-text-l hover:text-text-h"
               }`}
             >
@@ -43,12 +45,6 @@ export function HeaderBar({ active }: HeaderBarProps) {
             className={`button button-small`}
           >
             Account
-          </a>
-          <a
-            href="#/download"
-            className={`button button-small button-accent`}
-          >
-            Download
           </a>
         </div>
       </div>
