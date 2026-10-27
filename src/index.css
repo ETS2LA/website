@@ -411,6 +411,19 @@ h4 {
   border-radius: 4px;
 }
 
+/* Clean mode (`?clean`): header and footer are gone for a frameless embed, and
+   the `40vh` decorative heroes plus generous padding are tuned for a full
+   window - in a small iframe they push the content below the fold. */
+.clean-mode .page-hero {
+  height: auto !important;
+  min-height: 0;
+  padding-block: 1.75rem;
+}
+
+.clean-mode .page-shell {
+  padding-block: 1.25rem 2rem;
+}
+
 /* Callouts (from `> [!TIP]` blocks). */
 .help-alert {
   border: 1px solid var(--border);

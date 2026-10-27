@@ -80,7 +80,7 @@ export function HeroPage() {
 
   return (
     <>
-      <section className="w-full h-[40vh] bg-bg">
+      <section className="page-hero w-full h-[40vh] bg-bg">
         <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
           <h1 className="text-4xl!">ETS2LA</h1>
           <p>Self-driving, maps, privacy focused dashcams, and more for SCS Truck Simulators.</p>

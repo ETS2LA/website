@@ -87,7 +87,7 @@ export function PluginsPage() {
 
   return (
     <>
-      <section className="w-full h-[40vh] bg-bg">
+      <section className="page-hero w-full h-[40vh] bg-bg">
         <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
           <h1 className="text-4xl!">Plugins</h1>
           <p className="max-w-2xl">
@@ -98,7 +98,7 @@ export function PluginsPage() {
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-5xl px-4 pt-10">
+      <div className="page-shell mx-auto w-full max-w-5xl px-4 pt-10">
         <div className="flex flex-wrap items-center gap-2">
           <input
             type="search"

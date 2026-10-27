@@ -49,7 +49,7 @@ export function MarkdownPage({
 
   if (state.status === "loading") {
     return (
-      <div className="mx-auto w-full max-w-5xl px-4 py-12">
+      <div className="page-shell mx-auto w-full max-w-5xl px-4 py-12">
         <div className="space-y-3">
           <div className="h-7 w-1/3 animate-pulse rounded bg-control-bg-dark" />
           <div className="h-4 w-2/3 animate-pulse rounded bg-control-bg-dark" />
@@ -61,7 +61,7 @@ export function MarkdownPage({
 
   if (state.status === "error") {
     return (
-      <div className="mx-auto w-full max-w-5xl px-4 py-12">
+      <div className="page-shell mx-auto w-full max-w-5xl px-4 py-12">
         <p className="description">
           Could not load this page. It may have been moved or removed.
         </p>
@@ -70,7 +70,7 @@ export function MarkdownPage({
   }
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-12">
+    <div className="page-shell mx-auto w-full max-w-5xl px-4 py-12">
       <h1 className="text-3xl font-semibold text-text-h">{state.title}</h1>
       <article
         ref={articleRef}

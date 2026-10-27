@@ -75,14 +75,14 @@ export function DownloadPage() {
 
   return (
     <>
-      <section className="w-full h-[40vh] bg-bg">
+      <section className="page-hero w-full h-[40vh] bg-bg">
         <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
           <h1 className="text-4xl!">Download ETS2LA</h1>
           <p className="max-w-2xl">Choose a download source below. Please note that only the latest release is available here, for historical releases please visit the release page of the selected source.</p>
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-5xl px-4 pt-10">
+      <div className="page-shell mx-auto w-full max-w-5xl px-4 pt-10">
         <div
           role="radiogroup"
           aria-label="Download source"

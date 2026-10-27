@@ -65,7 +65,7 @@ export function HelpPage({
 
   return (
     <>
-      <section className="w-full h-[40vh] bg-bg">
+      <section className="page-hero w-full h-[40vh] bg-bg">
         <div className="mx-auto flex flex-col gap-2 h-full max-w-5xl items-start justify-end p-4 py-8">
           <h1 className="text-4xl!">
             {state.status === "ready" ? state.data.title : "Help"}
@@ -76,7 +76,7 @@ export function HelpPage({
         </div>
       </section>
 
-      <div className="mx-auto w-full max-w-5xl px-4 pt-10">
+      <div className="page-shell mx-auto w-full max-w-5xl px-4 pt-10">
         {pages.length > 0 && (
           <nav className="mb-6 flex flex-wrap items-center gap-2">
             {pages.map((page) => (

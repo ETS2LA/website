@@ -10,8 +10,8 @@ import { AccountPage } from "./Pages/AccountPage";
 import { AuthProvider } from "./Components/useAuth";
 import { useRoute } from "./Components/useRoute";
 import { useDocumentTitle } from "./Components/useDocumentTitle";
+import { useChromeMode } from "./Components/useChromeMode";
 
-/** Tab titles for the routes that have a fixed one. */
 const PAGE_TITLES: Record<string, string> = {
   download: "Download",
   plugins: "Plugins",
@@ -23,6 +23,11 @@ export function App() {
   const [path = "", section = ""] = route.split("#");
   const helpSlug = path.startsWith("help/") ? path.slice("help/".length) : "";
 
+  // `?headerless` hides the header, `?clean` hides the footer too.
+  const chrome = useChromeMode();
+  const showHeader = chrome === "full";
+  const showFooter = chrome !== "clean";
+
   // Markdown-backed routes (help, legal) set their own title from the markdown
   // heading, so they pass `null` and leave it alone until the page loads.
   const isMarkdownRoute =
@@ -33,8 +38,10 @@ export function App() {
 
   return (
     <AuthProvider>
-      <div className="flex min-h-screen flex-col bg-bg-dark">
-        <HeaderBar active={path.split("/")[0] ?? ""} />
+      <div
+        className={`flex min-h-screen flex-col bg-bg-dark ${chrome === "clean" ? "clean-mode" : ""}`}
+      >
+        {showHeader && <HeaderBar active={path.split("/")[0] ?? ""} />}
         <main className="flex-1">
           {path === "download" ? (
             <DownloadPage />
@@ -51,7 +58,7 @@ export function App() {
           )}
           <br/>
         </main>
-        <FooterBar />
+        {showFooter && <FooterBar />}
       </div>
     </AuthProvider>
   );
