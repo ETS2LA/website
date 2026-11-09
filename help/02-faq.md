@@ -38,7 +38,7 @@ Depending on your specific setup, you might have to tune these values slightly, 
 ## Does ETS2LA support mods?
 
 Yes, but with a few caveats:
-- ETS2LA will load *all* mods from the `Documents/Euro Truck Simulator 2/mod` folder. This includes mods you don't currently have enabled in the game. **Ensure that this folder only contains mods you are currently using**, you can move others to subfolders for example.
+- ETS2LA will load *all* mods from the `Documents/Euro Truck Simulator 2/mod` folder. This includes mods you don't currently have enabled in the game. **Ensure that this folder only contains mods you are currently using**. You can also exclude mods in the `Data Parsing` settings.
 - Some mods may create new maps, while others might edit `europe.mbd` or other base files. If a mod doesn't work properly, go into the ETS2LA `Data Parsing` settings and toggle on `Force Base Map Name`, this will ensure mods that load the base map don't break ETS2LA.
 - Map mods are often not updated completely for each new game version. **ETS2LA can only parse the latest version of the map data**, so if a mod is for example 20% on an older version, that *might cause* ETS2LA to not work properly *in those areas*. This is not something we can fix sadly.
 - Some map mod combinations (i.e. ProMods + RusMap) might use features or custom road types etc... that we don't support. In these cases there's also nothing we can do, as we focus on basegame compatibility.
