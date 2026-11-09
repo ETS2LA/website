@@ -27,6 +27,14 @@ ferries or intersections. We will only begin driving once you are on a road.
 reinstall the SDK from the settings. Restart the game and ETS2LA *might* work after.
 4. See the next section.
 
+## The steering wheel doesn't match ETS2LA's output?
+
+This is a problem with your ingame control settings. It is very likely related to either `Steering Non-Linearity` or `Steering Sensitivity`. Try the following:
+- Ensure `Steering Sensitivity` is set to `1.0` in the ingame settings.
+- Ensure `Steering Non-Linearity` is set to `0.0` in the ingame settings.
+
+Depending on your specific setup, you might have to tune these values slightly, especially physics changing mods can mess with them. Please do note that this issue is **not something we can fix**, as it's a problem in the game itself.
+
 ## Does ETS2LA support mods?
 
 Yes, but with a few caveats:
@@ -37,6 +45,9 @@ Yes, but with a few caveats:
 
 > [!TIP]
 > We don't guarantee 100% mod compatibility, however if you do have issues not related to those above, please report them in the `#support` channel on [Discord](https://ets2la.com/discord).
+
+> [!TIP]
+> If you want to try and *fix* a mod compatibility issue. You can see [this GitHub issue](https://github.com/ETS2LA/ETS2LA/issues/652#issuecomment-6376481292) for a possible solution. Please note that this is not a guaranteed fix, and it may not work for all mods.
 
 ## Is ETS2LA allowed on multiplayer?
 
@@ -52,6 +63,12 @@ to allow other features of ETS2LA to continue working.
 > [!CAUTION]
 > Most leaderboards and VTC tools ban any sort of self driving. Always check
 > with your VTC before enabling ETS2LA. **Trucky** is one of the few that do allow us.
+
+## Lane Assist is stuck on "Game is paused."
+
+This is likely due to some other plugin interfering with ETS2LA. We'll have a list of known problematic plugins below, note that these might have been later updated to work with ETS2LA, so a listing here doesn't necessarily mean the plugin is incompatible. If you have a plugin that is not listed here, please report it in the `#support` channel on [Discord](https://ets2la.com/discord).
+
+- `SPAD.neXt` - Known to cause this specific issue, they interfere with our memory by shipping a slightly different version of the telemetry plugin using the same memory space.
 
 ## How do I install a plugin manually?
 
